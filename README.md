@@ -12,8 +12,8 @@ technical skills for academic research
 
 ## version control
 * basics
-* vs for vs
-* vs for collaboration
+* vc for vc
+* vc for collaboration
 * git setup
 * personal experience
 
@@ -23,8 +23,13 @@ technical skills for academic research
 * sql: setup
 * personal experience
 
+## datafeed
+* APIs and all that
+* web scraping
+
 ## graphics
 * colors
+* interactive stuff
 
 ## tex
 * basics
@@ -38,5 +43,3 @@ technical skills for academic research
 
 ## collaboration tools
 * slack
-
-## open data sources
