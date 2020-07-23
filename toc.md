@@ -1,11 +1,11 @@
 # table of contents
-## introduction
-## software
-## research = development
-## collaboration tools
-## version control
-## writing with latex
-## database
-## datafeed
-## graphics
-## open source
+## [introduction](./introduction.md)
+## [software](./software.md)
+## [research = development](./research.md)
+## [collaboration tools](./collaboration-tools.md)
+## [version control](./version-control.md)
+## [writing with latex](./writing-with-latex.md)
+## [database](./database.md)
+## [datafeed](./datafeed.md)
+## [graphics](./graphics.md)
+## [open source](./open-source.md)
