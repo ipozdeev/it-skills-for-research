@@ -26,7 +26,7 @@ technical skills for academic research
 *   git setup
 *   git integration (Atom)
 
-## writing with latex
+## [writing with latex](./writing-with-latex.md)
 *   basics
 *   setup
 *   packages
