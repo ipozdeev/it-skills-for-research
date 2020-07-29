@@ -10,3 +10,7 @@ You use a text editor of your choice (Notepad, SublimeText, Atom etc.) to write 
 *   test installation, see [here](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-380003.5)
 
 ### packages
+To install a new package, you need to locate it in the distribution you are using (TeX Live in our case).
+> [https://ctan.org/pkg/threeparttable?lang=en](https://ctan.org/pkg/threeparttable?lang=en)
+
+Then, use either TeX Live Manager or `tlmgr install threeparttable` to install it, then refresh the TeX database with `texhash`
