@@ -5,7 +5,6 @@
 ## [collaboration tools](./collaboration-tools.md)
 ## [version control](./version-control.md)
 ## [writing with latex](./writing-with-latex.md)
-## [database](./database.md)
 ## [datafeed](./datafeed.md)
 ## [graphics](./graphics.md)
 ## [open source](./open-source.md)
