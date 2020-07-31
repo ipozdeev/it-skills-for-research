@@ -18,7 +18,12 @@ You can put a directory under version control -- and the project directory is an
 ```
 git init
 ```
-Now the directory is a local (existing on your machine rather than somewhere else) *repository* (virtual storage space). You can check the status of the repo anytime:
+Now the directory is a local (existing on your machine rather than somewhere else) *repository* (virtual storage space). If you want to share your project (or just make it accessible from everywhere), you would have to find a *remote* place to store your repository. Places like [https://www.atlassian.com/](atlassian.com) and [https://github.com/](github.com) serve this purpose. Once you have an account, you can create a remote repository there and point your local repository to it.
+```
+git remote add <shortname> <url>
+```
+
+You can check the status of the repo anytime:
 ```
 git status
 ```
@@ -31,3 +36,21 @@ git add todo.txt
 ```
 Now you have taken a snapshot of the file and made it *staged*. You can continue to work on the file or commit the snapshot.
 > \[[git-book](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)\] If you modify a file after you run `git add`, you have to run `git add` again to stage the latest version of the file.
+
+To commit means to persist changes in the repository. Once committed, a file can be reverted back to any committed version. Do not ignore the commit message - these make it easier to navigate in the change history!
+```
+git commit -m "initial commit of todo"
+```
+You can look up the history of commits:
+```
+git log
+```
+or revert to a particular commit:
+```
+git
+```
+Having committed stuff, it is time to *push* it to the remote repo.
+
+## exercises
+1.  Having made a major super important commit after a whole day of work, you realize that you forgot to delete one comma in a file. Instead of making another commit too minor to be deem important and in order to keep things tidy &mdash; how would you amend the previous commit?
+2.  What about importing a remote repository into your local project space?
