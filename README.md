@@ -19,7 +19,7 @@ technical skills for academic research
 *   slack
 *   zoom
 
-## version control
+## [version control](./version-control.md)
 *   basics
 *   vc for vc
 *   vc for collaboration
