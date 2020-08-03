@@ -37,7 +37,7 @@ git add todo.txt
 Now you have taken a snapshot of the file and made it *staged*. You can continue to work on the file or commit the snapshot.
 > \[[git-book](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)\] If you modify a file after you run `git add`, you have to run `git add` again to stage the latest version of the file.
 
-To commit means to persist changes in the repository. Once committed, a file can be reverted back to any committed version. Do not ignore the commit message - these make it easier to navigate in the change history!
+To commit means to persist changes in the repository. The repo can then be reverted back to any committed version. You can think of this similar to the multiverse theory: with each commit, the universe of your project branches, so that if you are unhappy with a branch you are perching on, you can go back to where the branch originated and take a parallel branch. Do not ignore the commit message - these make it easier to navigate in the change history!
 ```
 git commit -m "initial commit of todo"
 ```
@@ -45,9 +45,12 @@ You can look up the history of commits:
 ```
 git log
 ```
-or revert to a particular commit:
+
+## fixing the screwed-up
+### everything after the last commit is bad
+Make sure you **really** do not want the recent changes. You can revert to the previous commit:
 ```
-git
+git checkout -- <filename>
 ```
 Having committed stuff, it is time to *push* it to the remote repo.
 
