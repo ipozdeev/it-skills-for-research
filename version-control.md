@@ -1,14 +1,17 @@
 # version control
 <!-- TOC -->
 
--   [version control](#version-control)
-    -   [basics](#basics)
-    -   [installation](#installation)
-    -   [starting to version control](#starting-to-version-control)
-    -   [tracking changes](#tracking-changes)
-    -   [fixing the screwed-up](#fixing-the-screwed-up)
-        -   [everything after the last commit is bad](#everything-after-the-last-commit-is-bad)
-    -   [exercises](#exercises)
+-   [basics](#basics)
+-   [installation](#installation)
+-   [starting to version control](#starting-to-version-control)
+-   [tracking changes](#tracking-changes)
+-   [publishing changes](#publishing-changes)
+-   [fixing the screwed-up](#fixing-the-screwed-up)
+    -   [1. roll back changes in a file](#1-roll-back-changes-in-a-file)
+    -   [2. roll back changes in repo](#2-roll-back-changes-in-repo)
+    -   [3. roll back changes via a new commit](#3-roll-back-changes-via-a-new-commit)
+-   [resources](#resources)
+-   [exercises](#exercises)
 
 <!-- /TOC -->
 
@@ -49,36 +52,53 @@ git add todo.txt
 Now you have taken a snapshot of the file and made it *staged*. You can continue to work on the file or commit the snapshot.
 > \[[git-book](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)\] If you modify a file after you run `git add`, you have to run `git add` again to stage the latest version of the file.
 
-To commit means to persist changes in the repository. The repo can then be reverted back to any committed version. You can think of this similar to the multiverse theory: with each commit, the universe of your project branches, so that if you are unhappy with a branch you are perching on, you can go back to where the branch originated and take a parallel branch. Do not ignore the commit message - these make it easier to navigate in the change history!
+To commit means to persist changes in the repository. The repo can then be reverted back to any committed version. You can think of this similar to the multiverse theory: with each commit, the universe of your project branches, so that if you are unhappy with a branch you are perching on, you can go back to where the branch originated and take a parallel branch. Do not ignore the commit message &mdash; these make it easier to navigate in the change history!
 ```
 git commit -m "initial commit of todo"
 ```
 You can look up the history of commits:
 ```
-git log
+git log --oneline
 ```
-## publishing the changes
-Having committed stuff, it is time to *push* it to the remote repo thus making the changes public. Anyone with access to the remote repo
-
+## publishing changes
+Having committed stuff, it is time to *push* it to the remote repo thus making the changes public. Anyone with access to the remote repo will be able to integrate the changes into their own working copy.
+```
+git push
+```
 
 ## fixing the screwed-up
-### revert to the last commit
-Reason: everything since the last commit is ugly and I do not want to see it anymore.
+The following describes three cases which I have encountered the most. All other cases are left for you to explore on demand.
 
-Make sure you **really** mean it though. You can revert file `<filename>` to the previous commit erasing all the subsequent changes:
+### 1. roll back changes in a file
+Reason: one file is doomed, let me discard all changes, committed or not, staged or not, and just make the file match a previous commit:
 ```
-git checkout -- <filename>
+git checkout <SHA> <filename>
 ```
 
-### undo the last push
-Reason: everything since the last commit is ugly, but maybe useful, I do not know.
+### 2. roll back changes in repo
+Reason: everything since a previous commit is ugly and I do not want to see it anymore.
 
-You can undo all changes since the last push
+You can undo changes that haven’t been shared with anyone else using
+```
+git reset <SHA> --hard
+```
+Make sure you **really** mean it though, as your repo will be updated to match the specified commit and all staged and unstaged changes will be lost.
+
+### 3. roll back changes via a new commit
+Reason: A previous commit was faulty, and I want to undo those changes, but keep the shameful history.
+
+You can undo all changes in a commit using:
 ```
 git revert <SHA>
 ```
+This is kind of applying the inverse of a commit from your project history. Let the `<SHA>` of the commit you do not like be `sha_1`. If you run `git revert <sha_1>`, a new commit is made with a new `<SHA>`, let it read `<sha_2>`. Now, if you run `git revert <sha_2>`, the repo is back to where you started before running the first revert.
+
+Unlike `git reset`, this command adds a new commit that restores the tree to some previous state instead of clipping the tree. This is both safer and easier to work with, especially if you previously pushed your commit and others cloned it. In general, **never use `git reset` when changes have been pushed to a public repository and other people rely on them**.
+
+## resources
+-  [difference between `checkout`, `reset` and `revert`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
 
 ## exercises
 1.  Having made a major super important commit after a whole day of work, you realize that you forgot to delete one comma in a file. Instead of making another commit too minor to be deem important and in order to keep things tidy &mdash; how would you amend the previous commit?
 2.  What about importing a remote repository into your local project space?
-3.  How to revert all files to the previous commit, as in [[everything after the last commit is bad]](#everything-after-the-last-commit-is-bad)?
+3.  How to revert the changes specified by the fourth last commit?
