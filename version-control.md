@@ -1,8 +1,21 @@
 # version control
-## basics
-In brief, a version control system is a software that allows you to take a snapshot of your project and revert to it if necessary -- just like the backup feature on an operating system or a check point in a game.
+<!-- TOC -->
 
-There are several version control systems around: Git, Subversion etc. -- and we will be using Git here. As stated on the [webpage](https://git-scm.com/):
+-   [version control](#version-control)
+    -   [basics](#basics)
+    -   [installation](#installation)
+    -   [starting to version control](#starting-to-version-control)
+    -   [tracking changes](#tracking-changes)
+    -   [fixing the screwed-up](#fixing-the-screwed-up)
+        -   [everything after the last commit is bad](#everything-after-the-last-commit-is-bad)
+    -   [exercises](#exercises)
+
+<!-- /TOC -->
+
+## basics
+In brief, a version control system is a software that allows you to take a snapshot of your project and revert to it if necessary &mdash; just like the backup feature on an operating system or a check point in a game.
+
+There are several version control systems around: Git, Subversion etc. &mdash; and we will be using Git here. As stated on the [webpage](https://git-scm.com/):
 > Git is a free and open source distributed version control system...
 
 The following is based on \[[atlassian](https://www.atlassian.com/git/tutorials)\] and \[[git-book](https://git-scm.com/book/en/v2)\].
@@ -12,9 +25,8 @@ Follow the instructions on the webpage to install git. We will be mostly using t
 
 > \[[git-book](https://git-scm.com/book/en/v2)\] The first thing you should do when you install Git is to set your user name and email address.
 
-## usual workflow
-### starting to version control
-You can put a directory under version control -- and the project directory is an obvious choice! Go to your project directory and execute
+## starting to version control
+You can put a directory under version control &mdash; and the project directory is an obvious choice! Go to your project directory and execute
 ```
 git init
 ```
@@ -45,15 +57,28 @@ You can look up the history of commits:
 ```
 git log
 ```
+## publishing the changes
+Having committed stuff, it is time to *push* it to the remote repo thus making the changes public. Anyone with access to the remote repo
+
 
 ## fixing the screwed-up
-### everything after the last commit is bad
-Make sure you **really** do not want the recent changes. You can revert to the previous commit:
+### revert to the last commit
+Reason: everything since the last commit is ugly and I do not want to see it anymore.
+
+Make sure you **really** mean it though. You can revert file `<filename>` to the previous commit erasing all the subsequent changes:
 ```
 git checkout -- <filename>
 ```
-Having committed stuff, it is time to *push* it to the remote repo.
+
+### undo the last push
+Reason: everything since the last commit is ugly, but maybe useful, I do not know.
+
+You can undo all changes since the last push
+```
+git revert <SHA>
+```
 
 ## exercises
 1.  Having made a major super important commit after a whole day of work, you realize that you forgot to delete one comma in a file. Instead of making another commit too minor to be deem important and in order to keep things tidy &mdash; how would you amend the previous commit?
 2.  What about importing a remote repository into your local project space?
+3.  How to revert all files to the previous commit, as in [[everything after the last commit is bad]](#everything-after-the-last-commit-is-bad)?
