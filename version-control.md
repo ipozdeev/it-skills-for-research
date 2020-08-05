@@ -105,12 +105,16 @@ path | purpose
 `data/*` <br> `!data/description.txt` | everything in folder **data/** except file **description.txt**
 `*.log` | files with extension '**.log**'
 
-Lots of useful examples: [https://www.atlassian.com/git/tutorials/saving-changes/gitignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore)
+Note however that
+> git will continue to track any files that are already being tracked.
 
-Lots of useful templates of `.gitignore` files: [https://github.com/github/gitignore](https://github.com/github/gitignore)
+To stop the file from being tracked, see [this answer](https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore).
 
 ## resources
--   [difference between `checkout`, `reset` and `revert`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
+*   [difference between `checkout`, `reset` and `revert`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting);
+*   [lots of useful path examples for .gitignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore);
+*   [lots of useful templates of `.gitignore` files](https://github.com/github/gitignore).
+
 
 ## exercises
 1.  Having made a major super important commit after a whole day of work, you realize that you forgot to delete one comma in a file. Instead of making another commit too minor to be deem important and in order to keep things tidy &mdash; how would you amend the previous commit?
