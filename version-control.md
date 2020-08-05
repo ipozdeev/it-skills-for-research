@@ -10,6 +10,7 @@
     -   [1. roll back changes in a file](#1-roll-back-changes-in-a-file)
     -   [2. roll back changes in repo](#2-roll-back-changes-in-repo)
     -   [3. roll back changes via a new commit](#3-roll-back-changes-via-a-new-commit)
+-   [ignoring files](#ignoring-files)
 -   [resources](#resources)
 -   [exercises](#exercises)
 
@@ -95,8 +96,21 @@ This is kind of applying the inverse of a commit from your project history. Let 
 
 Unlike `git reset`, this command adds a new commit that restores the tree to some previous state instead of clipping the tree. This is both safer and easier to work with, especially if you previously pushed your commit and others cloned it. In general, **never use `git reset` when changes have been pushed to a public repository and other people rely on them**.
 
+## ignoring files
+Some files and folders do not need to be tracked, for instance, temporary files, large data containers (a .csv file with stock price history), auxiliary files such as LaTeX's .aux and .fft, project-specific software settings etc. To exclude those, you create file called `.gitignore` in your repo and fill it with relative or absolute paths to files and folder that you want to exclude from version control. Some examples:
+
+path | purpose
+--- | ---
+`data/`  |  folder **data/**
+`data/*` <br> `!data/description.txt` | everything in folder **data/** except file **description.txt**
+`*.log` | files with extension '**.log**'
+
+Lots of useful examples: [https://www.atlassian.com/git/tutorials/saving-changes/gitignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore)
+
+Lots of useful templates of `.gitignore` files: [https://github.com/github/gitignore](https://github.com/github/gitignore)
+
 ## resources
--  [difference between `checkout`, `reset` and `revert`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
+-   [difference between `checkout`, `reset` and `revert`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting)
 
 ## exercises
 1.  Having made a major super important commit after a whole day of work, you realize that you forgot to delete one comma in a file. Instead of making another commit too minor to be deem important and in order to keep things tidy &mdash; how would you amend the previous commit?
