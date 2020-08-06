@@ -7,6 +7,6 @@ technical skills for academic research
 -   [collaboration tools](#collaboration-tools)
 -   [version control](./version-control.md)
 -   [writing with latex](./writing-with-latex.md)
--   [datafeed](#datafeed)
+-   [datafeed](./data-management.md)
 -   [graphics](#graphics)
 -   [open source](#open-source)
