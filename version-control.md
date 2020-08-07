@@ -57,7 +57,7 @@ To commit means to persist changes in the repository. The repo can then be rever
 ```
 git commit -m "initial commit of todo"
 ```
-You can look up the history of commits:
+[Here](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) are some best practices for git messages. You can look up the history of commits:
 ```
 git log --oneline
 ```
