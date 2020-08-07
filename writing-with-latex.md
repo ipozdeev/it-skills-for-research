@@ -58,13 +58,13 @@ Then, in the LaTeXTools package settings, navigate to section 'Build engine sett
 
 ## workflow
 1. **Know your macros**. You are aware which macros produce the formats you need and in which packages those macros are to be found. For instance, multi-line equations require package *amsmath* and are inserted as follows:
-```
+```latex
 \begin{gather}
 ...
 \end{gather}
 ```
 2.  **Write text**. Write plain text using a text editor of choice (Notepad, Sublime, Atom etc.) inserting macros to set formatting. A document might look as simple as:
-```
+```latex
 \documentclass{article}
 \usepackage{amsmath}
 \begin{document}
@@ -92,7 +92,7 @@ We will be working with _biber_ and _biblatex_. The latter contains many possilb
 
 ### structuring the database
 A bibliography database is saved as a .bib file and has entries of the form:
-```
+```latex
 @<TYPE>{<KEY>,
   <FIELD> = {<FIELD_VALUE>},
 }
@@ -107,7 +107,7 @@ Look up the bib guide in [resources](/resources) for a broad overview of the str
 
 ### inserting the .bib database
 Place biblatex package import statement in the [preamble](https://en.wikibooks.org/wiki/LaTeX/Document_Structure) of the document, not forgetting to specify the parameters:
-```
+```latex
 % bibliography
 \usepackage[
     backend=biber,
