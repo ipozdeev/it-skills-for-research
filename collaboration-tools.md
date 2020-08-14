@@ -1,12 +1,13 @@
 <!-- TOC -->
 
 -   [git](#git)
-    -   [participating](#participating)
+    -   [participating in project](#participating-in-project)
     -   [distributed workflow](#distributed-workflow)
     -   [pull requests](#pull-requests)
 -   [slack](#slack)
-    -   [polls](#polls)
-    -   [zoom](#zoom)
+    -   [searchable conversations](#searchable-conversations)
+    -   [slack apps](#slack-apps)
+-   [exercises](#exercises)
 
 <!-- /TOC -->
 
@@ -39,7 +40,13 @@ Imagine that Alice is working on Figure 1 of her joint project with Bob and Chuc
 This might be of little extra value when working in a team of 2, but quickly becomes useful as the number of participants is growing.
 
 ## slack
-Slack is software not dissimilar to WhatsApp which organizes collaboration through chat windows called channels. You can use it in your web browser or as a desktop app. If you have not yet done so, please download Slack from [here](https://slack.com/). You will be sent an invite during the lecture.
+Slack is a software not dissimilar to WhatsApp, which organizes collaboration through chat windows called channels. It is a well-contrived, extensible, all-in-one-place alternative to **internal** emails, text messages and other types of communication. You can use Slack as a web, desktop or mobile app. So, let us try to run it however you prefer; you will be sent an invite to workspace `digital-tools-for-finance` during the lecture.
+
+### searchable conversations
+Slack allows to search in the conversation history. [Modifiers](https://slack.com/intl/en-ch/help/articles/202528808-Search-in-Slack#h_5ece87ed-b336-4ae0-86dd-54221c2d2c03) such as `before:4/12/2019` come in super handy!
 
 ### slack apps
-To add a specific feature to Slack, e.g. functionality to create polls or your Outlook calendar, you should add what is called [an app](https://slack.com/intl/en-ch/resources/slack-101/what-is-an-app). For now, let us install something to help us integrate the Github account, make Zoom calls and create polls, of course.
+To add a specific feature to Slack, e.g. functionality to create polls or your Outlook calendar, you should add what is called [an app](https://slack.com/intl/en-ch/resources/slack-101/what-is-an-app). For now, let us install something to help us integrate a Github account, make Zoom calls and create polls, of course.
+
+## exercises
+TBD
