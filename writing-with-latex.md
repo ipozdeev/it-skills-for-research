@@ -105,6 +105,15 @@ where
 
 Look up the bib guide in [resources](/resources) for a broad overview of the structure of .bib files.
 
+### importing .bib files
+Usually, you can find the .bib entry of a document on the webpage where the document is located (certainly true for journals). Look for 'Export to BibTeX' or 'Cite this item' or similar. Let us take a look:
+
+[https://www.nber.org/papers/w27638](https://www.jstor.org/stable/10.1086/605130 )
+![figures/bibtex-file-loc-example-nber.png](figures/bibtex-file-loc-example-nber.png)
+
+[https://www.jstor.org/stable/10.1086/605130](https://www.jstor.org/stable/10.1086/605130 )
+![figures/bibtex-file-loc-example-jstor.png](figures/bibtex-file-loc-example-jstor.png)
+
 ### inserting the .bib database
 Place biblatex package import statement in the [preamble](https://en.wikibooks.org/wiki/LaTeX/Document_Structure) of the document, not forgetting to specify the parameters:
 ```latex
