@@ -1,8 +1,18 @@
-latex/
 datafeed/
+
+# pycharm and ipython
 .idea/
 ./ipynb_checkponts
+./visualization/.ipynb_checkpoints
+
+# latex stuff
+latex/*.pdf
 *.aux
 *.log
+*.nav
+*.out
+*.snm
+*.fls
+*.fdb_latexmk
+*.toc
 *.gz
-./visualization/.ipynb_checkpoints

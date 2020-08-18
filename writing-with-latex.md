@@ -133,13 +133,36 @@ Place biblatex package import statement in the [preamble](https://en.wikibooks.o
 * package `dcolumn` allowing to align columns on a separator, such as the decimal dot;
 * package `endfloat` to push all figures and table to the end.
 
+
+## beamer
+Package `beamer` provides functionality to create presentations with LaTeX. You should now be able to guess what it does: through a plethora of macros, it redefines the geometry of the canvas to have the usual 'presentation' aspect ratio (4:3) and size of print-outs (128x96mm), allocates one page per frame, creates titles and subtitles, meaningful footers etc. A simplest layout of a beamer-style presentation is as follows:
+```
+\documentclass[10pt]{beamer}
+
+\begin{document}
+
+\author{your name goes shere}
+
+% ---------------------------------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+% ---------------------------------------------------------------------------
+
+\end{document}
+
+```
+More elaborate examples are in the [package documentation](https://ctan.org/pkg/beamer?lang=en).
+
+
 ## resources
-* [What LaTeX, TeX, pdflatex are all about](https://www.texfaq.org/FAQ-texthings);
-[* LaTeX learning resources](http://www.tug.org/begin.html) (all recommended);
-* [bibliography backend processors and packages](https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib);
-* [biblatex styles](https://tex.stackexchange.com/a/325099/218467);
-* [bib guide](https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM);
-* [fantastic biblatex cheatsheet](http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf).
+*   [What LaTeX, TeX, pdflatex are all about](https://www.texfaq.org/FAQ-texthings);
+*   [LaTeX learning resources](http://www.tug.org/begin.html) (all recommended);
+*   [bibliography backend processors and packages](https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib);
+*   [biblatex styles](https://tex.stackexchange.com/a/325099/218467);
+*   [bib guide](https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM);
+*   [fantastic biblatex cheatsheet](http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf);
+*   [beamer examples with output](http://www2.informatik.uni-freiburg.de/~frank/ENG/latex-course/latex-course-3/latex-course-3_en.html).
 
 ## exercises
 1.   TODO
