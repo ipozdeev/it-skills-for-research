@@ -1,3 +1,8 @@
 latex/
 datafeed/
 .idea/
+./ipynb_checkponts
+*.aux
+*.log
+*.gz
+./visualization/.ipynb_checkpoints
