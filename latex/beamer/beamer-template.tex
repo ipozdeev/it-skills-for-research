@@ -1,0 +1,69 @@
+\documentclass[10pt]{beamer}
+
+
+% colors
+\usepackage{xcolor}
+\definecolor{mydarkgray}{gray}{0.33}
+\definecolor{myred}{rgb}{0.85, 0.30, 0.0}
+\definecolor{myblue}{rgb}{0.01, 0.45, 0.70}
+\definecolor{mylightgray}{gray}{0.5}
+\definecolor{mylightestgray}{gray}{0.9}
+
+
+% beamer options
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{frametitle}[default][center]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{itemize subitem}{$\circ$}
+
+\setbeamercolor{title}{fg=myblue}
+\setbeamercolor{titlelike}{fg=mydarkgray}
+\setbeamercolor{frametitle}{fg=mydarkgray, bg=mylightestgray}
+\setbeamercolor{framesubtitle}{fg=mylightgray}
+\setbeamercolor{itemize item}{fg=mydarkgray}
+\setbeamercolor{itemize subitem}{fg=mydarkgray}
+
+
+% figures
+\usepackage{graphicx}
+
+
+% language
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% titlepage
+\author{your name goes here}
+
+\title{your title here}
+
+\institute{your affiliation here}
+\date{today is \MakeLowercase{\today}}
+
+\begin{document}
+% ---------------------------------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+% ---------------------------------------------------------------------------
+\begin{frame}
+\frametitle{content}
+\tableofcontents
+\end{frame}
+% ---------------------------------------------------------------------------
+\begin{frame}
+\section{introduction}
+\frametitle{frame title goes here}
+\framesubtitle{frame subtitle here}
+
+\end{frame}
+% ---------------------------------------------------------------------------
+\begin{frame}
+\section{conclusion}
+\frametitle{conclusion}
+
+\end{frame}
+% ---------------------------------------------------------------------------
+
+\end{document}
