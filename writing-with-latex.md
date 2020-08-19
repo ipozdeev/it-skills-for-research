@@ -35,21 +35,15 @@ See [resources](#resources) for more info.
 We will be using MiKTeX distribution and write text in Sublime, compiling from within it.
 
 ### installation
+A detailed guide for installing and configuring LaTeX and Sublime text can be found in the `/latex/configuring_latex_and_sublime_on_windows/` directory. A short summary for the MiKTeX part is below:
+
 *   download MiKTeX Net Installer from [here](https://miktex.org/download), from tab 'All downloads';
 *   run the installer, choose `Download MiKTeX`, then `Complete MiKTeX` when prompted;
 *   run the installer again but this time choose `Install MiKTeX`, then `Complete MiKTeX`, then `Install MiKTeX for anyone who uses this computer`; in the `Install MiKTeX from` field choose the folder you previously downloaded the MiKTeX files to; choose to indeed `Install missing packages on-the-fly`.
 
 ### packages
-To install an additional package, you need to locate it in the distribution you are using (TeX Live in our case) first, e.g. package [`threeparttable`](https://ctan.org/pkg/threeparttable?lang=en).
+To install an additional package, you need to locate it in MiKTeX first, e.g. package [`threeparttable`](https://ctan.org/pkg/threeparttable?lang=en). Fortunately, it is extremely easy: just open the MiKTeX console, navigate to `Packages` tab and type in the name of the package, then click the `+` button to install the package.
 
-Then, use either TeX Live Manager or
-```
-tlmgr install threeparttable
-```
-to install it, and do not forget to refresh the TeX database with
-```
-texhash
-```
 
 ### text editor
 If you have not already, install Sublime and package [LaTeXTools](https://latextools.readthedocs.io/en/latest/) which gives you code completions, highlighting, inline preview, compiling from the editor and a great amount of control when LaTeXing in general.
