@@ -1,6 +1,6 @@
 # introduction
 
-Most of research project feature a similar set of integral parts. First, there is an idea. Then, there are soliloquies or discussions about it resulting in its development and fruition. There is data and code to transform the data into results: remarks, tables, figures. There is text which you use to communicate your results to an audience. With that being said, it is possible to write down a generic layout of a research project like this:
+Most of research projects feature a similar set of constituent parts. First, there is an idea. Then, there are soliloquies or discussions about it resulting in its development and fruition. There is data, there is statistics and code to transform the data into results: remarks, tables, figures. There is text and speech which you use to communicate your results to an audience. There is feedback and publication. With that being said, it is possible to write down a generic layout of a research project like this:
 ```
 /project
 - data/
@@ -20,7 +20,7 @@ The knowledge includes different topics which we will discuss in this course: ve
 
 
 ## project space
-Your project lives somewhere. A good idea is to allocate a folder for all your projects and never ever leave it when starting a new one. The folder is most likely to be located on your hard drive, which we call 'local', but it is a genious idea to back it up where it cannot get deleted, which we call 'remote' or 'cloud'. Version control systems to be covered later offer &ndash; as a side effect, really &ndash; one solution for remote storage, but for medium-size files only; for everything else cloud drives such as Google Drive are the way to go. These have a space limit which up to a point in your research career you are not going to max out, and if it happens, you can move on to a competitor, such as Yandex.Disk or Dropbox.
+Your project lives somewhere. A good idea is to allocate a folder for all your projects and never ever leave it when starting a new one. The folder is most likely to be located on your hard drive, which we call 'local', but it is a genius idea to back it up where it cannot get deleted, which we call 'remote' or 'cloud'. Version control systems to be covered later offer &ndash; as a side effect, really &ndash; one solution for remote storage, but for medium-size files only; for everything else cloud drives such as Google Drive are the way to go. These have a space limit which up to a point in your research career you are not going to max out, and if it happens, you can move on to a competitor, such as Yandex.Disk or Dropbox.
 
 So, you have allocated place for all your projects somewhere, say, folder `projects`:
 ```
