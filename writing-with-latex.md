@@ -39,10 +39,14 @@ A detailed guide for installing and configuring LaTeX and Sublime text can be fo
 
 *   download MiKTeX Net Installer from [here](https://miktex.org/download), from tab 'All downloads';
 *   run the installer, choose `Download MiKTeX`, then `Complete MiKTeX` when prompted;
-*   run the installer again but this time choose `Install MiKTeX`, then `Complete MiKTeX`, then `Install MiKTeX for anyone who uses this computer`; in the `Install MiKTeX from` field choose the folder you previously downloaded the MiKTeX files to; choose to indeed `Install missing packages on-the-fly`.
+*   run the installer again but this time choose `Install MiKTeX`, then `Complete MiKTeX`, then `Install MiKTeX for anyone who uses this computer`; in the `Install MiKTeX from` field choose the folder you previously downloaded the MiKTeX files to; choose to indeed `Install missing packages on-the-fly`;
+*   (optional, but useful) [create a local TeXMF folder](https://tex.stackexchange.com/questions/69483/create-a-local-texmf-tree-in-miktex) &ndash; a folder where you would be able to *manually* install LaTeX packages (see [packages](#packages) below).
+
 
 ### packages
-To install an additional package, you need to locate it in MiKTeX first, e.g. package [`threeparttable`](https://ctan.org/pkg/threeparttable?lang=en). Fortunately, it is extremely easy: just open the MiKTeX console, navigate to `Packages` tab and type in the name of the package, then click the `+` button to install the package.
+To install an additional package, e.g. [`threeparttable`](https://ctan.org/pkg/threeparttable?lang=en), just open the MiKTeX console, navigate to `Packages` tab and type in the name of the package, then click the `+` button to install it.
+
+If you cannot see the package there, it is not part of the distribution, and you would have to install it manually. The package might come as one or a bundle of files such as `.sty`. In this case, the installation is a bit trickier, please see [this thread](https://tex.stackexchange.com/questions/2063/how-can-i-manually-install-a-package-on-miktex-windows) for reference.
 
 
 ### text editor
