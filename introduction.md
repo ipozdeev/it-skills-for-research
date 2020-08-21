@@ -24,7 +24,7 @@ Your project lives somewhere. A good idea is to allocate a folder for all your p
 
 So, you have allocated place for all your projects somewhere, say, folder `projects`:
 ```
-~/projects/
+projects/
   - project_1/
   - project_2/
 ```
@@ -38,6 +38,7 @@ To run on the machine other than that of _ipozdeev_ and his namesakes, one would
 path = expand_var("$RESEARCHPATH") + "project_1/data/data.csv"
 data = import_csv(path)
 ```
+Setting the variable to a different location (e.g. on another machine) would immediately make the code executable.
 
 ## software
 Below is a screamingly incomplete list of software which you might have missed &ndash; potentially regretfully, since a lot of it have from our experience been what many migrate to and few from.
