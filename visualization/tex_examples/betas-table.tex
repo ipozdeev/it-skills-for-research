@@ -1,26 +1,4 @@
-\documentclass{article}
-
-\usepackage[margin=2.5cm]{geometry}
-
-\usepackage{amsmath}
-\usepackage{tabularx}
-
-\usepackage{booktabs}
-\usepackage[flushleft]{threeparttable}
-
-\usepackage{caption} 
-\captionsetup[table]{skip=10pt}  % more space between the caption and table
-
-\usepackage{dcolumn}
-% First argument - the separator used to align the numbers, the second - how this separator appears in the output,
-% the last argument corresponds to a maximum number of decimal places in the column 2.3 means the column is centered around a number like xx.yyy
-\newcolumntype{d}{D{.}{.}{2}}
-
-
-\begin{document}
-
-
-\begin{tabularx}{1.0\textwidth}{Xdddddddddd}
+\begin{tabularx}{0.8\textwidth}{Xtttttttttt}
 \toprule
 {} & \multicolumn{1}{c}{AAPL} & \multicolumn{1}{c}{CVX} & \multicolumn{1}{c}{DAL} & \multicolumn{1}{c}{GM} & \multicolumn{1}{c}{GS} & \multicolumn{1}{c}{JPM} & \multicolumn{1}{c}{LUV} & \multicolumn{1}{c}{MSFT} & \multicolumn{1}{c}{TSLA} & \multicolumn{1}{c}{XOM} \\
 \midrule
@@ -32,6 +10,3 @@ annually &                     0.87 &                    1.33 &                 
          &                   (0.57) &                  (0.44) &                  (1.22) &                 (0.52) &                 (0.61) &                  (0.43) &                  (1.01) &                   (0.34) &                   (2.18) &                  (0.50) \\
 \bottomrule
 \end{tabularx}
-
-
-\end{document}
