@@ -1,6 +1,6 @@
 # introduction
 
-Most of research projects feature a similar set of constituent parts. First, there is an idea. Then, there are soliloquies or discussions about it resulting in its development and fruition. There is data, there is statistics and code to transform the data into results: remarks, tables, figures. There is text and speech which you use to communicate your results to an audience. There is feedback and publication. With that being said, it is possible to write down a generic layout of a research project like this:
+Most of research project feature a similar set of integral parts. First, there is an idea. Then, there are soliloquies or discussions about it resulting in its development and fruition. There is data and code to transform the data into results: remarks, tables, figures. There is text which you use to communicate your results to an audience. With that being said, it is possible to write down a generic layout of a research project like this:
 ```
 /project
 - data/
@@ -20,11 +20,11 @@ The knowledge includes different topics which we will discuss in this course: ve
 
 
 ## project space
-Your project lives somewhere. A good idea is to allocate a folder for all your projects and never ever leave it when starting a new one. The folder is most likely to be located on your hard drive, which we call 'local', but it is a genius idea to back it up where it cannot get deleted, which we call 'remote' or 'cloud'. Version control systems to be covered later offer &ndash; as a side effect, really &ndash; one solution for remote storage, but for medium-size files only; for everything else cloud drives such as Google Drive are the way to go. These have a space limit which up to a point in your research career you are not going to max out, and if it happens, you can move on to a competitor, such as Yandex.Disk or Dropbox.
+Your project lives somewhere. A good idea is to allocate a folder for all your projects and never ever leave it when starting a new one. The folder is most likely to be located on your hard drive, which we call 'local', but it is a genious idea to back it up where it cannot get deleted, which we call 'remote' or 'cloud'. Version control systems to be covered later offer &ndash; as a side effect, really &ndash; one solution for remote storage, but for medium-size files only; for everything else cloud drives such as Google Drive are the way to go. These have a space limit which up to a point in your research career you are not going to max out, and if it happens, you can move on to a competitor, such as Yandex.Disk or Dropbox.
 
 So, you have allocated place for all your projects somewhere, say, folder `projects`:
 ```
-projects/
+~/projects/
   - project_1/
   - project_2/
 ```
@@ -38,21 +38,20 @@ To run on the machine other than that of _ipozdeev_ and his namesakes, one would
 path = expand_var("$RESEARCHPATH") + "project_1/data/data.csv"
 data = import_csv(path)
 ```
-Setting the variable to a different location (e.g. on another machine) would immediately make the code executable.
 
 ## software
 Below is a screamingly incomplete list of software which you might have missed &ndash; potentially regretfully, since a lot of it have from our experience been what many migrate to and few from.
 
 ### text
-*   SublimeText is an extensible text editor, arguably the fastest and lightest of all. Its functionality and power comes from thousands of *packages* &ndash; extensions written to serve a purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. Sublime is a great first choice for LaTeXing.
+*   `SublimeText` is an extensible text editor, arguably the fastest and lightest that you might encounter. Its functionality and power comes from thousands of *packages* &ndash; extensions written to serve a purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. Sublime is a great first choice for LaTeXing.
 
-*   Atom is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing it. Package `hydrogen`, for instance, offers a fantastic way to learn to code in many languages by allowing for interactive coding and inline display of results. The bulk of this course was written using Atom.
+*   `Atom` is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing it. Package `hydrogen`, for instance, offers a fantastic way to learn to code in many languages by allowing for interactive coding and inline display of results. The bulk of this course was written using Atom.
 
 ### Python
-*   PyCharm (Community edition) is what is called an integrated development environment (IDE) that consists of a customizable text editor to write code, TODO:what? to run it and a built-in debugger to, well, debug. Interestingly, the debugger serves more as a development tool for data science and econometrics, as it allows to run code line-by-line, inspect elements and trace errors. PyCharm well supports coding in R, and its text editor can be extended to other languages as well. Convenient integration with version control systems is there too.
+*   `PyCharm` (Community edition) is what is called an integrated development environment (IDE) that consists of a customizable text editor to write code, TODO:what? to run it and a built-in debugger to, well, debug. Interestingly, the debugger serves more as a development tool for data science and econometrics, as it allows to run code line-by-line, inspect elements and trace errors. PyCharm well supports coding in R, and its text editor can be extended to other languages as well. Convenient integration with version control systems is there too.
 
 ### R
-*   RStudio would be a no-brainer here, although Atom and PyCharm are becoming ever more convenient.
+*   `RStudio` would be a no-brainer here, although Atom and PyCharm are becoming ever more convenient.
 
 ### version control
 to be discussed shortly.
@@ -61,7 +60,7 @@ to be discussed shortly.
 to be discussed shortly.
 
 ### cloud storage
-Google Drive, Yandex.Disk and Dropbox are decent solutions here, together offeing about 40 Gb of free cloud storage space.
+`Google Drive`, Yandex.Disk and Dropbox are decent solutions here, together offeing about 40 Gb of free cloud storage space.
 
 ### collaboration
 to be discussed shortly.
