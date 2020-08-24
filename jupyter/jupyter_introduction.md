@@ -1,8 +1,8 @@
 ### What are jupyter notebooks?
 
-* The Jupyter Notebook is an app that runs within a web browser and allwos us to create and share interactive documents that contain code, visualizations, equations and explanatory text.
+* The Jupyter Notebook is an app that runs within a web browser and allows us to create and share interactive documents that contain code, visualizations, equations and explanatory text.
 
-* Jupyter has evolved from IPython and now accomodates many different programming languages: R, Julia, C++, etc.
+* Jupyter has evolved from IPython and now accommodates many different programming languages: R, Julia, C++, etc.
 
 
 * Jupyter is open source
@@ -13,15 +13,15 @@
 * The notebooks are easy to share and are a perfect medium to communicate the exact step-by-step process leading to the results of a research project. Hence it is important for reproducibility.
 
 
-* The notebooks are interactvie and hence provide a high didactical value allowing the target audience to better grasp the core concepts of research given hands-on examples
+* The notebooks are interactive and hence provide a high didactic value allowing the target audience to better grasp the core concepts of research given hands-on examples
 
 
 ### Installation
 
-* To run jupyter notebooks you need a Python installation. The recommended way is to install Anaconda distribution which comes with pre-packaged jupyter along with a suite of tools for datascience
+* To run jupyter notebooks you need a Python installation. The recommended way is to install Anaconda distribution which comes with pre-packaged jupyter along with a suite of tools for data science
 
 
-* For other configurations check [the offcial documentation](https://jupyter.org/install)
+* For other configurations check [the official documentation](https://jupyter.org/install)
 
 
 ### Starting a new notebook
