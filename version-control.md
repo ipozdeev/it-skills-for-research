@@ -17,10 +17,12 @@
 <!-- /TOC -->
 
 ## basics
-In brief, a version control system is a software that allows you to take a snapshot of your project and revert to it if necessary &mdash; just like the backup feature on an operating system or a check point in a game.
+In brief, a version control system is a software that allows you to take a snapshot of your project and revert to it if necessary &mdash; just like the backup feature on an operating system or a check point in a game. Version control is great for all things text: first and foremost code, but also dissertations, memos and reports. Plus, on an equally important note, it facilitates concurrent editing and allows groups of people to efficiently work on the same set of files.
 
 There are several version control systems around: Git, Subversion etc. &mdash; and we will be using Git here. As stated on the [webpage](https://git-scm.com/):
 > Git is a free and open source distributed version control system...
+
+Here, *free* means you do not have to pay for it; *open source* &ndash; that the code behind it is not proprietary (you can download, customize and amend it); *distributed* &ndash; [this](https://www.atlassian.com/blog/software-teams/version-control-centralized-dvcs).
 
 The following is based on \[[atlassian](https://www.atlassian.com/git/tutorials)\] and \[[git-book](https://git-scm.com/book/en/v2)\].
 
@@ -117,6 +119,15 @@ To stop the file from being tracked, see [this answer](https://stackoverflow.com
 
 
 ## exercises
-1.  Having made a major super important commit after a whole day of work, you realize that you forgot to delete one comma in a file. Instead of making another commit too minor to be deem important and in order to keep things tidy &mdash; how would you amend the previous commit?
-2.  What about importing a remote repository into your local project space?
-3.  How to revert the changes specified by the fourth last commit?
+1.  Install Git;
+2.  Create an account on Github or Bitbucket (or use an existing if you want);
+3.  Set up a local repository;
+4.  Within it, create folder `data` and file `notes.txt` and exclude the folder from being tracked;
+5.  Commit everything;
+6.  Change the content of the `.txt` file, commit the new version;
+7.  Change the content of the `.txt` file, commit the new version overwriting the previous commit;
+8.  Create a remote repo on Github/Bitbucket and link your local repo to it;
+9.  Push the commits;
+10.  Let another member of your team clone the repo now and change the `.txt` file, committing and pushing it back to the remote;
+11.  Checkout the commit that was just before your team member's commit, as if the latter was undesired;
+12.  Change the content of the `.txt` file, commit and push to the remote.

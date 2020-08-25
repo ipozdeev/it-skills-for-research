@@ -19,7 +19,7 @@
 
 <!-- /TOC -->
 ## basics
-LaTeX is a *typesetting system* used to translate plain text into pretty documents. It separates content and form, encouraging the author to concentrate on the former, while letting the LaTeX handle the latter. You can think here of a standard author-publisher relation: Stephen King types a masterpiece on a typewriter not heedful of font sizes, header transparency, footnote separators or the like, then sends his manuscript to a publisher who handles all the above details.
+LaTeX is a *typesetting system* used to translate plain text into pretty documents. It separates content and form, encouraging the author to concentrate on the former, while letting the LaTeX handle the latter. You can think here of a standard author-publisher relation: Stephen King types a masterpiece on a typewriter not heedful of font sizes, header transparency, footnote separators or the like, then sends his manuscript to a publisher who takes care all the above details.
 
 > Is it a program, a language or what?
 
@@ -57,7 +57,7 @@ You will also need to install [Sumatra PDF](https://www.sumatrapdfreader.org/fre
 Then, in the LaTeXTools package settings, navigate to section 'Build engine settings' and set 'builder' to 'basic'. Also, take time to read through what is written there. Basically, *building* is a bundle consisting of compiling the document, compiling the bibliography and producing the .pdf.
 
 Optionally, install:
-*   [ghostscript](https://ghostscript.com/download/gsdnld.html) to preview equations in SublimeText;
+*   [ghostscript](https://ghostscript.com/download/gsdnld.html) to preview equations in Sublime Text;
 *   [ImageMagick](http://www.imagemagick.org/script/download.php) to preview figures (don't forget to check the box `Add application directory to your system path`).
 
 ## workflow
@@ -169,4 +169,19 @@ More elaborate examples are in the [package documentation](https://ctan.org/pkg/
 *   [beamer examples with output](http://www2.informatik.uni-freiburg.de/~frank/ENG/latex-course/latex-course-3/latex-course-3_en.html).
 
 ## exercises
-1.   TODO
+1.  Install MiKTeX;
+2.  Setup Sublime Text for LaTeXing, including graphics preview and inverse search;
+3.  Install, if not present already, packages `threeparttable` and `blindtext`;
+4.  Create folder `text/` with subfloders `paper` and `presentation`;
+4.  Create a `.bib` file with two entries, a published paper and a working paper;
+4.  Create a simple article consisting of:
+    *   title page with title, author(s), affiliation(s), date, abstract and thanks;
+    *   two pages of dummy text (use `blindtext` for that);
+    *   two citations of the papers you added in step 5 above;
+    *   a figure and a table, both with captions and notes;
+    *   bibliography on a separate page.
+5.  Create a simple beamer presentation consisting of:
+    *   title frame with title, author, affiliation and date;
+    *   three frames with titles and subtitles;
+    *   some equations a theorem;
+    *   a figure with two panels.
