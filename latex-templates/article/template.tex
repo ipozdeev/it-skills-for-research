@@ -1,10 +1,32 @@
 \documentclass{article}
 \usepackage{amsmath}
+
+% figures
 \usepackage{graphicx}
+
+% bibliography
+\usepackage[
+    backend=biber,
+    style=bwl-FU,
+    url=false,
+    doi=false,
+    eprint=false
+]{biblatex}
+\addbibresource{template-biblio.bib}
+
 \begin{document}
+
+equations:
 \begin{gather}
 	x = 1 \\
 	y = -1
 \end{gather}
-\includegraphics{}
+
+figure:
+
+\includegraphics{../figures/betas-hmap.pdf}
+
+citation:
+\cite{Cieslak2019}
+
 \end{document}

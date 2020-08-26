@@ -1,12 +1,10 @@
-datafeed/
-
 # pycharm and ipython
 .idea/
 ./ipynb_checkponts
 ./visualization/.ipynb_checkpoints
 
 # latex stuff
-latex/*.pdf
+latex-templates/**/*.pdf
 *.aux
 *.log
 *.nav
@@ -16,3 +14,8 @@ latex/*.pdf
 *.fdb_latexmk
 *.toc
 *.gz
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.run.xml
