@@ -50,9 +50,9 @@ To add a specific feature to Slack, e.g. functionality to create polls or your O
 
 
 ## whiteboards
-Writing things down is an essential component of any researh project: from planning to maintaining a research log. Apps like [miro](https://miro.com/) and [Stormboard](https://stormboard.com/) are digital whiteboards with a number of important features: unlimited space, ability to invite other people to work simultaneously, integration with other apps like the ones for project management or presentations. 
+Writing things down is an essential component of any research project: from planning to maintaining a research log. Apps like [miro](https://miro.com/) and [Stormboard](https://stormboard.com/) are digital whiteboards with a number of important features: unlimited space, ability to invite other people to work simultaneously, integration with other apps like the ones for project management or presentations.
 
-The whiteboards can be used for literaly anything: task planning, brain-storming sessions, logging intermediary research results, etc.
+The whiteboards can be used for literally anything: task planning, brain-storming sessions, logging intermediary research results, etc.
 
 
 ## exercises
