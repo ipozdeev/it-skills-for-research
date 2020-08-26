@@ -90,27 +90,27 @@ Observe the separation here: you write the text, then compile it &ndash; which i
 LaTeX documents are expected to follows a certain layout. Please take a look at the [[latex wiki]](https://en.wikibooks.org/wiki/LaTeX/Document_Structure).
 
 ## bibliography
-Bibliography is a collection of all references you cite in your work. As it is in general a bad idea to type citations by hand (there are too many of those, plus several other reasons), a better idea is to organize them in a well structured database and point to its entries whenever needed. In a LaTeX document, this is achieved using two things, which you will always encounter in discussions of bibliography: a backend processor such as _biber_ and a package providing bibliography formats such as _biblatex_. The former take a bibliography database (usually a .bib file) and process it to produce a .tex-like file, while the latter define macros used to place a citation, give a citation an ordinal number or create a hyperlink.
+Bibliography is a collection of all references you cite in your work. As it is in general a bad idea to type citations by hand (there are too many of those, plus several other reasons), a better idea is to organize them in a well structured database and point to its entries whenever needed. In a LaTeX document, this is achieved using two things, which you will always encounter in discussions of bibliography: a backend processor such as _biber_ and a package providing bibliography formats such as _biblatex_. The former takes a bibliography database (usually a `.bib` file) and processes it to produce a TeX-conforming file (usually with extension `.bbl`), while the latter define macros used to place a citation, give a citation an ordinal number or create a hyperlink.
 
-We will be working with _biber_ and _biblatex_. The latter contains many possible bibliography formats, e.g. 'bwl-FU'.
+We will be working with _biber_ and _biblatex_. The latter contains many possible bibliography formats, e.g. `bwl-FU`.
 
-### structuring the database
-A bibliography database is saved as a .bib file and has entries of the form:
+### structure
+A bibliography database is saved as a `.bib` file and has entries of the form:
 ```latex
 @<TYPE>{<KEY>,
   <FIELD> = {<FIELD_VALUE>},
 }
 ```
 where
-*   `<TYPE>` is the type of the source, most commonly `article` or `book`,
+*   `<TYPE>` is the type of the source, most commonly `article`, `techreport` or `book`,
 *   `<KEY>` is the unique identifier of this entry to be used in text, most commonly a short memorizable string such as `cieslak2019stock` which refers to the paper by Cieslak, Morse and Vissing-Jorgensen called 'Stock returns over the FOMC cycle' published in 2019;
 *   `<FIELD>` is the name of one of many fields containing information about the source, e.g. `title` and `journal`;
 *   `<FIELD_VALUE>` is the field value.
 
 Look up the bib guide in [resources](/resources) for a broad overview of the structure of .bib files.
 
-### importing .bib files
-Usually, you can find the .bib entry of a document on the webpage where the document is located (certainly true for journals). Look for 'Export to BibTeX' or 'Cite this item' or similar. Let us take a look:
+### maintenance
+Surely, it is too time-consuming to manually type in every one of hundreds of bibliography entries you want to cite. More often than not however, you would be able to find citation info in the same place as the cited piece. Look for 'Export to BibTeX' or 'Cite this item' or similar. For instance:
 
 [https://www.nber.org/papers/w27638](https://www.jstor.org/stable/10.1086/605130 )
 ![figures/bibtex-file-loc-example-nber.png](figures/bibtex-file-loc-example-nber.png)
@@ -118,8 +118,10 @@ Usually, you can find the .bib entry of a document on the webpage where the docu
 [https://www.jstor.org/stable/10.1086/605130](https://www.jstor.org/stable/10.1086/605130 )
 ![figures/bibtex-file-loc-example-jstor.png](figures/bibtex-file-loc-example-jstor.png)
 
-### inserting the .bib database
-Place biblatex package import statement in the [preamble](https://en.wikibooks.org/wiki/LaTeX/Document_Structure) of the document, not forgetting to specify the parameters:
+`JabRef` is a nice little reference manager that helps the user collect and organize references. Among other things, it can boast an auto-collect feature based on document identifiers such as [*ISBN*](https://en.wikipedia.org/wiki/International_Standard_Book_Number) or [*DOI*](https://en.wikipedia.org/wiki/Digital_object_identifier). Take a look at the [user's guide](https://docs.jabref.org/) for more information.
+
+### implementation
+Place biblatex package import statement in the [preamble](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Preamble) of the document, not forgetting to specify the parameters:
 ```latex
 % bibliography
 \usepackage[
@@ -131,6 +133,12 @@ Place biblatex package import statement in the [preamble](https://en.wikibooks.o
 ]{biblatex}
 \addbibresource{<bibliography_name>.bib}
 ```
+
+And to print the bibliography, put
+```latex
+\printbibliography
+```
+where it is supposed to appear.
 
 ## useful tricks
 *   package `threeparttable` and environment `tablenotes`;
