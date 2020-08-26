@@ -43,15 +43,15 @@ data = import_csv(path)
 Below is a screamingly incomplete list of software which you might have missed &ndash; potentially regretfully, since a lot of it have from our experience been what many migrate to and few from.
 
 ### text
-*   `SublimeText` is an extensible text editor, arguably the fastest and lightest that you might encounter. Its functionality and power comes from thousands of *packages* &ndash; extensions written to serve a purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. Sublime is a great first choice for LaTeXing.
+*   `SublimeText` is an extensible text editor, arguably the fastest and lightest that you might encounter. Its power comes from thousands of *packages* &ndash; extensions written to serve some purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. Sublime is a great first choice for LaTeXing.
 
-*   `Atom` is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing it. Package `hydrogen`, for instance, offers a fantastic way to learn to code in many languages by allowing for interactive coding and inline display of results. The bulk of this course was written using Atom.
+*   `Atom` is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing its functionality. Package `hydrogen`, for instance, offers a fantastic way to learn to code in many languages by allowing for interactive coding and inline display of results. The bulk of this course was written using Atom.
 
 ### Python
-*   `PyCharm` (Community edition) is what is called an integrated development environment (IDE) that consists of a customizable text editor to write code, TODO:what? to run it and a built-in debugger to, well, debug. Interestingly, the debugger serves more as a development tool for data science and econometrics, as it allows to run code line-by-line, inspect elements and trace errors. PyCharm well supports coding in R, and its text editor can be extended to other languages as well. Convenient integration with version control systems is there too.
+*   `PyCharm` (Community edition) is what is called an integrated development environment (IDE) that consists of a million things, a customizable text editor to write code, built-in engine to run it and a debugger to, well, debug. Interestingly, the debugger serves more as a development tool for data science and econometrics, as it allows to execute code line-by-line, inspect elements and trace errors. `PyCharm` well supports coding in `R`, and its text editor can be extended to other languages as well. Convenient integration with version control systems is there too.
 
 ### R
-*   `RStudio` would be a no-brainer here, although Atom and PyCharm are becoming ever more convenient.
+*   `RStudio` would be a no-brainer here, although `Atom` and `PyCharm` are becoming ever more convenient.
 
 ### version control
 to be discussed shortly.
@@ -60,7 +60,7 @@ to be discussed shortly.
 to be discussed shortly.
 
 ### cloud storage
-`Google Drive`, Yandex.Disk and Dropbox are decent solutions here, together offeing about 40 Gb of free cloud storage space.
+`Google Drive`, `Yandex.Disk` and `Dropbox` are decent solutions here, together offering about 40 Gb of free cloud storage space.
 
 ### collaboration
 to be discussed shortly.
