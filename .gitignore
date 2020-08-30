@@ -19,3 +19,7 @@ latex-templates/**/*.pdf
 *.blg
 *.dvi
 *.run.xml
+
+# R
+*.Rproj
+*.Rproj.user
