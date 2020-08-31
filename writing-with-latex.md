@@ -180,8 +180,8 @@ More elaborate examples are in the [package documentation](https://ctan.org/pkg/
 1.  Install MiKTeX;
 2.  Setup Sublime Text for LaTeXing, including graphics preview and inverse search;
 3.  Install, if not present already, packages `threeparttable` and `blindtext`;
-4.  Create folder `text/` with subfloders `paper` and `presentation`;
-4.  Create a `.bib` file with two entries, a published paper and a working paper;
+4.  Create folder `text/` with subfloders `paper/` and `presentation/`;
+4.  Create a `.bib` file with two entries, a [published paper](https://www.journals.uchicago.edu/doi/10.1086/707735) and a [working paper](https://ssrn.com/abstract=3555917);
 4.  Create a simple article consisting of:
     *   title page with title, author(s), affiliation(s), date, abstract and thanks;
     *   two pages of dummy text (use `blindtext` for that);
@@ -189,7 +189,7 @@ More elaborate examples are in the [package documentation](https://ctan.org/pkg/
     *   a figure and a table, both with captions and notes;
     *   bibliography on a separate page.
 5.  Create a simple beamer presentation consisting of:
-    *   title frame with title, author, affiliation and date;
+    *   title frame with title, author(s), affiliation(s) and date;
     *   three frames with titles and subtitles;
-    *   some equations a theorem;
+    *   some equations and a theorem (use the special `theorem` environment);
     *   a figure with two panels.
