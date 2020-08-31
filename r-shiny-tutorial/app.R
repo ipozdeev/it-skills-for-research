@@ -1,35 +1,65 @@
 library(shiny)
+library(plotly)
 source("datafeed.R")
 source("helpers.R")
 
+
 # user interface is defined here
 ui <- fluidPage(
-  titlePanel("market betas vs. average returns"),
+  titlePanel(h1("market betas vs. average returns")),
   
   sidebarLayout(
     sidebarPanel(
-      "select data frequency",
+      h2("controls"),
+      br(),
       selectInput("frequency",
                   label = "select frequency",
                   choices = list("daily" = "daily", 
                                  "monthly" = "monthly",
                                  "yearly" = "yearly"), selected = "daily"),
+      
     ),
-    mainPanel("results",
-              textOutput(("b")))
+    mainPanel(h2("results"), plotlyOutput("plot"))
   )
 )
 
 # what your computer/server does is defined here
 server <- function(input, output) {
-  r = get_stock_data()
-  print(r)
-  mu = apply(r, 1, FUN = mean)
-  b = calculate_betas(r ,freq = input$frequency, mkt_col = "SPY")
-  output$b <- renderText({ 
-    "You have selected this"
+  # get data
+  r <- get_stock_data()
+  
+  # calculate betas based on data frequency
+  inputB = reactive({
+    calculate_betas(r, freq = input$frequency, mkt_col = "SPY")
+  })
+  
+  output$plot <- renderPlotly({
+    # means
+    mu = colMeans(r) * 252 * 100
+    # betas
+    b = inputB()
+    # both to data.frame
+    df = data.frame(b, mu = mu)
+    # ols fit
+    fit <- lm(mu ~ b, data = df)
+    
+    # plot
+    fig <- plot_ly(
+      type = "scatter",
+      x = b, y = mu,
+      data = df, 
+      mode = "markers",
+      text = rownames(df),
+      showlegend = FALSE,
+      name = "stock")
+    
+    fig <- fig %>%
+      add_lines(x = df$b, y = fitted(fit), name = "ols fit")
+    
+    fig
+    
   })
 }
 
-# this runs the app with the UI and server logic
+# run the app
 shinyApp(ui = ui, server = server)
