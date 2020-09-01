@@ -5,7 +5,9 @@
 The Jupyter Notebook is an app that runs within a web browser and allows us to create and share interactive documents that contain code, visualizations, equations and explanatory text. Jupyter has evolved from IPython and now accommodates many different programming languages: R, Julia, C++, etc. Jupyter is open source.
 
 ### Why jupyter?
-Notebooks are easy to share and are a perfect medium to communicate the exact step-by-step process leading to the results of a research project. Hence their importance for reproducibility. Notebooks are interactive and hence provide a high didactic value allowing the target audience to better grasp the core concepts of research given hands-on examples
+Notebooks are easy to share and are a perfect medium to communicate the exact step-by-step process leading to the results of a research project. Hence their importance for reproducibility. Notebooks are interactive and hence provide a high didactic value allowing the target audience to better grasp the core concepts of research given hands-on examples.
+
+For example, [the transformer architecture](https://arxiv.org/abs/1706.03762) currently dominates other models in many natural language processing tasks. The original paper, however, is extremely dense and would take days to replicate from scratch. Fortunately, Alexander Rush from the Harvard NLP team implemented the paper line-by-line in a [jupyter notebook](https://nlp.seas.harvard.edu/2018/04/03/attention.html).
 
 ### Installation
 To run jupyter notebooks you need a Python installation. The recommended way is to install Anaconda distribution which comes with pre-packaged jupyter along with a suite of tools for data science. For other configurations check [the official documentation](https://jupyter.org/install).
