@@ -26,3 +26,4 @@ latex-templates/**/*.pdf
 *.RData
 *.Rhistory
 *.dcf
+.Rproj.user

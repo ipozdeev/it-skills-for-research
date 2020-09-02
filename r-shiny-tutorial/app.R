@@ -19,7 +19,11 @@ ui <- fluidPage(
                                  "yearly" = "yearly"), selected = "daily"),
       
     ),
-    mainPanel(h2("results"), plotlyOutput("plot"))
+    
+    mainPanel(
+      h2("results"), 
+      plotlyOutput("plot")
+    )
   )
 )
 
