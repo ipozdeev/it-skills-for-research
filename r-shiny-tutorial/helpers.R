@@ -5,7 +5,7 @@ calculate_betas = function(df, freq, mkt_col) {
   resamplers = list(monthly = apply.monthly, 
                     yearly = apply.yearly, 
                     daily = function(x, ...) x)
-  r_freq = resamplers[freq](r, FUN = mean)
+  r_freq = resamplers[[freq]](df, FUN = mean)
   
   # calculate betas
   b = list()
@@ -14,6 +14,6 @@ calculate_betas = function(df, freq, mkt_col) {
     b[s] = m$coefficients[2]
   }
   
-  return(b)
+  return(unlist(b, use.names = TRUE))
   
 }
