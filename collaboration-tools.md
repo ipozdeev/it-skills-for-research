@@ -56,4 +56,9 @@ The whiteboards can be used for literally anything: task planning, brain-stormin
 
 
 ## exercises
-TBD
+
+1. Go to [miro.com](https://miro.com/) and log in / sign up.
+
+2. Create a new whiteboard
+
+3. Invite another person to collaborate (miro can access slack)
