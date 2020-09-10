@@ -1,5 +1,4 @@
 # introduction
-
 Most of research project feature a similar set of integral parts. First, there is an idea. Then, there are soliloquies or discussions about it resulting in its development and fruition. There is data and code to transform the data into results: remarks, tables, figures. There is text which you use to communicate your results to an audience. With that being said, it is possible to write down a generic layout of a research project like this:
 ```
 /project
@@ -16,7 +15,7 @@ This is it, really! With non-essential modifications, most research projects hav
 
 This means that a research project is pretty much kin to development projects one sees on GitHub, and that knowledge transfer is possible.
 
-The knowledge includes different topics which we will discuss in this course: version control, data management, outward communication and so on.
+The knowledge includes different topics which we will discuss in this course: version control, data management, long-distance communication and so on.
 
 
 ## project space
@@ -30,28 +29,33 @@ So, you have allocated place for all your projects somewhere, say, folder `proje
 ```
 For convenience, you could set up an environment variable to reference this folder. [Environment variables](https://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them) are shortcuts which would ease transition of your projects to another machine by removing the need to rename all paths in your code. If it is unclear, consider some data import:
 ```python
-path = "c://users/ipozdeev/documents/projects/project_1/data/data.csv"
+path = "c://users/alansmithee/documents/projects/project_1/data/data.csv"
 data = import_csv(path)
 ```
-To run on the machine other than that of _ipozdeev_ and his namesakes, one would need to reformat code. Now consider this, with environment variable `RESEARCHPATH` previously  set to `c://users/ipozdeev/documents/projects`:
+To run on the machine other than that of _alansmithee_ and his namesakes, one would need to reformat the code. Same if the `projects` folder were moved to a different location. Now consider an alternative, with environment variable `RESEARCHPATH` previously set to `c://users/alansmithee/documents/projects`:
 ```python
 path = expand_var("$RESEARCHPATH") + "project_1/data/data.csv"
 data = import_csv(path)
 ```
+With `projects` relocated to a different place, it is only one value, namely `$RESEARCHPATH`, that would need to be changed globally for the code to run without problems.
 
 ## software
-Below is a screamingly incomplete list of software which you might have missed &ndash; potentially regretfully, since a lot of it have from our experience been what many migrate to and few from.
+Below is an incomplete list of software which you might have missed. We do not claim their objective superiority, but from our experience, these are what many researchers tend to gravitate to, and only few &ndash; from.
 
 ### text
-*   `Sublime Text` is an extensible text editor, arguably the fastest and lightest that you might encounter. Its power comes from thousands of *packages* &ndash; extensions written to serve some purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. Sublime is a great first choice for LaTeXing.
+*   `SublimeText` is an extensible text editor, arguably the fastest and lightest that you might encounter. Its power comes from thousands of _packages_ &ndash; extensions written to serve some purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. Sublime is a great first choice for LaTeXing.
 
-*   `Atom` is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing its functionality. Package `hydrogen`, for instance, offers a fantastic way to learn to code in many languages by allowing for interactive coding and inline display of results. The bulk of this course was written using Atom.
+*   `Atom` is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing its functionality. Package `hydrogen`, for instance, offers a way to learn to program in many languages by allowing for interactive coding and inline display of results. The bulk of this course is written with Atom.
 
 ### Python
-*   `PyCharm` (Community edition) is what is called an integrated development environment (IDE) that consists of a million things, a customizable text editor to write code, built-in engine to run it and a debugger to, well, debug. Interestingly, the debugger serves more as a development tool for data science and econometrics, as it allows to execute code line-by-line, inspect elements and trace errors. `PyCharm` well supports coding in `R`, and its text editor can be extended to other languages as well. Convenient integration with version control systems is there too.
+*   `PyCharm` (Community edition) is what is called an integrated development environment (IDE) that consists of a million things, a customizable text editor to write code, built-in engine to run it and a debugger to, well, debug. Interestingly, the debugger serves more as a development tool for data science and econometrics, as it allows to execute code line-by-line, inspect elements and trace errors. `PyCharm` well supports coding in `R`, and its text editor can be extended to other languages as well. Convenient integration with version control systems is there too.d
 
 ### R
 *   `RStudio` would be a no-brainer here, although `Atom` and `PyCharm` are becoming ever more convenient.
+
+### Julia
+Julia is a rather young language that is 'not yet there', but progressing at a decent pace. Its syntax is similar to `MATLAB` and `Python` (which makes it easy to operate), and the performance is `C`-like (close to the best there is). If you need lots of computing power and do not want/have time to optimize your code in `R`, `Python` or `MATLAB`, do give it a try.
+
 
 ### version control
 to be discussed shortly.

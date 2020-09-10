@@ -3,7 +3,7 @@ The black-and-white paper appearing in a journal is by far the most used way of 
 
 As an example, consider a toy exercise of detecting the relation between stocks' market betas and expected returns. You have performed some data analysis and present the results as follows:
 
-![figures/bibtex-file-loc-example-nber.png](figures/beta-vs-mu.png)
+![figures/beta-vs-mu.png](figures/beta-vs-mu.png)
 
 The audience start asking questions:<br>
 &ndash; What happens if you change the estimation window? <br>
@@ -16,7 +16,7 @@ In this chapter we will discuss some modern alternatives to the black-and-white 
 
 ## interactive apps
 ### R shiny
-Now, consider that you could make the chart able to answer these questions, as showcased here: [https://ipozdeev.shinyapps.io/r-shiny-tutorial/](https://ipozdeev.shinyapps.io/r-shiny-tutorial/).
+What if you could make the chart able to answer these questions, as showcased in this `R shiny` app: [https://ipozdeev.shinyapps.io/r-shiny-tutorial/](https://ipozdeev.shinyapps.io/r-shiny-tutorial/).
 
 An `R shiny` app is a webpage that contains `R` components. Attached to it a server with an open session of `R`, such that the moment the user changes inputs on the webpage, these changes are passed on to `R` and reflected in the output. `R shiny` apps wrap the functionality of `R` in a pretty HTML/CSS design without the coder having to know much of HTML and CSS. You can create an entire page using nothing but R!
 
@@ -98,7 +98,7 @@ shinyApp(ui = ui, server = server)
 ```
 
 ## notebooks
-Instead of letting your findings talk back to audience, you might as well teach the audience easily replicate your findings. In 99% cases this is easily achieved with Jupyter Notebooks.
+Instead of letting your findings talk back to audience, you might as well teach the audience how to replicate your findings. In 99% cases this is easily achieved with Jupyter Notebooks.
 
 ### what are (jupyter) notebooks?
 The Jupyter Notebook is a way for the coder to make guided tours through their work. It is an app that runs within a web browser and allows to create and share interactive documents that contain code, visualizations, equations and explanatory text. Jupyter has evolved from IPython and now accommodates many different programming languages: R, Julia, C++, etc. Jupyter is open source.
@@ -120,3 +120,9 @@ Happy coding!
 Open source is a concept in intellectual property meaning that everyone is granted the right to inspect and use some product's source code, design or the like. Linux is an open source project, but Windows is not. Everyone can inspect the source code of Linux to exclude possibility of ill intentions such as surveillance and unauthorized data collection; Windows is by and large inaccessible to such inspection.
 
 Most research projects are Windows-like: although the methodology is usually to be found in the paper, much remains unreported, especially the code behind the calculations. Replication and fact checking could thus take an interested person days, and given the size of the global academic community, thousands of human-hours are possibly wasted on redundant replication attempts. At the same time, the marginal effort for the author to provide a clear reusable code is disproportionately smaller. Still, it being not-zero and offering little remuneration, is an obstacle and arguably the reason why we see it once in a blue moon.
+
+## secret topic
+TBA
+
+## exercises
+1.  Add another input control to the `r-shiny-tutorial` app to add/exclude stocks from the OLS estimation and plot;
