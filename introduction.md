@@ -20,7 +20,7 @@ The knowledge includes different topics which we will discuss in this course: ve
 
 
 ## project space
-Your project lives somewhere. A good idea is to allocate a folder for all your projects and never ever leave it when starting a new one. The folder is most likely to be located on your hard drive, which we call 'local', but it is a genious idea to back it up where it cannot get deleted, which we call 'remote' or 'cloud'. Version control systems to be covered later offer &ndash; as a side effect, really &ndash; one solution for remote storage, but for medium-size files only; for everything else cloud drives such as Google Drive are the way to go. These have a space limit which up to a point in your research career you are not going to max out, and if it happens, you can move on to a competitor, such as Yandex.Disk or Dropbox.
+Your project lives somewhere. A good idea is to allocate a folder for all your projects and never ever leave it when starting a new one. The folder is most likely to be located on your hard drive, which we call 'local', but it is a genious idea to back it up where it cannot get deleted, which we call 'remote' or 'cloud'. Websites such as [https://github.com/](https://github.com/) or [https://www.atlassian.com/](https://www.atlassian.com/) that offer hosting for version-controlled projects (to be covered later) offer one solution for remote storage, albeit for medium-size files only &ndash; for everything else cloud drives such as Google Drive are the way to go. These have a space limit which up to a point in your research career you are not going to max out, and if it happens, you can move on to a competitor, such as `Yandex.Disk` or `Dropbox`.
 
 So, you have allocated place for all your projects somewhere, say, folder `projects`:
 ```
@@ -43,7 +43,7 @@ data = import_csv(path)
 Below is a screamingly incomplete list of software which you might have missed &ndash; potentially regretfully, since a lot of it have from our experience been what many migrate to and few from.
 
 ### text
-*   `SublimeText` is an extensible text editor, arguably the fastest and lightest that you might encounter. Its power comes from thousands of *packages* &ndash; extensions written to serve some purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. Sublime is a great first choice for LaTeXing.
+*   `Sublime Text` is an extensible text editor, arguably the fastest and lightest that you might encounter. Its power comes from thousands of *packages* &ndash; extensions written to serve some purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. Sublime is a great first choice for LaTeXing.
 
 *   `Atom` is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing its functionality. Package `hydrogen`, for instance, offers a fantastic way to learn to code in many languages by allowing for interactive coding and inline display of results. The bulk of this course was written using Atom.
 
@@ -60,7 +60,14 @@ to be discussed shortly.
 to be discussed shortly.
 
 ### cloud storage
-`Google Drive`, `Yandex.Disk` and `Dropbox` are decent solutions here, together offering about 40 Gb of free cloud storage space.
+`Google Drive`, `Yandex.Disk`, `OneDrive` and `Dropbox` are decent solutions here, together offering about 45 Gb of free cloud storage space. Data protection concerns apply though: the servers where your data is copied are located where you sometimes do not want sensitive (e.g. related to a private sector job) data to appear.
 
 ### collaboration
 to be discussed shortly.
+
+## exercises
+1.  install Sublime Text;
+2.  install Package Control;
+3.  install a package to be able to count words;
+4.  create a directory for the group project you are supposed to hand in as the graded assignment for this course, then set up a basic structure for it;
+5.  create an environment variable to reference the folder where all your projects, including the assignment, are.
