@@ -32,7 +32,7 @@ If Alice's changes are not in conflict with Bob's, e.g. because Alice changed fi
 ### pull requests
 A handy way to notify team members that something has been pushed are **pull requests**. Once a feature is ready, the author files a pull request via their github or bitbucket etc. account. This is akin to sending a message asking to 'please pull and take a look'.
 
-So, what's wrong with the message? As discussed on [bitbucket](https://www.atlassian.com/git/tutorials/making-a-pull-request):
+So, what's wrong with just sending a message? As discussed on [bitbucket](https://www.atlassian.com/git/tutorials/making-a-pull-request):
 > \[...\] the pull request is more than just a notification &ndash; it’s a dedicated forum for discussing the proposed feature. If there are any problems with the changes, teammates can post feedback in the pull request and even tweak the feature by pushing follow-up commits. All of this activity is tracked directly inside of the pull request.
 
 Imagine that Alice is working on Figure 1 of her joint project with Bob and Chuck. By committing her changes, pushing them to the remote and filing a pull request, she encourages the other two to take a look and discuss what can be improved here.
@@ -40,13 +40,13 @@ Imagine that Alice is working on Figure 1 of her joint project with Bob and Chuc
 This might be of little extra value when working in a team of 2, but quickly becomes useful as the number of participants is growing.
 
 ## slack
-Slack is a software not dissimilar to WhatsApp, which organizes collaboration through chat windows called channels. It is a well-contrived, extensible, all-in-one-place alternative to **internal** emails, text messages and other types of communication. You can use Slack as a web, desktop or mobile app. So, let us try to run it however you prefer; you will be sent an invite to workspace `digital-tools-for-finance` during the lecture.
+Slack is a software not dissimilar to WhatsApp, which organizes collaboration through chat windows called channels. It is a well-contrived, extensible, all-in-one-place alternative to _internal_ emails, text messages and other types of communication. You can use Slack as a web, desktop or mobile app. So, let us try to run it however you prefer; you will be sent an invite to workspace `digital-tools-for-finance` during the lecture.
 
 ### searchable conversations
 Slack allows to search in the conversation history. [Modifiers](https://slack.com/intl/en-ch/help/articles/202528808-Search-in-Slack#h_5ece87ed-b336-4ae0-86dd-54221c2d2c03) such as `before:4/12/2019` come in super handy!
 
 ### slack apps
-To add a specific feature to Slack, e.g. functionality to create polls or your Outlook calendar, you should add what is called [an app](https://slack.com/intl/en-ch/resources/slack-101/what-is-an-app). For now, let us install something to help us integrate a Github account, make Zoom calls and create polls, of course.
+To add a specific feature to Slack, e.g. functionality to create polls or your Outlook calendar, you should add what is called [an app](https://slack.com/intl/en-ch/resources/slack-101/what-is-an-app). For now, let us install something to help us integrate a github account, make Zoom calls and create polls, of course.
 
 
 ## whiteboards
@@ -56,9 +56,10 @@ The whiteboards can be used for literally anything: task planning, brain-stormin
 
 
 ## exercises
-
-1. Go to [miro.com](https://miro.com/) and log in / sign up.
-
-2. Create a new whiteboard
-
-3. Invite another person to collaborate (miro can access slack)
+1.  Create a slack group and invite your collaborators;
+2.  Install an app to create polls and the Zoom app;
+3.  Create an invitation to join a Zoom meeting;
+2.  In `digital-tools-for-finance`, channel `#questions`, search for messages containing 'merge' written before August 26, 2020;
+1.  Go to [miro.com](https://miro.com/) and log in / sign up;
+2.  Create a new whiteboard;
+3.  Invite another person to collaborate (miro can access slack).
