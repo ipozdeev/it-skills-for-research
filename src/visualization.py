@@ -21,7 +21,7 @@ def get_findings():
                        parse_dates=True)
 
     y = data.drop("SPY", axis=1)
-    x = data[["SPY"]];
+    x = data[["SPY"]]
     x.loc[:, "const"] = 1.0
 
     b = dict()
@@ -40,13 +40,19 @@ def get_findings():
         .rename(index={"B": "daily", "M": "monthly", "Y": "annually"})
     se = pd.Series(se).unstack() \
         .rename(index={"B": "daily", "M": "monthly", "Y": "annually"})
+    mu = y.mean()
 
-    return b, se
+    res = {
+        "b": b, "se": se, "mu": mu
+    }
+
+    return res
 
 
 def fig_table_heatmap():
     """Figure to show superiority of heatmap over tables."""
-    b, se = get_findings()
+    f = get_findings()
+    b, se = f["b"], f["se"]
 
     tbl_ant = b.applymap("{:.2f}\n".format) + se.applymap("({:.2f})".format)
     fig, ax = plt.subplots(figsize=(5.04, 3.78 / 2))
@@ -57,6 +63,23 @@ def fig_table_heatmap():
     fig.tight_layout()
     fig.savefig("../visualization/tex_examples/betas-hmap.pdf",
                 transparent=False)
+
+
+def fig_er_vs_b():
+    """Figure to show betas vs. average returns."""
+    f = get_findings()
+    b, mu = f["b"].loc["daily"], f["mu"] * 252 * 100
+    to_plot = pd.concat((b, mu), axis=1, keys=["b", "mu"])
+
+    fig, ax = plt.subplots(figsize=(5.04, 3.78 / 2))
+    ax = sns.regplot(x="b", y="mu", data=to_plot, ax=ax)
+    ax.set_xlim((b.min() - 0.05, b.max() + 0.05))
+    ax.set_ylim((mu.min() - 5, mu.max() + 5))
+    ax.set_ylabel("$\\bar{R}$, in percent p.a.")
+    ax.set_xlabel("$\\beta$")
+    fig.tight_layout()
+    fig.savefig("../figures/beta-vs-mu.png", dpi=200)
+
 
 def table_table():
     """Table."""
@@ -74,4 +97,5 @@ def table_table():
 
 if __name__ == '__main__':
     # fig_table_heatmap()
-    table_table()
+    # table_table()
+    fig_er_vs_b()

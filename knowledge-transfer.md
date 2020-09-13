@@ -109,20 +109,24 @@ Notebooks are easy to share and are a perfect medium to communicate the exact st
 For example, [the transformer architecture](https://arxiv.org/abs/1706.03762) currently dominates other models in many natural language processing tasks. The original paper, however, is extremely dense and would take days to replicate from scratch. Fortunately, Alexander Rush from the Harvard NLP team implemented the paper line-by-line in a [jupyter notebook](https://nlp.seas.harvard.edu/2018/04/03/attention.html).
 
 ### installation
-To run jupyter notebooks you need a Python installation. The recommended way is to install Anaconda distribution which comes with pre-packaged jupyter along with a suite of tools for data science. For other configurations check [the official documentation](https://jupyter.org/install).
+To run jupyter notebooks you need a Python installation. The recommended way is to install Anaconda distribution which comes with pre-packaged jupyter along with a suite of tools for data science.
+
+To register additional kernels, e.g. R, you would need to install them from the language interpreter and make known to jupyter:
+```
+install.packages("IRkernel")
+IRkernel::installspec()
+```
+
+For other configurations check [the official documentation](https://jupyter.org/install).
 
 ### starting a new notebook
 To start a notebook open the command prompt, then navigate to the directory you will be working in and type in `jupyter notebook`. The command will start a notebook server which should be running while you are working in the notebook. For additional information like running the server using a custom IP or port, refer to [this page](https://jupyter.readthedocs.io/en/latest/running.html). The notebook will run in your browser. The first thing you see will be a dashboard where you can navigate in different directories and create new notebooks.
 
 Happy coding!
 
-## open source in research
-Open source is a concept in intellectual property meaning that everyone is granted the right to inspect and use some product's source code, design or the like. Linux is an open source project, but Windows is not. Everyone can inspect the source code of Linux to exclude possibility of ill intentions such as surveillance and unauthorized data collection; Windows is by and large inaccessible to such inspection.
-
-Most research projects are Windows-like: although the methodology is usually to be found in the paper, much remains unreported, especially the code behind the calculations. Replication and fact checking could thus take an interested person days, and given the size of the global academic community, thousands of human-hours are possibly wasted on redundant replication attempts. At the same time, the marginal effort for the author to provide a clear reusable code is disproportionately smaller. Still, it being not-zero and offering little remuneration, is an obstacle and arguably the reason why we see it once in a blue moon.
-
 ## secret topic
 TBA
 
 ## exercises
 1.  Add another input control to the `r-shiny-tutorial` app to add/exclude stocks from the OLS estimation and plot;
+2.  Create a jupyter notebook

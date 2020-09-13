@@ -19,7 +19,7 @@ The knowledge includes different topics which we will discuss in this course: ve
 
 
 ## project space
-Your project lives somewhere. A good idea is to allocate a folder for all your projects and never ever leave it when starting a new one. The folder is most likely to be located on your hard drive, which we call 'local', but it is a genious idea to back it up where it cannot get deleted, which we call 'remote' or 'cloud'. Websites such as [https://github.com/](https://github.com/) or [https://www.atlassian.com/](https://www.atlassian.com/) that offer hosting for version-controlled projects (to be covered later) offer one solution for remote storage, albeit for medium-size files only &ndash; for everything else cloud drives such as Google Drive are the way to go. These have a space limit which up to a point in your research career you are not going to max out, and if it happens, you can move on to a competitor, such as `Yandex.Disk` or `Dropbox`.
+Your project lives somewhere. A good idea is to allocate a folder for all your projects and never ever leave it when starting a new one. The folder is most likely to be located on your hard drive, which we call 'local', but it is a genius idea to back it up where it cannot get deleted, which we call 'remote' or 'cloud'. Websites such as [https://github.com/](https://github.com/) or [https://www.atlassian.com/](https://www.atlassian.com/) that offer hosting for version-controlled projects (to be covered later) are one solution for remote storage, albeit for medium-size files only &ndash; for everything else cloud drives such as Google Drive are the way to go. These have a space limit which up to a point in your research career you are not going to max out, and if it happens, you can move on to a competitor, such as `Yandex.Disk` or `Dropbox`.
 
 So, you have allocated place for all your projects somewhere, say, folder `projects`:
 ```
@@ -43,19 +43,23 @@ With `projects` relocated to a different place, it is only one value, namely `$R
 Below is an incomplete list of software which you might have missed. We do not claim their objective superiority, but from our experience, these are what many researchers tend to gravitate to, and only few &ndash; from.
 
 ### text
-*   `SublimeText` is an extensible text editor, arguably the fastest and lightest that you might encounter. Its power comes from thousands of _packages_ &ndash; extensions written to serve some purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. Sublime is a great first choice for LaTeXing.
+**Sublime Text** is an extensible text editor, arguably the fastest and lightest that you might encounter. Its power comes from thousands of _packages_ &ndash; extensions written to serve some purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. **Sublime** is a great first choice for LaTeXing.
 
-*   `Atom` is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing its functionality. Package `hydrogen`, for instance, offers a way to learn to program in many languages by allowing for interactive coding and inline display of results. The bulk of this course is written with Atom.
+Atom is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing its functionality. Package **hydrogen**, for instance, offers a way to learn to program in many languages by allowing for interactive coding and inline display of results. The bulk of this course is written with **Atom**.
 
 ### Python
-*   `PyCharm` (Community edition) is what is called an integrated development environment (IDE) that consists of a million things, a customizable text editor to write code, built-in engine to run it and a debugger to, well, debug. Interestingly, the debugger serves more as a development tool for data science and econometrics, as it allows to execute code line-by-line, inspect elements and trace errors. `PyCharm` well supports coding in `R`, and its text editor can be extended to other languages as well. Convenient integration with version control systems is there too.d
+**PyCharm (Community edition)** is what is called an integrated development environment (IDE) that consists of a million things, a customizable text editor to write code, built-in engine to run it and a debugger to, well, debug. Interestingly, the debugger serves more as a development tool for data science and econometrics, as it allows to execute code line-by-line, inspect elements and trace errors. **PyCharm** well supports coding in R, and its text editor can be extended to other languages as well. Convenient integration with version control systems is there too.
 
 ### R
-*   `RStudio` would be a no-brainer here, although `Atom` and `PyCharm` are becoming ever more convenient.
+**RStudio** would be a no-brainer here, although **Atom** and **PyCharm** are becoming ever more convenient.
 
 ### Julia
-Julia is a rather young language that is 'not yet there', but progressing at a decent pace. Its syntax is similar to `MATLAB` and `Python` (which makes it easy to operate), and the performance is `C`-like (close to the best there is). If you need lots of computing power and do not want/have time to optimize your code in `R`, `Python` or `MATLAB`, do give it a try.
+**Julia** is a rather young language that is 'not yet there', but progressing at a decent pace. Its syntax is similar to MATLAB and Python (which makes it easy to operate), and the performance is C-like (close to the best there is). If you need lots of computing power and do not want/have time to optimize your code in R, Python or MATLAB, do give it a try.
 
+**Juno** embedded in **Atom** is a decent environment for development in **Julia**.
+
+### econometrics
+**gretl** is a free and rather powerful open-source alternative to **EViews** and **Stata**, perfectly balanced for peek-in estimations and more advanced projects.
 
 ### version control
 to be discussed shortly.
