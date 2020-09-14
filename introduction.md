@@ -67,13 +67,13 @@ Python is a programming language, which we will need to run Jupyter notebooks la
 We will be using Git, which you should install from [here](https://git-scm.com/downloads). Please also create an account on [Github](https://github.com/).
 
 ### databases
-to be discussed shortly.
+We will be using MySQL. An instllation guide for Windows can be found [here](https://youtu.be/7S_tz1z_5bA?t=593). The same video also contains instructions for a Mac installation.
 
 ### cloud storage
 **Google Drive**, **Yandex.Disk**, **OneDrive** and **Dropbox** are decent solutions here, together offering about 45 Gb of free cloud storage space. Data protection concerns apply though: the servers where your data is copied are located where you sometimes do not want sensitive (e.g. related to a private sector job) data to appear.
 
 ### collaboration
-We will be using **Slack**, **Zoom** and **Miro** (you can install the former two locally or use from the browser). Please create an account with each of those or connect an existing one.
+We will be using **Slack**, **Zoom** and **Miro** (you can install all three locally or use from the browser). Please create an account with each of those or connect an existing one.
 
 ## exercises
 1.  install Sublime Text;
