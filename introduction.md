@@ -48,6 +48,8 @@ Below is an incomplete list of software which you might have missed. We do not c
 Atom is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing its functionality. Package **hydrogen**, for instance, offers a way to learn to program in many languages by allowing for interactive coding and inline display of results. The bulk of this course is written with **Atom**.
 
 ### Python
+Python is a programming language, which we will need to run Jupyter notebooks later in the course. Please install it using the Anaconda distribution (if you care about hard drive space, feel free to use miniconda and manually install jupyter).
+
 **PyCharm (Community edition)** is what is called an integrated development environment (IDE) that consists of a million things, a customizable text editor to write code, built-in engine to run it and a debugger to, well, debug. Interestingly, the debugger serves more as a development tool for data science and econometrics, as it allows to execute code line-by-line, inspect elements and trace errors. **PyCharm** well supports coding in R, and its text editor can be extended to other languages as well. Convenient integration with version control systems is there too.
 
 ### R
@@ -62,16 +64,16 @@ Atom is another extensible text editor featuring brilliant Git integration. Just
 **gretl** is a free and rather powerful open-source alternative to **EViews** and **Stata**, perfectly balanced for peek-in estimations and more advanced projects.
 
 ### version control
-to be discussed shortly.
+We will be using Git, which you should install from [here](https://git-scm.com/downloads). Please also create an account on [Github](https://github.com/).
 
 ### databases
 to be discussed shortly.
 
 ### cloud storage
-`Google Drive`, `Yandex.Disk`, `OneDrive` and `Dropbox` are decent solutions here, together offering about 45 Gb of free cloud storage space. Data protection concerns apply though: the servers where your data is copied are located where you sometimes do not want sensitive (e.g. related to a private sector job) data to appear.
+**Google Drive**, **Yandex.Disk**, **OneDrive** and **Dropbox** are decent solutions here, together offering about 45 Gb of free cloud storage space. Data protection concerns apply though: the servers where your data is copied are located where you sometimes do not want sensitive (e.g. related to a private sector job) data to appear.
 
 ### collaboration
-to be discussed shortly.
+We will be using **Slack**, **Zoom** and **Miro** (you can install the former two locally or use from the browser). Please create an account with each of those or connect an existing one.
 
 ## exercises
 1.  install Sublime Text;
