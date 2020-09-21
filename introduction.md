@@ -67,7 +67,7 @@ Python is a programming language, which we will need to run Jupyter notebooks la
 We will be using Git, which you should install from [here](https://git-scm.com/downloads). Please also create an account on [Github](https://github.com/).
 
 ### databases
-We will be using MySQL. An instllation guide for Windows can be found [here](https://youtu.be/7S_tz1z_5bA?t=593). The same video also contains instructions for a Mac installation.
+We will be using MySQL. An installation guide for Windows can be found [here](https://youtu.be/7S_tz1z_5bA?t=593). The same video also contains instructions for a Mac installation.
 
 ### cloud storage
 **Google Drive**, **Yandex.Disk**, **OneDrive** and **Dropbox** are decent solutions here, together offering about 45 Gb of free cloud storage space. Data protection concerns apply though: the servers where your data is copied are located where you sometimes do not want sensitive (e.g. related to a private sector job) data to appear.
@@ -80,4 +80,8 @@ We will be using **Slack**, **Zoom** and **Miro** (you can install all three loc
 2.  install Package Control;
 3.  install a package to be able to count words;
 4.  create a directory for the group project you are supposed to hand in as the graded assignment for this course, then set up a basic structure for it;
-5.  create an environment variable to reference the folder where all your projects, including the assignment, are.
+5.  create an environment variable to reference the folder where all your projects, including the assignment, are located;
+6.  install git;
+6.  create an account on **Slack** and join the `DTfF` group (invite will be sent per email);
+7.  create an account on **Miro**;
+8.  install python using anaconda or miniconda and make sure `jupyter` is installed.
