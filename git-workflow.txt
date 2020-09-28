@@ -1,0 +1,9 @@
+db:
+- pull
+
+ip:
+- create file, make it half working, add
+- finish the file, add + commit
+
+db:
+- pull
