@@ -7,3 +7,9 @@ ip:
 
 db:
 - pull
+
+db:
+- modify the file, commit
+
+ip:
+- pull
