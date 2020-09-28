@@ -17,7 +17,7 @@
 <!-- /TOC -->
 
 ## basics
-In brief, a version control system is a software that allows you to take a snapshot of your project and revert to it if necessary &mdash; just like the backup feature on an operating system or a check point in a game. Version control is great for all things text: first and foremost code, but also dissertations, memos and reports. Plus, on an equally important note, it facilitates concurrent editing and allows groups of people to efficiently work on the same set of files.
+In brief, a version control system is a software that allows you to take a snapshot of your project and revert to it if necessary &mdash; just like the backup feature on an operating system or a checkpoint in a game. Version control is great for all things text: first and foremost code, but also dissertations, memos and reports. Plus, on an equally important note, it facilitates concurrent editing and allows groups of people to efficiently work on the same set of files.
 
 There are several version control systems around: Git, Subversion etc. &mdash; and we will be using Git here. As stated on the [webpage](https://git-scm.com/):
 > Git is a free and open source distributed version control system...
@@ -32,13 +32,17 @@ Follow the instructions on the webpage to install git. We will be mostly using t
 > \[[git-book](https://git-scm.com/book/en/v2)\] The first thing you should do when you install Git is to set your user name and email address.
 
 ## starting to version control
-You can put a directory under version control &mdash; and the project directory is an obvious choice! Go to your project directory and execute
+You can put a directory under version control &mdash; and the project directory is an obvious choice! Go to the directory associated with your project (not the one with all the projects!) and execute
 ```
 git init
 ```
-Now the directory is a local (existing on your machine rather than somewhere else) *repository* (virtual storage space). If you want to share your project (or just make it accessible from everywhere), you would have to find a *remote* place to store your repository. Places like [https://www.atlassian.com/](atlassian.com) and [https://github.com/](github.com) serve this purpose. Once you have an account, you can create a remote repository there and point your local repository to it.
+Now the directory is a local (existing on your machine rather than somewhere else) *repository* (virtual storage space). If you want to share your project (or just make it accessible from everywhere), you would have to find a *remote* place to store your repository. Places like [https://www.atlassian.com/](atlassian.com) and [https://github.com/](github.com) offer this possibility (but you could also set it up on an own server). Once you have an account, you can create a remote repository and point your local repository to it.
 ```
 git remote add <shortname> <url>
+```
+Alternatively, you can create an empty remote on Github first, then _clone_ it to the local machine:
+```
+git clone <url>
 ```
 
 You can check the status of the repo anytime:
@@ -120,14 +124,24 @@ To stop the file from being tracked, see [this answer](https://stackoverflow.com
 
 ## exercises
 1.  Install Git;
-2.  Create an account on Github or Bitbucket (or use an existing if you want);
+2.  Create an account on Github (or use an existing if you want);
 3.  Set up a local repository;
-4.  Within it, create folder `data` and file `notes.txt` and exclude the folder from being tracked;
-5.  Commit everything;
-6.  Change the content of the `.txt` file, commit the new version;
-7.  Change the content of the `.txt` file, commit the new version overwriting the previous commit;
+4.  Within it, create the following two folder and two files:
+```
+data/
+text/
+notes.txt
+functions.py
+```
+and exclude folder `data/` from being tracked;
+5.  Add and commit everything;
+6.  Add line reading 'THIS IS FINE' to `notes.txt`, commit the new version with message 'a fine change';
+7.  Change that line to 'THIS IS GOOD', commit the new version with message 'a good change' _overwriting the previous commit_ as if it never happened (make sure `git log` does not show 'a fine change');
+8.  Change that line to 'THIS IS BAD' and close the editor to make it impossible to use `Ctrl+Z`;
+9.  Try to restore `notes.txt` to the state where it reads 'THIS IS GOOD';
+10. Change that line to 'THIS IS THE BEST' and delete file `functions.py`, commit your changes giving your commit a name such as 'first-working';
+11. Undo the previous commit using `git revert`, makes sure `functions.py` does exist and the line reads 'THIS IS GOOD';
 8.  Create a remote repo on Github/Bitbucket and link your local repo to it;
-9.  Push the commits;
-10.  Let another member of your team clone the repo now and change the `.txt` file, committing and pushing it back to the remote;
-11.  Checkout the commit that was just before your team member's commit, as if the latter was undesired;
-12.  Change the content of the `.txt` file, commit and push to the remote.
+9.  Push all the commits to the remote;
+10. Try to revert the repo to the state where `notes.txt` read 'THIS IS FINE'.
+11. Commit and push all the commits to the remote.
