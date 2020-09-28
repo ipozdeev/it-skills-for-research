@@ -127,12 +127,14 @@ To stop the file from being tracked, see [this answer](https://stackoverflow.com
 2.  Create an account on Github (or use an existing if you want);
 3.  Set up a local repository;
 4.  Within it, create the following two folder and two files:
+
 ```
 data/
 text/
 notes.txt
 functions.py
 ```
+
 and exclude folder `data/` from being tracked;
 5.  Add and commit everything;
 6.  Add line reading 'THIS IS FINE' to `notes.txt`, commit the new version with message 'a fine change';
