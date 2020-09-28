@@ -134,8 +134,8 @@ text/
 notes.txt
 functions.py
 ```
-
 and exclude folder `data/` from being tracked;
+
 5.  Add and commit everything;
 6.  Add line reading 'THIS IS FINE' to `notes.txt`, commit the new version with message 'a fine change';
 7.  Change that line to 'THIS IS GOOD', commit the new version with message 'a good change' _overwriting the previous commit_ as if it never happened (make sure `git log` does not show 'a fine change');
