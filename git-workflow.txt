@@ -1,9 +1,38 @@
 db:
-- pull
+- clone
+- in 'shared-folder' create file 'functions.txt', write 'THIS LINE IS OK' in it, add+commit+push
 
 ip:
-- create file, make it half working, add
-- finish the file, add + commit
+- pull
+- change line #1 to 'THIS LINE IS BAD'
+- pull (nothing changes)
+- add+commit+push
 
 db:
-- pull
+- add another line 'THIS #2 LINE IS OK', change line #1 to 'THIS LINE IS STILL OK'
+- pull (should fail, need to commit the changes first)
+- add+commit
+- pull, resolve conflicts
+- commit+push
+
+ip:
+- pull (should see two lines)
+- want to continue working on the first line until it is ok
+- create a new branch 'feature-1'
+- change line #1 to 'THIS LINE IS BAD'
+- add+commit+push
+
+db:
+- pull without switching branches (nothing changes)
+
+ip:
+- change line #1 to 'THIS LINE IS FINALLY OK'
+- add+commit+push
+- open pull request
+
+db:
+- review request, write a comment
+- approve
+
+ip:
+- merge branch into master
