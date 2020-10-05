@@ -68,6 +68,7 @@ The whiteboards can be used for literally anything: task planning, brain-stormin
 
 
 ## exercises
+1.  Re-do the toy example of a two-person workflow (possibly extending it to three or more people);
 1.  Create a slack group and invite your collaborators;
 2.  Install an app to create polls and the Zoom app;
 3.  Create an invitation to join a Zoom meeting;
