@@ -60,6 +60,9 @@ Optionally, install:
 *   [ghostscript](https://ghostscript.com/download/gsdnld.html) to preview equations in Sublime Text;
 *   [ImageMagick](http://www.imagemagick.org/script/download.php) to preview figures (don't forget to check the box `Add application directory to your system path`).
 
+## Overleaf
+[Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) is a great online tool allowing to create TeX documents. They have nice tutorials and tons of different templates and examples which you can modify and accommodate to your needs.
+
 ## workflow
 1. **Know your macros**. You are aware which macros produce the formats you need and in which packages those macros are to be found. For instance, multi-line equations require package *amsmath* and are inserted as follows:
 ```latex
