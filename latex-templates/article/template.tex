@@ -6,19 +6,12 @@
 
 % figures
 \usepackage{graphicx}
+\usepackage{float}
 
 % No indent for new paragraphs
-% \setlength\parindent{0pt}
+\setlength\parindent{0pt}
 
-% bibliography
-\usepackage[
-    backend=biber,
-    style=bwl-FU,
-    url=false,
-    doi=false,
-    eprint=false
-]{biblatex}
-\addbibresource{template-biblio.bib}
+
 
 \begin{document}
 
@@ -49,14 +42,30 @@ Aligned system of equations:
 \sum\limits_{i=1}^{N}y_i &= e^{\alpha + \beta x}
 \end{align}
 
+A new system to be aligned
+\begin{align}
+x ^ 2 + y ^ 2 &= 1 \\
+a \& b &\& c \& d = \omega
+\end{align}
+
 \subsubsection{Subsubsection is here: a figure}
 Figure:
 
+
+\blindtext[2]
+
+
+\begin{figure}[H]
+\caption{This is figure title}
 \includegraphics{../../figures/beta-vs-mu.png}
+\end{figure}
 
-citation:
-\cite{Cieslak2019}
+\blindtext[1]
 
-\printbibliography
+\begin{figure}[H]
+\caption{This is figure title}
+\includegraphics{../../figures/beta-vs-mu.png}
+\end{figure}
+
 
 \end{document}
