@@ -6,12 +6,13 @@
   - [installation](#installation)
   - [packages](#packages)
   - [text editor](#text-editor)
+- [overleaf](#overleaf)
 - [workflow](#workflow)
 - [document structure](#document-structure)
 - [bibliography](#bibliography)
-  - [structuring the database](#structuring-the-database)
-  - [importing .bib files](#importing-bib-files)
-  - [inserting the .bib database](#inserting-the-bib-database)
+  - [structure](#structure)
+  - [maintenance](#maintenance)
+  - [implementation](#implementation)
 - [useful tricks](#useful-tricks)
 - [beamer](#beamer)
 - [resources](#resources)
@@ -60,7 +61,7 @@ Optionally, install:
 *   [ghostscript](https://ghostscript.com/download/gsdnld.html) to preview equations in Sublime Text;
 *   [ImageMagick](http://www.imagemagick.org/script/download.php) to preview figures (don't forget to check the box `Add application directory to your system path`).
 
-## Overleaf
+## overleaf
 [Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) is a great online tool allowing to create TeX documents. They have nice tutorials and tons of different templates and examples which you can modify and accommodate to your needs.
 
 ## workflow
@@ -184,6 +185,8 @@ More elaborate examples are in the [package documentation](https://ctan.org/pkg/
 2.  Setup Sublime Text for LaTeXing, including graphics preview and inverse search;
 3.  Install, if not present already, packages `threeparttable` and `blindtext`;
 4.  Create folder `text/` with subfloders `paper/` and `presentation/`;
+5.  Install JabRef;
+6.  Locate the DOI of Milgrom's paper 'A Theory of Auctions and Competitive Bidding' and use it to auto-parse the info to JabRef;
 4.  Create a `.bib` file with two entries, a [published paper](https://www.journals.uchicago.edu/doi/10.1086/707735) and a [working paper](https://ssrn.com/abstract=3555917);
 4.  Create a simple article consisting of:
     *   title page with title, author(s), affiliation(s), date, abstract and thanks;
