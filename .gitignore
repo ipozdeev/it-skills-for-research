@@ -27,3 +27,6 @@ latex-templates/**/*.pdf
 *.Rhistory
 *.dcf
 .Rproj.user
+
+# groups
+groups.txt
