@@ -138,7 +138,7 @@ Putting data into the DB and updating it would be done in a similar way.
 You would be surprised, but `.csv` (or `.xml` or `.json` or any text file for that matter) might be not the best format to choose for storing your data. Sure, it is human-readable, Excel-readable and shareable, but also bulky, slow to input/output and subject to comma vs. dot and similar problems. Some alternatives are:
 
 ### serialization of dataframes
-Serialization is the action of transfoming an object to a string of bytes from which it is possible to uniquely recover the object. It is a quick solution to preserve the data as it appears in your code, fast and relatively memory efficient, but not shareable across languages.
+Serialization is the action of transforming an object to a string of bytes from which it is possible to uniquely recover the object. It is a quick solution to preserve the data as it appears in your code, fast and relatively memory efficient, but not shareable across languages.
 - Python: [pickle](https://docs.python.org/3/library/pickle.html)
 - R: [serialize](https://stat.ethz.ch/R-manual/R-devel/library/base/html/serialize.html)
 
@@ -156,6 +156,12 @@ Serialization is the action of transfoming an object to a string of bytes from w
 
 ## example: SQL database
 to be discussed in a separate section
+
+## exercises
+1.  create file structure for a database of your own...
+2.  ...keeping upstream separate from downstream;
+3.  take a look at [iexfinance](https://addisonlynch.github.io/iexfinance/)'s api;
+4.  play around with writing to and reading from different data formats.
 
 <!-- ### SQL database
 In what follows we will discuss how to set up an own SQL database and serve it locally for research purposes. It does not always pay off to set up an own database, as fixed costs are rather high, but when it is up and running, the convenience of having it rapidly becomes noticeable. A good case for doing this is when large amounts of relational data of different data types are involved and a quick and memory-efficient data retrieval routine is desired.
