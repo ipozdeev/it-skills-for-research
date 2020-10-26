@@ -18,6 +18,7 @@ latex-templates/**/*.pdf
 *.bcf
 *.blg
 *.dvi
+*.bak
 *.run.xml
 
 # R
@@ -30,3 +31,8 @@ latex-templates/**/*.pdf
 
 # groups
 groups.txt
+
+# file formats examples dfs
+src/
+!src/*.py
+!src/*.R
