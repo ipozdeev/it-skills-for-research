@@ -5,12 +5,17 @@
 - [introduction](#introduction)
 - [downstream](#downstream)
   - [memoization](#memoization)
+  - [chunking](#chunking)
 - [upstream](#upstream)
   - [api](#api)
 - [database](#database)
   - [database api structure](#database-api-structure)
   - [example: folder with text files](#example-folder-with-text-files)
-  - [example: SQL database](#example-sql-database)
+- [data file formats](#data-file-formats)
+  - [serialization of dataframes](#serialization-of-dataframes)
+  - [HDF](#hdf)
+  - [feather](#feather)
+- [example: SQL database](#example-sql-database)
 
 <!-- /TOC -->
 
@@ -21,6 +26,7 @@ If your project is at least partially has to do with data manipulation, it is in
 Similar to oil, you can think of two steps it takes for data to enter your calculations:
 *   **upstream**: raw data from a data supplier enters your machine;
 *   **downstream**: data is delivered to your programs which process it.
+
 Sometimes the two are merged into one, but it is in general a good idea to keep them separate.
 
 ## downstream
@@ -65,13 +71,16 @@ def expensive_function():
 
 For R, [memoise](https://cran.r-project.org/web/packages/memoise/index.html) is one solution, although this we cannot vouch for.
 
+### chunking
+Sometimes (with machine learning, for instance) the data needed for a task is comparable to the RAM of your machine. When this happens, it becomes infeasible to load it all into the memory, and _chunking_ is needed. In most languages, _chunking_ is implemented as a [generator](https://en.wikipedia.org/wiki/Generator_(computer_programming)) and constitutes repeated calls to a database. See, for instance, `chunksize` parameter in `pandas` IO section.
+
 ## upstream
 ### api
 A common way to have data ready for manipulation is to download it to a `.csv` or `.xlsx` before reading in into the software of choice such as R or Julia. However, some data suppliers allow to skip the (rather cumbersome and often costly) intermediate step and streamline data retrieval by providing what is called an application programming interface, or API. For a website such as **quandl** or **WRDS**, the API usually gives the user access to a text file located under a URL link and containing the desired data.
 
 As an example, let us take a look at [**quandl**](https://www.quandl.com/tools/api), where section 'API Features' provides the details, and at the [**IMF**](http://datahelp.imf.org/knowledgebase/articles/667681-json-restful-web-service).
 
-Since these are just text documents, you would have to write wrapper functions to further ease the upstream. More often than not however (all hail the XXI century), someone would have already written these functions for your favorite language, probably even the data supplier themselves. For example, **quandl** provides [libraries for Python](https://www.quandl.com/tools/python) &ndash; collections of wrappers to ease your access to their data. The **IMF**, on the other hand, did not bother, but helpful tips prepared by other users are available from [here and there](https://www.bd-econ.com/imfapi1.html).
+Since these are just text documents, you would have to write wrapper functions to further ease the upstream. More often than not however (all hail the XXI century), someone would have already written these functions for your favorite language, probably even the data supplier themselves. For example, **quandl** provides [libraries for Python](https://www.quandl.com/tools/python) &ndash; collections of wrappers to ease your access to their data. The **IMF**, on the other hand, did not bother, but helpful tips prepared by other users are available [here and there](https://www.bd-econ.com/imfapi1.html).
 
 
 ## database
@@ -125,7 +134,27 @@ def fetch_fx_data(subset, s_dt="1960", e_dt="2020"):
 ```
 Putting data into the DB and updating it would be done in a similar way.
 
-### example: SQL database
+## data file formats
+You would be surprised, but `.csv` (or `.xml` or `.json` or any text file for that matter) might be not the best format to choose for storing your data. Sure, it is human-readable, Excel-readable and shareable, but also bulky, slow to input/output and subject to comma vs. dot and similar problems. Some alternatives are:
+
+### serialization of dataframes
+Serialization is the action of transfoming an object to a string of bytes from which it is possible to uniquely recover the object. It is a quick solution to preserve the data as it appears in your code, fast and relatively memory efficient, but not shareable across languages.
+- Python: [pickle](https://docs.python.org/3/library/pickle.html)
+- R: [serialize](https://stat.ethz.ch/R-manual/R-devel/library/base/html/serialize.html)
+
+### HDF
+[HDF](https://www.hdfgroup.org/solutions/hdf5/) is a format for storing hierarchical data. It is best suited for large (even gigantic) organized and reasonably stationary (not changing too frequently) datasets and allows to store metadata. HDF lets you query data in chunks in a memory-efficient way and is shareable across languages. On the other hand, it is somehwat inflexible (hard to recover space after deleting data).
+
+- Python: `h5py` + support in `pandas`
+- R: `rhdf5`
+
+### feather
+[Feather](https://arrow.apache.org/docs/python/feather.html) is a language-agnostic data frame storage. Not possilbe to read in chunks, but handy for those working with R, Python and Julia at the same time.
+
+- Python: `pyarrow` + support in `pandas`
+- R: `arrow`
+
+## example: SQL database
 to be discussed in a separate section
 
 <!-- ### SQL database
