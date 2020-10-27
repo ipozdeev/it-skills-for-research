@@ -72,7 +72,7 @@ def expensive_function():
 For R, [memoise](https://cran.r-project.org/web/packages/memoise/index.html) is one solution, although this we cannot vouch for.
 
 ### chunking
-Sometimes (with machine learning, for instance) the data needed for a task is comparable to the RAM of your machine. When this happens, it becomes infeasible to load it all into the memory, and _chunking_ is needed. In most languages, _chunking_ is implemented as a [generator](https://en.wikipedia.org/wiki/Generator_(computer_programming)) and constitutes repeated calls to a database. See, for instance, `chunksize` parameter in `pandas` IO section.
+Sometimes (with machine learning, for instance) the amount of data needed for a task is comparable to the amount of RAM on your machine. When this happens, it becomes infeasible to load the complete dataset into the memory, and _chunking_ is needed. In most languages, _chunking_ is implemented as a [generator](https://en.wikipedia.org/wiki/Generator_(computer_programming)) and constitutes repeated calls to a database. See, for instance, `chunksize` parameter in `pandas` IO section.
 
 ## upstream
 ### api
@@ -162,40 +162,3 @@ to be discussed in a separate section
 2.  ...keeping upstream separate from downstream;
 3.  take a look at [iexfinance](https://addisonlynch.github.io/iexfinance/)'s api;
 4.  play around with writing to and reading from different data formats.
-
-<!-- ### SQL database
-In what follows we will discuss how to set up an own SQL database and serve it locally for research purposes. It does not always pay off to set up an own database, as fixed costs are rather high, but when it is up and running, the convenience of having it rapidly becomes noticeable. A good case for doing this is when large amounts of relational data of different data types are involved and a quick and memory-efficient data retrieval routine is desired.
-
-Let us suppose you are doing research on stocks. You think you would need to identify stocks by the issuer company's name and filter by the company's market capitalization (e.g. take 100 largest companies). You would want to pull time series data of stock prices. Hence, your requirements include the following:
-*   store numeric data (prices, market cap);
-*   store date-like data (observations dates);
-*   store text data (company names);
-*   map stocks to companies and vice versa.
-
-Is this a good case for an own DB? Probably, yes, since 1) there are thousands of stocks in CRSP with thousands of date-value pairs; 2) multiple datatypes are involved (numeric, date, string) and 3) there is a relation to be imposed (one company -> many stocks, one stock -> one company).
-
-On the other hand, -->
-
-<!-- ## three forms of project data
-### final form
-In most projects, the destination point is publication, defined broadly as something aimed at communicating the results to an audience. This can be a journal article, a presentation at a conference or a memo to yourself &ndash; in any way, there are likely to be figures and tables involved. **The third, or final, form** of project data is the data which is plotted, summarized and tabulated nigh the destination. This is usually the most important data in your project, since it conveys the results of your work, but also the most processed and the most subject to change. Let us say, there is Figure 1 and Table 1 in your research. They were most probably produced similar to the following:
-```python
-def figure_1(data, parameters):
-  plot(data, parameters)
-  ...
-
-def table_1(data, parameters):
-  s_data = summarize(data)
-  s_data.to_latex()
-  ...
-```
-The data that goes into these tables is in the final form. It will probably change not once or twice, for the reason of data updates alone, which would result in new figures and tables. It is a good idea to store this data for the following becomes easier:
-1.  redraw pictures and rewrite tables using a different style or format;
-2.  address audience's questions and comments, such as 'what happened in March 2020?' etc.;
-3.  share data with whoever (including the future you!) would like to use it, e.g. to check if your policy uncertainty measure is correlated with their option-implied volatility.
-
-### raw form
-Raw data comes from data providers and open sources. It is the data over which you have no control: stock quotes, quarterly GDP values, tweets, satellite images and so on. It is a good idea to store this data locally unless the data provider forbids it explicitly, and in any case, you should store raw data only in its unchanged form, unless the transformation you apply before storing is fully reversible (examples of non-reversible transformations are resampling, aggregation and differencing).
-
-### intermediate form
-All data between the raw and final forms counts as intermediate. In general, you would want to store it only if the calculations leading to its acquisition are too time-consuming to be repeated. -->
