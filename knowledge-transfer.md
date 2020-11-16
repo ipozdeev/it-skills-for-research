@@ -10,22 +10,30 @@ The audience start asking questions:<br>
 &ndash; What is the stock over there with 60% average return? <br>
 &ndash; How would excluding this stock change the results?
 
-Later, someone writes you claiming that they cannot reproduce the results. Have you used the data from `Yahoo`? Did you include the constant in your regression?
+Answering these questions has a flair of sharing your _research flow_ rather than just the results, and indeed, if you could teach the audience to re-tread your path, they would be able to answer all the above question themselves &ndash; and more, they would be able to _reproduce_ your findings.
 
 In this chapter we will discuss some modern alternatives to the black-and-white paper (beyond the paper in color) and where the concept of open source fits into the academic game.
+
+## coding environment
+First, let us talk about how to share which software you use. This might be a non-trivial task if you are developing in `Python` or `R` and clearly relying on interdependent packages. A snapshot of these packages constitutes you working _environment_, and a precise description thereof is as essential for anyone interested in replicating your research as the data and the code itself.
+
+In `R`, a good solution is [`packrat`](http://rstudio.github.io/packrat/). When in the project folder, executing `packrat::init()` tells the library to create folder `packrat/` with a bunch of configuration files and to relocate your current working environment to this folder (it has familiar the `lib/`, `bin/` etc.). From now on, the packages that you once installed in the home `R` folder are ignored, and the ones you will install appear in `packrat/lib/`. More in [this great SE answer](https://stackoverflow.com/a/38949039/2835160).
+
+In Python, you would normally use a virtual environment to be easily created with [`venv`](https://docs.python.org/3/library/venv.html#module-venv) or [`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
+
 
 ## interactive apps
 ### R shiny
 What if you could make the chart able to answer these questions, as showcased in this `R shiny` app: [https://ipozdeev.shinyapps.io/r-shiny-tutorial/](https://ipozdeev.shinyapps.io/r-shiny-tutorial/).
 
-An `R shiny` app is a webpage that contains `R` components. Attached to it a server with an open session of `R`, such that the moment the user changes inputs on the webpage, these changes are passed on to `R` and reflected in the output. `R shiny` apps wrap the functionality of `R` in a pretty HTML/CSS design without the coder having to know much of HTML and CSS. You can create an entire page using nothing but R!
+An `R shiny` app is a webpage that contains `R` components. Attached to it a server with an open session of `R`, such that the moment the user changes inputs on the webpage, these changes are passed on to `R` and reflected in the output. `R shiny` apps wrap the functionality of `R` in a pretty HTML/CSS design without the coder having to know much of HTML and CSS. You can create an entire page using nothing but `R`!
 
 For a researcher who uses `R` to do the coding, `R shiny` is a marginally inexpensive step to give voice to their research project.
 
 The following is based on the [video tutorial](https://shiny.rstudio.com/tutorial/) and [documentation](https://shiny.rstudio.com/articles/basics.html) you are encouraged to sit through.
 
 ### app structure
-Although there are several ways to create an R shiny app, we would not go beyond writing it familiarly in an `.R` script. This script almost always has the following basic structure:
+Although there are several ways to create an `R shiny` app, we would not go beyond writing it familiarly in an `.R` script. This script almost always has the following basic structure:
 ```
 library(shiny)
 
@@ -101,7 +109,7 @@ shinyApp(ui = ui, server = server)
 Instead of letting your findings talk back to audience, you might as well teach the audience how to replicate your findings. In 99% cases this is easily achieved with Jupyter Notebooks.
 
 ### what are (jupyter) notebooks?
-The Jupyter Notebook is a way for the coder to make guided tours through their work. It is an app that runs within a web browser and allows to create and share interactive documents that contain code, visualizations, equations and explanatory text. Jupyter has evolved from IPython and now accommodates many different programming languages: R, Julia, C++, etc. Jupyter is open source.
+The jupyter notebook is a way for the coder to make guided tours through their work. It is an app that runs within a web browser and allows to create and share interactive documents that contain code, visualizations, equations and explanatory text. Jupyter has evolved from IPython and now accommodates many different programming languages: `R`, `Julia`, `C++`, etc. Jupyter is open source.
 
 ### why jupyter?
 Notebooks are easy to share and are a perfect medium to communicate the exact step-by-step process leading to the results of a research project. Hence their importance for reproducibility. Notebooks are interactive and hence provide a high didactic value allowing the target audience to better grasp the core concepts of research given hands-on examples. Notebooks are a promising alternative to slides-based presentations, just as interactive apps are to papers.
@@ -109,9 +117,9 @@ Notebooks are easy to share and are a perfect medium to communicate the exact st
 For example, [the transformer architecture](https://arxiv.org/abs/1706.03762) currently dominates other models in many natural language processing tasks. The original paper, however, is extremely dense and would take days to replicate from scratch. Fortunately, Alexander Rush from the Harvard NLP team implemented the paper line-by-line in a [jupyter notebook](https://nlp.seas.harvard.edu/2018/04/03/attention.html).
 
 ### installation
-To run jupyter notebooks you need a Python installation. The recommended way is to install Anaconda distribution which comes with pre-packaged jupyter along with a suite of tools for data science.
+To run `jupyter` notebooks you need a `Python` installation. The recommended way is to install Anaconda distribution which comes with pre-packaged `jupyter` along with a suite of tools for data science.
 
-To register additional kernels, e.g. R, you would need to install them from the language interpreter and make known to jupyter:
+To register additional kernels, e.g. `R`, you would need to install them from the language interpreter and make known to `jupyter`:
 ```
 install.packages("IRkernel")
 IRkernel::installspec()
@@ -128,5 +136,10 @@ Happy coding!
 TBA
 
 ## exercises
-1.  Add another input control to the `r-shiny-tutorial` app to add/exclude stocks from the OLS estimation and plot;
-2.  Create a jupyter notebook
+1.  Create a pip/conda (`packrat`) environment if using `Python` (`R`);
+2.  Think how you would export this environment to another computer;
+3.  Clone/update `digital-tools-for-finance` repo and use `packrat` to install the dependencies needed to run the app in `r-shiny-tutorial/`;
+4.  Create a virtual environment with `venv` or `conda` and export it to a `.txt` file;
+1.  Add another input control to the `r-shiny-tutorial` app to add/exclude stocks from the OLS estimation and chart;
+2.  Create a jupyter notebook, produce some output.
+3.  Save, commit and push the notebook to Github; make sure it appears there with the output.
