@@ -72,7 +72,7 @@ def expensive_function():
 For R, [memoise](https://cran.r-project.org/web/packages/memoise/index.html) is one solution, although this we cannot vouch for.
 
 ### chunking
-Sometimes (with machine learning, for instance) the amount of data needed for a task is comparable to the amount of RAM on your machine. When this happens, it becomes infeasible to load the complete dataset into the memory, and _chunking_ is needed. In most languages, _chunking_ is implemented as a [generator](https://en.wikipedia.org/wiki/Generator_(computer_programming)) and constitutes repeated calls to a database. See, for instance, `chunksize` parameter in `pandas` IO section.
+Sometimes (in machine learning applications, for instance) the amount of data needed for a task becomes large relative to the amount of RAM on your machine. When this happens, loading the complete dataset into the memory is no longer an option, and _chunking_ is needed. In most languages, _chunking_ is implemented as a [generator](https://en.wikipedia.org/wiki/Generator_(computer_programming)) and constitutes repeated calls to a database. See, for instance, `chunksize` parameter in `pandas` IO section.
 
 ## upstream
 ### api
