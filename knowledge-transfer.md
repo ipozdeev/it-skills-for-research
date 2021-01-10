@@ -118,11 +118,17 @@ For example, [the transformer architecture](https://arxiv.org/abs/1706.03762) cu
 
 ### installation
 To run `jupyter` notebooks you need a `Python` installation. The recommended way is to install Anaconda distribution which comes with pre-packaged `jupyter` along with a suite of tools for data science.
-
 To register additional kernels, e.g. `R`, you would need to install them from the language interpreter and make known to `jupyter`:
 ```
 install.packages("IRkernel")
 IRkernel::installspec()
+```
+
+If you are using a python environment, say, `fresh-crisp-env`, which is not visible among the kernels in jupyter, you should register the corresponding kernel first:
+```
+conda activate fresh-crisp-env
+conda install ipykernel
+python -m ipykernel install --user --name fresh-crisp-env
 ```
 
 For other configurations check [the official documentation](https://jupyter.org/install).
