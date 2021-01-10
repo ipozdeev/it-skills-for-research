@@ -29,8 +29,10 @@ latex-templates/**/*.pdf
 *.dcf
 .Rproj.user
 
-# groups
+# course-related
 groups.txt
+submissions-2020
+grading-checklist.txt
 
 # file formats examples dfs
 src/
