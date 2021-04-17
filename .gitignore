@@ -33,6 +33,7 @@ latex-templates/**/*.pdf
 groups.txt
 submissions-2020
 grading-checklist.txt
+todo.txt
 
 # file formats examples dfs
 src/
