@@ -2,30 +2,47 @@
 
 ## introduction
 
-In addition to the functionality of downloading stuff from their website, some data vendors would provide a *data API*.
+In addition to the functionality of bulk downloading data, some websites would provide a *data API*.
 
-API stands for 'application programming interface'. Think about user interface (UI), which is anything that helps the end user get non-sophisticated access to sophisticated technology; API helps applications (=programs) to get access to server resources via HTTP. The latter part means that API requests are sent as familiar `http://` links &ndash; possibly even through your web browser.
+API stands for 'application programming interface'. Think about user interface (UI), which is an abstraction that helps a user get easy access to sophisticated technology; API is a similar abstraction that helps applications (=programs) to get access to server resources. Here, we will cover HTTP-based APIs, meaning that requests are sent as familiar `http://` links &ndash; and hence can be handled even through your web browser.
 
-Why does it work? First, note that whenever you follow an ordinary url such as [https://fred.stlouisfed.org/](https://fred.stlouisfed.org/), what you really do is send a request to a remote server, to which the server responds by sending you back some HTML code plus some data which your browser renders as a webpage for you to see. In the same way, if you follow a special url such as
+Why does it work? First, note that whenever you click on an ordinary URL link such as [https://fred.stlouisfed.org/](https://fred.stlouisfed.org/), what you really do is send a request to a remote server, to which the server responds by sending you back some HTML code and data which your browser renders as a webpage for you to see. In the same way, if you follow a special link such as
 [https://api.stlouisfed.org/fred/series/observations?series_id=DGS10](https://api.stlouisfed.org/fred/series/observations?series_id=DGS10)
-the server might respond with giving you data from its database. It is the task of the server developer to write an API which people can use to access the data behind the curtains.
+the server might respond by sending you data from its database. It is the task of the server developer to write an API which can be used to access the data behind the curtains.
 
-If for some reason you need the freshest data possible, or would like to automate data upstream without necessity to click on buttons, the API comes in handy.
+API comes in handy for those who would frequently need the freshest data possible or would like to automate data upstream without necessity to click on buttons.
 
-In what follows we will get familiar with the [FRED API](https://fred.stlouisfed.org/) and code our own wrapper for it to be able to just
+In what follows we will get familiar with the [Kraken API](https://docs.kraken.com/rest/) and code our own wrapper for it to be able to simply run
 ```python
-data = get_fred_data("DGS10")
+data = get_trades("XBT", since="2020-01-15")
 ```
-every time we need the latest US 10-year Treasury yield.
+every time we need Bitcoin trades details.
 
 ## before we start
-[postman]() is an app that can be used to peek into api requests
+[postman]() is an app that can be used to peek into API requests and is a good choice for educational purposes.
 
 
 ## terminology
-*   root url
-*   endpoint
-*   request
-*   response
-*   parameters
-*   authorization
+*   **request**: what you send to the server; set of instructions in the form of a link, e.g. `https://api.kraken.com/0/public/Trades?pair=XBTUSD` which tells the server what you want to retrieve;
+*   **response**: what the server sends back; most frequently a dictionary-like JSON object containing the error message and the payload;
+*   **error code**: a brief message about how the request was processed. Some examples for HTTP-based APIs can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status). The two most popular ones are error code `200` meaning no error and `400` meaning bad request (usually dues to typos or misspecification of parameters);
+*   **root URL**: the address that all requests of an API will start with. In analogy with SQL, the root URL is a database. For instance, `https://api.kraken.com/0/public` is the root URL to the public data database containing OHLC data, recent trades etc. as _endpoints_;
+*   **endpoint**: defined location of a particular dataset. In analogy with SQL, an endpoint is a table within a database. For instance, relative to the root, `/OHLC` identifies the point of access to the OHLC data;
+*   **parameters**: specifications to a request. In SQL, these could be the `SELECT...` and `WHERE...` part of the query. Parameters are separated from the endpoint with the question mark sign `?`and from each other with the ampersand `&`. Some parameters are required: omitting them would lead to a bad request, &ndash; while others are optional.
+*   **authorization**: some requests cannot be fulfilled without authorization. For instance, if you would like to place trade orders from your account using an API, you must prove your identity first. This can be done via several methods which we won't discuss here.
+
+
+## implementation
+Jupyter notebook `api-example.ipynb` in folder **jupyter** contains clickable Python code for the following.
+
+### stating a request
+As stipulated in the API documentation, the `Trades` endpoint gives access to 1000 trades involving a given currency since a given date. Navigating to the [Trades section](https://docs.kraken.com/rest/#operation/getRecentTrades) of the API documentation, we see what must be included in the request to retrieve this data and which elements a successful response would contain.
+
+Again, the API request is just a text link sent to the Kraken server; we construct it from the root URL `https://api.kraken.com/0/public`, the endpoint `/Trades` the and parameters `pair` and `since`. To retrieve Bitcoin Cash data since 2020/01/25 15:15:00
+we first note that the pair must be specified as `XXXYYY` and that parameter `since` must be a [UNIX time](https://en.wikipedia.org/wiki/Unix_time). Hence, the link is constructed as `pair=BCHUSD&since=1579961700`.
+
+### sending the request
+Sending the request can be done by following the link in your web browser (try it!) or with Python's `requests` library, or any other similar library in your software of choice. The response generated by the server takes the form described in the API documentation and contains the error message (hopefully code 200) and the data hidden in JSON notation under `["result"]["BCHUSD"]`.
+
+
+## exercises
