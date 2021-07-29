@@ -1,6 +1,5 @@
 # writing with latex
 <!-- TOC -->
-
 - [basics](#basics)
 - [setup](#setup)
   - [installation](#installation)
@@ -17,23 +16,36 @@
 - [beamer](#beamer)
 - [resources](#resources)
 - [exercises](#exercises)
-
 <!-- /TOC -->
-## basics
-LaTeX is a *typesetting system* used to translate plain text into pretty documents. It separates content and form, encouraging the author to concentrate on the former, while letting the LaTeX handle the latter. You can think here of a standard author-publisher relation: Stephen King types a masterpiece on a typewriter not heedful of font sizes, header transparency, footnote separators or the like, then sends his manuscript to a publisher who takes care all the above details.
 
-> Is it a program, a language or what?
+## introduction
+Any text document you encounter (including the one you are reading now) can be broken down into plain text and formatting.
 
-Sort of a program. It is a convenient collection of TeX macros used to format text, TeX being a lower-level typesetting system with an integrated macro scripting language. The whole game started with TeX many years ago, but for everyday use TeX is too much flexibility and too little user friendliness, so easier-to-use packaged pieces of TeX programming instructions started to appear, LaTeX being one of them. It contains pre-written routines you can use to change fonts, add section headers, insert hyperlinks etc. &ndash; without LaTeX you would have to write TeX code for every such action. Collections like LaTeX are also called *formats*.
+Plain text is *what we write* &ndash; the content of the document. Formatted text on the other hand is *what we read* &ndash; the content plus the form, where the latter is chosen in a way as to allow the former to best serve its purpose. It is only rarely &ndash; e.g. as computer code or a manuscript fresh off of a typewriter &ndash; that the two coincide.
 
-On a higher level still, there are *TeX distributions*, which are structured collections of stuff beyond a format someone thought you might need when typesetting. A typical TeX distribution such as *MiKTeX* or *TeX Live* includes formats ( e.g. LaTeX), languages, many fonts, environments for specific tasks, helper programs such as bibliography formatters, pdf creators, even text editors and much more. Distributions differ in the degree of security (writability to certain locations, susceptibility to viral attacks), user interface (GUI or command line), platform friendliness (some work better on Windows), amount of packages installed by default and so on. We will be using [MiKTeX](https://miktex.org/) which is slightly better optimized for Windows, but suffers from security problems. If you value security too much, it is a better idea to switch to TeX Live.
+Separating content and form has many benefits (think of several yourself!) and is possible thanks to typesetting systems such as LaTeX. LaTeX workflow requires you to write plain text interspersed with formatting commands (which are but plain text themselves) using your favorite text editor, then merge the text and format by compiling the document using a TeX engine.
 
-Separate collections of macros, usually serving one purpose, e.g. to insert a figure, are distributed as *packages*. Packages are add-ons which fill a gap here and there. One frequently used package is *graphicx*.
+Note that this workflow is different from using a word processor such as MS Word or LibreOffice Writer which let you decide on the formatting and apply it on-the-fly. Although this might seem as a more convenient route, separating content from form is the serious-level standard and does result in better publications.
+
+## terminology
+When you say 'I am using LaTeX for my thesis', what you mean is that you are using a special system of commands called LaTeX to set the formatting of your thesis. These commands that you place here and there in the body of the text will be interpreted by a TeX engine to apply the formatting and produce a readable document. You can use a different system instead of LaTeX, but LaTeX is the predominant choice. Similarly, you can use one of many engines to execute the commands.
+
+This way, LaTeX is what is called a *format*: a convenient collection of macros (programming instructions) written in the programming language called TeX. TeX has been around for years, but is a little too flexible and complex for everyday tasks, which is why people have collected many frequently used TeX macros, e.g. those that change fonts and insert hyperlinks, and bundled them together to produce LaTeX and other formats. Without the latter you would have to write TeX code for every piece of formatting.
+
+A format alone is not enough: as mentioned previously an engine is also required. To name a popular one, *pdfLaTeX* would compile a document typeset in LaTeX to produce a pdf. 
+
+For better typesetting experience, other software might come in handy, e.g. a bibliography formatter or graphics manipulation program. When all things necessary to transform an idea into a readable document are bundled together, a *TeX distribution* appears. Two distributions are currently maintained as open source: [MiKTeX](https://miktex.org/) and [TeX Live](https://www.tug.org/texlive/), but there are probably others maintained in corporations and universities. Of the two mentioned, [MiKTeX](https://miktex.org/) is claimed to be better optimized for Windows but to suffer from security problems; when on Linux or when security is key, [TeX Live](https://www.tug.org/texlive/) might be a better option.
+
+Separate collections of macros designed to perform specific tasks (e.g. to insert a figure) within a specific format are called *packages*. These can be thought of as add-ons which fill a gap here and there.
 
 See [resources](#resources) for more info.
 
 ## setup
-We will be using MiKTeX distribution and write text in Sublime, compiling from within it.
+The route from an idea to a .pdf goes as follows:
+*   Write plain text consisting of the content and macros laying out the formatting;
+*   Compile with an engine to apply the formatting.
+
+As an illustration, we will be writing plain text in Sublime and using pdfLaTeX to compile it. Instead of executing commands in the console, we will rely on Sublime's LaTeXTools package which implements a builder that runs all the necessary commands for us. Feel free to use any other option.
 
 ### installation
 A detailed guide for installing and configuring LaTeX and Sublime text can be found in the `/latex/configuring_latex_and_sublime_on_windows/` directory. A short summary for the MiKTeX part is below:
@@ -41,13 +53,13 @@ A detailed guide for installing and configuring LaTeX and Sublime text can be fo
 *   download MiKTeX Net Installer from [here](https://miktex.org/download), from tab 'All downloads';
 *   run the installer, choose `Download MiKTeX`, then `Complete MiKTeX` when prompted;
 *   run the installer again but this time choose `Install MiKTeX`, then `Complete MiKTeX`, then `Install MiKTeX for anyone who uses this computer`; in the `Install MiKTeX from` field choose the folder you previously downloaded the MiKTeX files to; choose to indeed `Install missing packages on-the-fly`;
-*   (optional, but useful) [create a local TeXMF folder](https://tex.stackexchange.com/questions/69483/create-a-local-texmf-tree-in-miktex) &ndash; a folder where you would be able to *manually* install LaTeX packages (see [packages](#packages) below).
+*   (optional, but useful) [create a local TeXMF folder](https://tex.stackexchange.com/questions/69483/create-a-local-texmf-tree-in-miktex) &ndash; a folder where you would be able to manually install missing LaTeX packages.
 
 
 ### packages
-To install an additional package, e.g. [`threeparttable`](https://ctan.org/pkg/threeparttable?lang=en), just open the MiKTeX console, navigate to `Packages` tab and type in the name of the package, then click the `+` button to install it.
+There are two ways to install additional packages. The easy way is to use the package manager: open the MiKTeX console, navigate to tab `Packages` and type in the name of the package, then click the `+` button to install it. This works for most packages, e.g. [`threeparttable`](https://ctan.org/pkg/threeparttable?lang=en). 
 
-If you cannot see the package there, it is not part of the distribution, and you would have to install it manually. The package might come as one or a bundle of files such as `.sty`. In this case, the installation is a bit trickier, please see [this thread](https://tex.stackexchange.com/questions/2063/how-can-i-manually-install-a-package-on-miktex-windows) for reference.
+Packages that are not available through the package manager &ndash; e.g. those written by nobody else but you and/or distributed as files with extension `.sty` &ndash; can still be installed manually, although the process is a bit trickier. Please see [this thread](https://tex.stackexchange.com/questions/2063/how-can-i-manually-install-a-package-on-miktex-windows) for reference.
 
 
 ### text editor
