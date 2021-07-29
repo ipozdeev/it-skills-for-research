@@ -1,7 +1,11 @@
 # writing with latex
 <!-- TOC -->
+<<<<<<< HEAD
 - [introduction](#introduction)
 - [terminology](#terminology)
+=======
+- [basics](#basics)
+>>>>>>> 3cda812ab2856a875fda78d8f9186d3bef86e72d
 - [setup](#setup)
   - [installation](#installation)
   - [packages](#packages)
