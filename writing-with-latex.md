@@ -1,85 +1,66 @@
 # writing with latex
+
 <!-- TOC -->
-<<<<<<< HEAD
+
 - [introduction](#introduction)
 - [terminology](#terminology)
-=======
-- [basics](#basics)
->>>>>>> 3cda812ab2856a875fda78d8f9186d3bef86e72d
 - [setup](#setup)
-  - [installation](#installation)
-  - [packages](#packages)
-  - [text editor](#text-editor)
-- [overleaf](#overleaf)
+- [packages](#packages)
 - [workflow](#workflow)
-- [document structure](#document-structure)
 - [bibliography](#bibliography)
   - [structure](#structure)
   - [maintenance](#maintenance)
   - [implementation](#implementation)
 - [useful tricks](#useful-tricks)
 - [beamer](#beamer)
+- [custom classes and packages](#custom-classes-and-packages)
 - [resources](#resources)
 - [exercises](#exercises)
+
 <!-- /TOC -->
 
+
 ## introduction
-Any text document you encounter (including the one you are reading now) can be broken down into plain text and formatting.
+Any text document you encounter (including the one you are reading now) is a combination of plain text and formatting.
 
-Plain text is *what we write* &ndash; the content of the document. Formatted text on the other hand is *what we read* &ndash; the content plus the form, where the latter is chosen in a way as to allow the former to best serve its purpose. It is only rarely &ndash; e.g. as computer code or a manuscript fresh off of a typewriter &ndash; that the two coincide.
+Plain text is *what we write* &ndash; the content of the document. Formatted text on the other hand is *what we read* &ndash; the content plus the form, where the latter is chosen in a way as to allow the former to best serve its purpose. It is only rarely &ndash; e.g. as computer code or a manuscript fresh off of a typewriter &ndash; that the two are the same.
 
-Separating content and form has many benefits (think of several yourself!) and is possible thanks to typesetting systems such as LaTeX. LaTeX workflow requires you to write plain text interspersed with formatting commands (which are but plain text themselves) using your favorite text editor, then merge the text and format by compiling the document using a TeX engine.
+Separating content and form has many benefits (think of several yourself) and is possible thanks to typesetting systems such as LaTeX. LaTeX workflow requires you to write plain text interspersed with formatting commands (which are but plain text themselves) using your favorite text editor, then merge the text and formatting by compiling the document with a TeX engine.
 
-Note that this workflow is different from using a word processor such as MS Word or LibreOffice Writer which let you decide on the formatting and apply it on-the-fly. Although this might seem as a more convenient route, separating content from form is the serious-level standard and does result in better publications.
+Note that this workflow is different from using a word processor such as MS Word or LibreOffice Writer which make you apply the formatting on the fly. Although this might seem as a more convenient route, separating content from form is the serious-level standard and does result in better publications.
+
 
 ## terminology
-When you say 'I am using LaTeX for my thesis', what you mean is that you are using a special system of commands called LaTeX to set the formatting of your thesis. These commands that you place here and there in the body of the text will be interpreted by a TeX engine to apply the formatting and produce a readable document. You can use a different system instead of LaTeX, but LaTeX is the predominant choice. Similarly, you can use one of many engines to execute the commands.
+For someone to be 'using LaTeX for the thesis' means to be using a special system of commands called LaTeX to set the formatting of the thesis's text. These commands placed here and there in the `.tex` file will be interpreted by a TeX engine to apply the formatting and produce a readable document. LaTeX is not the only such system, but the most popular one. Similarly, there are several TeX engines to interpret the commands.
 
-This way, LaTeX is what is called a *format*: a convenient collection of macros (programming instructions) written in the programming language called TeX. TeX has been around for years, but is a little too flexible and complex for everyday tasks, which is why people have collected many frequently used TeX macros, e.g. those that change fonts and insert hyperlinks, and bundled them together to produce LaTeX and other formats. Without the latter you would have to write TeX code for every piece of formatting.
+LaTeX is what is called a *format*: a convenient collection of macros (programming instructions) written in the programming language called TeX. TeX has been around for years, but is a little too flexible and complex for everyday tasks, which is why people have collected many frequently used TeX macros, e.g. those that change fonts and insert hyperlinks, and bundled them together to produce LaTeX and other formats. Without the latter you would have to write TeX code for every piece of formatting.
 
-A format alone is not enough: as mentioned previously an engine is also required. To name a popular one, *pdfLaTeX* would compile a document typeset in LaTeX to produce a pdf. 
+A format alone is not enough: as mentioned previously an engine is also required. To name a popular one, *pdfLaTeX* would compile a document typeset in LaTeX to produce a pdf.
 
-For better typesetting experience, other software might come in handy, e.g. a bibliography formatter or graphics manipulation program. When all things necessary to transform an idea into a readable document are bundled together, a *TeX distribution* appears. Two distributions are currently maintained as open source: [MiKTeX](https://miktex.org/) and [TeX Live](https://www.tug.org/texlive/), but there are probably others maintained in corporations and universities. Of the two mentioned, [MiKTeX](https://miktex.org/) is claimed to be better optimized for Windows but to suffer from security problems; when on Linux or when security is key, [TeX Live](https://www.tug.org/texlive/) might be a better option.
+For better typesetting experience, other software might come in handy, e.g. a bibliography formatter or graphics manipulation program. When all things necessary to transform an idea into a readable document are bundled together, a *TeX distribution* appears. Two distributions are currently maintained as open source: [MiKTeX](https://miktex.org/) and [TeX Live](https://www.tug.org/texlive/), but there may be others circulating in the private sector. Of the two mentioned, [MiKTeX](https://miktex.org/) is claimed to be better optimized for Windows but to suffer from security problems; when on Linux or when security is key, TeX Live might be a better option.
 
-Separate collections of macros designed to perform specific tasks (e.g. to insert a figure) within a specific format are called *packages*. These can be thought of as add-ons which fill a gap here and there.
+Separate collections of macros designed to perform specific tasks (e.g. to insert a figure) within a specific format are called *packages*. These can be thought of as add-ons filling a gap here and there.
 
 See [resources](#resources) for more info.
 
+
 ## setup
-The route from an idea to a .pdf goes as follows:
-*   Write plain text consisting of the content and macros laying out the formatting;
-*   Compile with an engine to apply the formatting.
+To get latexing up and running we would need a format, an engine, a bibliography processor (to be discussed later) and a text editor. Here, we will use LaTeX, pdfLaTeX, biber and Sublime Text with the excellent LaTeXTools package respectively, but feel free to use your own favorites instead.
 
-As an illustration, we will be writing plain text in Sublime and using pdfLaTeX to compile it. Instead of executing commands in the console, we will rely on Sublime's LaTeXTools package which implements a builder that runs all the necessary commands for us. Feel free to use any other option.
+Install and configure LaTeX and Sublime Text + LaTeXTools package as outlined in [setup guide](latex/setup.md#latex-installation-and-sublime-setup-guide-windows).
 
-### installation
-A detailed guide for installing and configuring LaTeX and Sublime text can be found in the `/latex/configuring_latex_and_sublime_on_windows/` directory. A short summary for the MiKTeX part is below:
-
-*   download MiKTeX Net Installer from [here](https://miktex.org/download), from tab 'All downloads';
-*   run the installer, choose `Download MiKTeX`, then `Complete MiKTeX` when prompted;
-*   run the installer again but this time choose `Install MiKTeX`, then `Complete MiKTeX`, then `Install MiKTeX for anyone who uses this computer`; in the `Install MiKTeX from` field choose the folder you previously downloaded the MiKTeX files to; choose to indeed `Install missing packages on-the-fly`;
-*   (optional, but useful) [create a local TeXMF folder](https://tex.stackexchange.com/questions/69483/create-a-local-texmf-tree-in-miktex) &ndash; a folder where you would be able to manually install missing LaTeX packages.
+[Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) is a great option: it is an online tool for learning TeX and creating documents. It features tons of different templates and examples which you can modify and accommodate to your needs.
 
 
-### packages
-There are two ways to install additional packages. The easy way is to use the package manager: open the MiKTeX console, navigate to tab `Packages` and type in the name of the package, then click the `+` button to install it. This works for most packages, e.g. [`threeparttable`](https://ctan.org/pkg/threeparttable?lang=en). 
+## packages
+If you would like to install a missing package, e.g. [`threeparttable`](https://ctan.org/pkg/threeparttable?lang=en), google it first. Almost all packages you will ever need are registered on [CTAN](https://ctan.org/); in this case, check if the package is contained in your distribution:
 
-Packages that are not available through the package manager &ndash; e.g. those written by nobody else but you and/or distributed as files with extension `.sty` &ndash; can still be installed manually, although the process is a bit trickier. Please see [this thread](https://tex.stackexchange.com/questions/2063/how-can-i-manually-install-a-package-on-miktex-windows) for reference.
+<img src="src/latex/package-on-ctan.png" width="500"/>
 
+With some luck, you would be able to install it the easy way through the package manager: open the MiKTeX console, navigate to tab `Packages` and type in the name of the package as it appears under 'Contained in' on CTAN, then click the `+` button to install it.
 
-### text editor
-If you have not already, install Sublime and package [LaTeXTools](https://latextools.readthedocs.io/en/latest/) which gives you code completions, highlighting, inline preview, compiling from the editor and a great amount of control when LaTeXing in general.
+Packages that are not available through the package manager &ndash; e.g. those written by you and/or distributed as files with extension `.sty` &ndash; can still be installed manually, although the process is a bit trickier. Please see [this thread](https://tex.stackexchange.com/questions/2063/how-can-i-manually-install-a-package-on-miktex-windows) for instructions.
 
-You will also need to install [Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader.html) to use preview the produced .pdf files and inverse search a place in .tex from the corresponding place in .pdf. For instructions how to set up inverse search (from the .pdf to the .tex) see [here](https://latextools.readthedocs.io/en/latest/install/#windows).
-
-Then, in the LaTeXTools package settings, navigate to section 'Build engine settings' and set 'builder' to 'basic'. Also, take time to read through what is written there. Basically, *building* is a bundle consisting of compiling the document, compiling the bibliography and producing the .pdf.
-
-Optionally, install:
-*   [ghostscript](https://ghostscript.com/download/gsdnld.html) to preview equations in Sublime Text;
-*   [ImageMagick](http://www.imagemagick.org/script/download.php) to preview figures (don't forget to check the box `Add application directory to your system path`).
-
-## overleaf
-[Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) is a great online tool allowing to create TeX documents. They have nice tutorials and tons of different templates and examples which you can modify and accommodate to your needs.
 
 ## workflow
 1. **Know your macros**. You are aware which macros produce the formats you need and in which packages those macros are to be found. For instance, multi-line equations require package *amsmath* and are inserted as follows:
@@ -88,7 +69,10 @@ Optionally, install:
 ...
 \end{gather}
 ```
-2.  **Write text**. Write plain text using a text editor of choice (Notepad, Sublime, Atom etc.) inserting macros to set formatting. A document might look as simple as:
+
+2.   **Follow the layout**. LaTeX documents are expected to be rigidly structured: please take a look at the [latex wiki](https://en.wikibooks.org/wiki/LaTeX/Document_Structure).
+
+3.  **Write text**. Write plain text inserting macros to set formatting. A document might look as simple as:
 ```latex
 \documentclass{article}
 \usepackage{amsmath}
@@ -99,21 +83,19 @@ Optionally, install:
 \end{gather}
 \end{document}
 ```
-3.  **Build**. To turn your collection of text and macros into a readable document, the file must be compiled by running it through a program such as `latex` (will produce a .dvi file) or `pdflatex` (will produce a .pdf). From whenever your .tex file is located, execute the following in the command line:
+
+4.  **Compile**. To turn your collection of text and macros into a readable document, the file must be compiled using an engine such as `latex` (will produce a `.dvi` file) or `pdflatex` (will produce a pdf). From whenever your `.tex` file is located, execute the following in the command line:
 ```
 pdflatex <filename>.tex
 ```
-to produce a readable .pdf. In Sublime with LaTeXTools installed, you can use `Ctrl+B` to build.
-
-Observe the separation here: you write the text, then compile it &ndash; which is tantamount to having the machine typeset it.
-
-## document structure
-LaTeX documents are expected to follows a certain layout. Please take a look at the [[latex wiki]](https://en.wikibooks.org/wiki/LaTeX/Document_Structure).
+to produce a readable pdf. In Sublime with LaTeXTools installed, you can use `Ctrl+B` instead.
 
 ## bibliography
-Bibliography is a collection of all references you cite in your work. As it is in general a bad idea to type citations by hand (there are too many of those, plus several other reasons), a better idea is to organize them in a well structured database and point to its entries whenever needed. In a LaTeX document, this is achieved using two things, which you will always encounter in discussions of bibliography: a backend processor such as _biber_ and a package providing bibliography formats such as _biblatex_. The former takes a bibliography database (usually a `.bib` file) and processes it to produce a TeX-conforming file (usually with extension `.bbl`), while the latter define macros used to place a citation, give a citation an ordinal number or create a hyperlink.
+Bibliography is a collection of all references you cite in your work. As it is in general a bad idea to type citations by hand (at the bare minimum to avoid awkward spelling errors), a better idea is to organize them in a well structured database and point to its entries whenever needed. In a LaTeX document, this is achieved using two things, which you will always encounter in discussions of bibliography: a backend processor such as _biber_ and a package providing bibliography formats such as _biblatex_. The former takes a bibliography database (usually a `.bib` file) and processes it to produce a TeX-conforming file (usually with extension `.bbl`), while the latter uses a format's macros to place, point to and and keep track of citations.
 
-We will be working with _biber_ and _biblatex_. The latter contains many possible bibliography formats, e.g. `bwl-FU`.
+<!-- TODO: how does biber work? -->
+
+We will be working with *biber* and *biblatex*. The latter contains many possible bibliography variants such as `bwl-FU`, differing in the way names are abbreviated and ordered, mnemonics defined etc.
 
 ### structure
 A bibliography database is saved as a `.bib` file and has entries of the form:
@@ -128,18 +110,22 @@ where
 *   `<FIELD>` is the name of one of many fields containing information about the source, e.g. `title` and `journal`;
 *   `<FIELD_VALUE>` is the field value.
 
-Look up the bib guide in [resources](/resources) for a broad overview of the structure of .bib files.
+Look up the bib guide in [resources](/resources) for a broad overview of the structure of `.bib` files.
 
 ### maintenance
 Surely, it is too time-consuming to manually type in every one of hundreds of bibliography entries you want to cite. More often than not however, you would be able to find citation info in the same place as the cited piece. Look for 'Export to BibTeX' or 'Cite this item' or similar. For instance:
 
-[https://www.nber.org/papers/w27638](https://www.jstor.org/stable/10.1086/605130 )
-![figures/bibtex-file-loc-example-nber.png](figures/bibtex-file-loc-example-nber.png)
+[https://www.nber.org/papers/w27638](https://www.nber.org/papers/w27638)
+
+<img src="src/latex/bibtex-file-loc-example-nber.png" width="500"/>
+
+or
 
 [https://www.jstor.org/stable/10.1086/605130](https://www.jstor.org/stable/10.1086/605130 )
-![figures/bibtex-file-loc-example-jstor.png](figures/bibtex-file-loc-example-jstor.png)
 
-`JabRef` is a nice little reference manager that helps the user collect and organize references. Among other things, it can boast an auto-collect feature based on document identifiers such as [*ISBN*](https://en.wikipedia.org/wiki/International_Standard_Book_Number) or [*DOI*](https://en.wikipedia.org/wiki/Digital_object_identifier). Take a look at the [user's guide](https://docs.jabref.org/) for more information.
+<img src="src/latex/bibtex-file-loc-example-jstor.png" width="500"/>
+
+*JabRef* is a nice little reference manager that helps the user collect and organize references. Among other things, it can boast an auto-collect feature based on document identifiers such as [*ISBN*](https://en.wikipedia.org/wiki/International_Standard_Book_Number) or [*DOI*](https://en.wikipedia.org/wiki/Digital_object_identifier). Take a look at the [user's guide](https://docs.jabref.org/) for more information.
 
 ### implementation
 Place biblatex package import statement in the [preamble](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Preamble) of the document, not forgetting to specify the parameters:
@@ -164,7 +150,8 @@ where it is supposed to appear.
 ## useful tricks
 *   package `threeparttable` and environment `tablenotes`;
 *   package `dcolumn` allowing to align columns on a separator, such as the decimal dot;
-*   package `endfloat` to push all figures and table to the end.
+*   package `endfloat` to push all figures and table to the end (please avoid it);
+*   integration with jupyter notebooks (to be discussed later).
 
 
 ## beamer
@@ -186,6 +173,11 @@ Package `beamer` provides functionality to create presentations with LaTeX. You 
 
 ```
 More elaborate examples are in the [package documentation](https://ctan.org/pkg/beamer?lang=en).
+
+
+## custom classes and packages
+If you are not happy with off-the-shelf solutions LaTeX has to offer or have a strong preference for individuality in design, you can write your own packages and classes and `\usepackage{}` or `\documentclasss{}` them in the preamble of the document. [Here](https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files) is a short explanation when to use which. A frequent reason to write a `.sty` is indeed:
+> [...] if a company needs branded reports that use a special font and have the logo of the company in the footer; you need a new class.
 
 
 ## resources
