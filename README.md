@@ -3,19 +3,22 @@ technical skills for academic research, finance-centric
 # table of contents
 | date    | topic
 | ----    | ----
-| sep 21  | [introduction](./introduction.md)
-| sep 28  | [version control](./version-control.md)
-| oct 5   | [collaboration tools](./collaboration-tools.md)
-| oct 12  | [writing with latex](./writing-with-latex.md) (p1)
-| oct 19  | [writing with latex](./writing-with-latex.md) (p2)
-| oct 26  | [data management](./data-management.md) (p1)
-| nov 2   | [data management](./data-management.md) (p2)
+| sep 20  | [introduction](./introduction.md)
+| sep 27  | [version control](./version-control.md)
+| oct 4   | [collaboration tools](./collaboration-tools.md)
+| oct 11  | [writing with latex](./writing-with-latex.md) (p1)
+| oct 18  | [writing with latex](./writing-with-latex.md) (p2)
+| oct 25  | [data management](./data-management.md) (p1)
+| nov 1   | [data management](./data-management.md) (p2)
 |         | feedback
-| nov 9   | [visualization](./visualization.md)
-| nov 16  | [knowledge transfer](./knowledge-transfer.md)
+| nov 8   | [visualization](./visualization.md)
+| nov 15  | [knowledge transfer](./knowledge-transfer.md)
+
+# midterm
+the midterm is there to make sure all the work is not being postponed until it is too late. please have the end-of-chapter exercises solved by the midterm date: a way for us to check them is to look at the commit history in the corresponding repository.
 
 # assignment
-the assignment should be completed by mid December (precise date to be announced shortly) in form of a project:
+the final assignment should be completed by mid December (precise date to be announced shortly) in form of a project:
 1. hosted as a single repository on Github;
 2. having a well defined and concise structure;
 3. having a history of commits and merges;
