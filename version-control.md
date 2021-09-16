@@ -29,11 +29,11 @@ Here, *free* means you do not have to pay for it; *open source* &ndash; that the
 The following is based on \[[atlassian](https://www.atlassian.com/git/tutorials)\] and \[[git-book](https://git-scm.com/book/en/v2)\].
 
 ## installation
-Follow the instructions on the webpage to install Git. Now, to operate Git you can be doing of the following:
-*   entering commands in the command line;
-*   relying on your favourite text editor's built-in Git integration;
-*   using a specialized third software.
-Choose whatever you like! In this tutorial, we will be using commands. Obviously, the same commands are executed by your favorite text editor or third software when you use those.
+Follow the instructions on the webpage to install Git. Now, to operate Git you can:
+*   enter commands in the command line;
+*   rely on your favorite text editor's built-in Git integration;
+*   use a specialized third software such as Sublime Merge.
+Choose whatever you like! In this tutorial, we will stick to the first option. Obviously, the same commands we will be executing power the Git features of your favorite text editor or third software.
 
 > \[[git-book](https://git-scm.com/book/en/v2)\] The first thing you should do when you install Git is to set your user name and email address.
 
@@ -51,7 +51,9 @@ git status
 Check the status after each of the following subsections!
 
 ## git areas
-As a useful abstraction, several areas in the git workflow can be defined: the sandbox, the staging area, the local repository and the remote repository. The sandbox is simply the files and folders of your project, untracked by default and hence the easiest to lose. Modifications to them overwrite each other until the files are made tracked with `git add`. After that the files receive the staging area label and are promised to be recorded as they looked at the time of running `git add` when `git commit` is executed later. The local repo label is applied to files with committed changes. These are easy to trace back. Finally, commits can be pushed to a remote repository to be made accessible to other contributors or recovered in case the local storage becomes inaccessible.
+As a useful abstraction, several areas in the git workflow can be defined: the sandbox, the staging area, the local repository and the remote repository. The sandbox is simply the files and folders of your project, untracked by default and hence the easiest to lose. Modifications to them overwrite each other until the files are made tracked with `git add`. After that the files receive the staging area label and are promised to be recorded in that state (at the time of running `git add`) when `git commit` is executed later. The local repo label is applied to files with committed changes; these are easy to trace back. Finally, commits can be pushed to a remote repository to be made accessible to other contributors or recovered in case the local storage becomes inaccessible.
+
+Right, there's also the stash area to keep those annoying files not ready to be staged or removed.
 
 ## tracking changes
 Create file `todo.txt` within the folder and write a line in it. As of yet, the file is part of the sandbox only; it is untracked and easy to mess up or lose: if you delete that first line and crash the editor, the line is gone forever. Make it tracked (known to Git):
@@ -84,7 +86,7 @@ Reason: I want to see what a file looked like at a particular point in time:
 ```
 git checkout <SHA> <filename>
 ```
-where `<SHA>` is the hash ID of a particular commit. At the beginner level of git proficiency this is only advised to look at the files, maybe run tests etc., eventually undoing all changes since `git checkout` and going back to the main development branch via `git checkout main`.
+where `<SHA>` is the hash ID of a particular commit. At the beginner level of Git proficiency this is only advised to look at the files, maybe run tests etc., eventually undoing all changes since `git checkout` and going back to the main development branch via `git checkout main`.
 
 ### 3. roll back all changes
 Reason: everything since a previous commit is ugly and I do not want to see the files or commits anymore.
@@ -115,7 +117,7 @@ path | purpose
 Note however that
 > Git will continue to track any files that are already being tracked.
 
-To stop the file from being tracked, see [this answer](https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore).
+To stop tracking a file, see [this answer](https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore).
 
 ## publishing changes
 If you want to share your project (or just make it accessible from everywhere), you would have to find a *remote* to store your repository. Places like [https://www.atlassian.com/](atlassian.com) and [https://github.com/](github.com) offer this possibility (but you could also set it up on an own server). Once you have an account, you can create a remote and point your local repository to it.
