@@ -122,10 +122,11 @@ If you want to share your project (or just make it accessible from everywhere), 
 ```
 git remote add <shortname> <url>
 ```
-where `<shortname>` is a mnemonic, most frequently set to 'origin'. Alternatively, you can create an empty remote on Github first, then _clone_ it to the local machine:
+where `<shortname>` is a mnemonic, most frequently set to 'origin'. Clearly, the `<url>` must exist. Alternatively, you can create an empty remote on Github first, then _clone_ it to the local machine:
 ```
 git clone <url>
 ```
+More on remotes, including the very important and quite annoying authentication process [here](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories).
 
 Having committed stuff, it is time to *push* it to the remote repo thus making the changes public. Anyone with access to the remote repo will be able to integrate the changes into their own working copy.
 ```
@@ -141,7 +142,7 @@ git push
 ## exercises
 1.  Install Git;
 2.  Create an account on Github (or use an existing if you want);
-3.  Set up a local repository;
+3.  Set up a local repository in your project folder;
 4.  Within it, create the following two folders and two files:
 
 ```

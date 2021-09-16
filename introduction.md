@@ -20,11 +20,11 @@
 
 <!-- /TOC -->
 
-This course's sole purpose is to introduce an aspiring researcher to certain useful software and IT concepts which are to research what icing is to cake: not the defining part but not inessential either. After all, research is not only idea generation, data analysis and publication (which universities do a good job at teaching): there are (often underrepresented in the curriculum) things like project and data management, collaboration, knowledge transfer etc. which, when done properly, boost efficiency and allow to make a larger impact. The core and heart of our little course are these little things.
+This course's sole purpose is to introduce an aspiring researcher to certain useful software and IT concepts which are to research what icing is to cake: not the defining part but not inessential either. After all, research is not only idea generation, data analysis and publication (which universities do a good job at teaching): there are things like project and data management, collaboration, knowledge transfer etc. which, when done properly, boost efficiency and allow to make a larger impact (yet often underrepresented in curricula). The core and heart of our little course are these little things.
 
 Many a concept to be taught here are no big news in software development. Surprisingly(?), the latter has many similarities to research: you start with an idea, set up a team, write code, run tests, correct errors, create documentation, ensure user friendliness and publish the product: to any of these a scholar would find an analogue in own routine. The similarities ensure that knowledge transfer is possible between the two disciplines, and since the IT is the more dynamic and skin in the game-y, researchers mostly end up at the receiving end. Good for us &ndash; we can learn!
 
-To start the transfer channel, you can go to GitHub &ndash; a place where people host all sorts of projects &ndash; you might find much inspiration for one of yours. Check these out:
+To start the transfer channel, you can go to GitHub &ndash; a place where people host all sorts of projects &ndash; to find much inspiration for one of yours. Check these out:
 *   [https://github.com/CSSEGISandData/COVID-19/](https://github.com/CSSEGISandData/COVID-19/)
 *   [https://github.com/bashtage/linearmodels](https://github.com/bashtage/linearmodels)
 *   [https://github.com/utkuozbulak/pytorch-cnn-visualizations](https://github.com/utkuozbulak/pytorch-cnn-visualizations)
@@ -73,14 +73,14 @@ Below is an incomplete list of software which you might have missed. We do not c
 ### command line (aka shell, aka terminal, aka prompt)
 Most of tasks you perform on a computer can be executed as commands in the black-and-white monospace-font window that is the terminal. It is a handy tool mostly used for all things files and folders and for automating tasks. Here, we will use it to perform minor file manipulations, execute git and LaTeX commands, set up a coding environment and launch jupyter notebooks.
 
-Not that you can't perform the same tasks with your favorite programming language, but a nice attempt to justify usage of the command line can be found [here](https://www.nature.com/articles/d41586-021-00263-0).
+Not that you can't perform the same tasks with your favorite programming language, but some nice cases for using the command line can be found [here](https://www.nature.com/articles/d41586-021-00263-0).
 
 TODO: Windows/Linux stuff
 
 ### text
 First, make sure you understand the difference between a text editor and word processor (refer to [the LaTeX introduction](https://github.com/ipozdeev/digital-tools-for-finance/blob/master/writing-with-latex.md#introduction) for details).
 
-**Sublime Text** is an extensible text editor, arguably the fastest and lightest that you might encounter. Its power comes from thousands of _packages_ &ndash; extensions written to serve some purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc. **Sublime** is a great first choice for LaTeXing.
+**Sublime Text** is an extensible text editor, arguably the fastest and lightest that you might encounter. Its power comes from thousands of _packages_ &ndash; extensions written to serve some purpose, e.g. provide a python engine, LaTeX language support, HTML layouts etc.
 
 Atom is another extensible text editor featuring brilliant Git integration. Just like Sublime, it relies on a large set of community packages extending and enhancing its functionality. Package **hydrogen**, for instance, offers a way to learn to program in many languages by allowing for interactive coding and inline display of results. The bulk of this course is written with **Atom**.
 
