@@ -18,7 +18,7 @@ International collaborations account for almost one-quarter of all publications.
 ### participating in project
 With git, it is possible for many developers to work on the same file simultaneously and seamlessly, without asking each other to 'please close that Excel'. Having set up a remote repository and made it public, others can start to participate in the project by cloning the repo:
 ```
-git clone ipozdeev/digital-tools-for-finance
+git clone https://github.com/ipozdeev/digital-tools-for-finance.git
 ```
 This will download all tracked content of the repo to the cloner's machine.
 
