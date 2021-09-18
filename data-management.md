@@ -2,20 +2,22 @@
 
 <!-- TOC -->
 
-- [introduction](#introduction)
-- [downstream](#downstream)
-  - [memoization](#memoization)
-  - [chunking](#chunking)
-- [upstream](#upstream)
-  - [api](#api)
-- [database](#database)
-  - [database api structure](#database-api-structure)
-  - [example: folder with text files](#example-folder-with-text-files)
-- [data file formats](#data-file-formats)
-  - [serialization of dataframes](#serialization-of-dataframes)
-  - [HDF](#hdf)
-  - [feather](#feather)
-- [example: SQL database](#example-sql-database)
+- [data management](#data-management)
+  - [introduction](#introduction)
+  - [downstream](#downstream)
+    - [memoization](#memoization)
+    - [chunking](#chunking)
+  - [upstream](#upstream)
+    - [api](#api)
+  - [database](#database)
+    - [database api structure](#database-api-structure)
+    - [example: folder with text files](#example-folder-with-text-files)
+  - [data file formats](#data-file-formats)
+    - [serialization of dataframes](#serialization-of-dataframes)
+    - [HDF](#hdf)
+    - [feather](#feather)
+  - [example: SQL database](#example-sql-database)
+  - [exercises](#exercises)
 
 <!-- /TOC -->
 
