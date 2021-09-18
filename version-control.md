@@ -1,20 +1,21 @@
 # version control
 <!-- TOC -->
 
-- [basics](#basics)
-- [installation](#installation)
-- [starting to version control](#starting-to-version-control)
-- [git areas](#git-areas)
-- [tracking changes](#tracking-changes)
-- [fixing the screwed-up](#fixing-the-screwed-up)
-  - [1. roll back recent changes](#1-roll-back-recent-changes)
-  - [2. go back to a particular commit](#2-go-back-to-a-particular-commit)
-  - [3. roll back all changes](#3-roll-back-all-changes)
-  - [4. roll back changes via a new commit](#4-roll-back-changes-via-a-new-commit)
-- [ignoring files](#ignoring-files)
-- [publishing changes](#publishing-changes)
-- [resources](#resources)
-- [exercises](#exercises)
+- [version control](#version-control)
+  - [basics](#basics)
+  - [installation](#installation)
+  - [starting to version control](#starting-to-version-control)
+  - [git areas](#git-areas)
+  - [tracking changes](#tracking-changes)
+  - [fixing the screwed-up](#fixing-the-screwed-up)
+    - [1. roll back recent changes](#1-roll-back-recent-changes)
+    - [2. go back to a particular commit](#2-go-back-to-a-particular-commit)
+    - [3. roll back all changes](#3-roll-back-all-changes)
+    - [4. roll back changes via a new commit](#4-roll-back-changes-via-a-new-commit)
+  - [ignoring files](#ignoring-files)
+  - [publishing changes](#publishing-changes)
+  - [resources](#resources)
+  - [exercises](#exercises)
 
 <!-- /TOC -->
 

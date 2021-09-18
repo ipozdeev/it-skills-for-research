@@ -1,13 +1,16 @@
 <!-- TOC -->
 
--   [git](#git)
-    -   [participating in project](#participating-in-project)
-    -   [distributed workflow](#distributed-workflow)
-    -   [pull requests](#pull-requests)
--   [slack](#slack)
-    -   [searchable conversations](#searchable-conversations)
-    -   [slack apps](#slack-apps)
--   [exercises](#exercises)
+- [collaboration-tools](#collaboration-tools)
+  - [git](#git)
+    - [participating in project](#participating-in-project)
+    - [distributed workflow](#distributed-workflow)
+    - [branching](#branching)
+    - [pull requests](#pull-requests)
+  - [slack](#slack)
+    - [searchable conversations](#searchable-conversations)
+    - [slack apps](#slack-apps)
+  - [whiteboards](#whiteboards)
+  - [exercises](#exercises)
 
 <!-- /TOC -->
 
