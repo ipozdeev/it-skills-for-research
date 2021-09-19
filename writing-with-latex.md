@@ -2,20 +2,21 @@
 
 <!-- TOC -->
 
-- [introduction](#introduction)
-- [terminology](#terminology)
-- [setup](#setup)
-- [packages](#packages)
-- [workflow](#workflow)
-- [bibliography](#bibliography)
-  - [structure](#structure)
-  - [maintenance](#maintenance)
-  - [implementation](#implementation)
-- [useful tricks](#useful-tricks)
-- [beamer](#beamer)
-- [custom classes and packages](#custom-classes-and-packages)
-- [resources](#resources)
-- [exercises](#exercises)
+- [writing with latex](#writing-with-latex)
+  - [introduction](#introduction)
+  - [terminology](#terminology)
+  - [setup](#setup)
+  - [packages](#packages)
+  - [workflow](#workflow)
+  - [bibliography](#bibliography)
+    - [structure](#structure)
+    - [maintenance](#maintenance)
+    - [implementation](#implementation)
+  - [useful tricks](#useful-tricks)
+  - [beamer](#beamer)
+  - [custom classes and packages](#custom-classes-and-packages)
+  - [resources](#resources)
+  - [exercises](#exercises)
 
 <!-- /TOC -->
 
