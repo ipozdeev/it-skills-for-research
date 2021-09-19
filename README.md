@@ -1,11 +1,11 @@
-technical skills for academic research, finance-centric
+technical skills for academic (not only) research, may be a bit finance-centric
 
 # table of contents
 | date    | topic
 | ----    | ----
-| sep 20  | [introduction](./introduction.md)
+| sep 20  | [introduction](./introduction.md)<br/>[command line](./command-line.md)<br/>[project environment](./project-environment.md)
 | sep 27  | [version control](./version-control.md)
-| oct 4   | [collaboration tools](./collaboration-tools.md)
+| oct 4   | [collaboration tools](./collaboration-tools.md) (version control p2)
 | oct 11  | [writing with latex](./writing-with-latex.md) (p1)
 | oct 18  | [writing with latex](./writing-with-latex.md) (p2)
 | oct 25  | [data management](./data-management.md) (p1)
