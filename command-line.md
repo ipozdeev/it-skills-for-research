@@ -51,3 +51,7 @@ this batch script will create file `todo.txt` in the current directory (and writ
 
 ## automating tasks
 Scripts can be executed automatically at a specified time. All you need is a working script, correct path references and a task in the task scheduler of choice (Task Scheduler on Windows, crontab on Linux/Mac). As an example, web scraping or mailfeed can be automated.
+
+
+## resources
+* a great tutorial from mozilla is [here](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line).

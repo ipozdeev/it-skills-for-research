@@ -22,6 +22,7 @@ Many a concept to be taught here are no big news in software development. Surpri
 
 To start the transfer channel, you can go to GitHub &ndash; a place where people host all sorts of projects &ndash; to find much inspiration for one of yours. Check these out:
 *   [https://github.com/CSSEGISandData/COVID-19/](https://github.com/CSSEGISandData/COVID-19/)
+*   [https://github.com/karpathy/cryptos](https://github.com/karpathy/cryptos)
 *   [https://github.com/bashtage/linearmodels](https://github.com/bashtage/linearmodels)
 *   [https://github.com/utkuozbulak/pytorch-cnn-visualizations](https://github.com/utkuozbulak/pytorch-cnn-visualizations)
 
@@ -52,7 +53,7 @@ The developer's workhorse. There are some non-essential differences between Wind
 Sublime Text, Atom, plus integrated development environments: PyCharm, Spyder, RStudio and the like. We will be using Sublime Text the most.
 
 ### coding
-Python, R, Julia, maybe warpped as jupyter notebooks.
+Python, R, Julia, maybe wrapped as jupyter notebooks.
 
 ### version control
 We will be using Git. Please also create an account on [Github](https://github.com/).
@@ -67,4 +68,4 @@ We will be using MySQL and maybe database libraries. An installation guide for W
 We will be using **Slack**, **Zoom** and **Miro** (you can install all three locally or use from the browser). Please create an account with each of those or connect an existing one.
 
 ## exercises
-1.  create an account on **Slack** and join the `DTfF` group (invite will be sent per email).
+1.  create an account on **Slack** and join the `dtff-2021` group (invite will be sent per email).

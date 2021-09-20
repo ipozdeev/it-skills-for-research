@@ -15,7 +15,7 @@ technical skills for academic (not only) research, may be a bit finance-centric
 | nov 15  | [knowledge transfer](./knowledge-transfer.md)
 
 # midterm
-the midterm is there to make sure all the work is not being postponed until it is too late. please have the end-of-chapter exercises solved by the midterm date: a way for us to check them is to look at the commit history in the corresponding repository.
+the midterm is there to make sure all the work is not being postponed until it is too late. please have the end-of-chapter exercises (the ones before the midterm) solved by then: a way for us to check this is to look at the commit history of your repository.
 
 # assignment
 the final assignment should be completed by mid December (precise date to be announced shortly) in form of a project:
