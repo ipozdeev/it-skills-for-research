@@ -18,7 +18,7 @@ technical skills for academic (not only) research, may be a bit finance-centric
 the midterm is there to make sure all the work is not being postponed until it is too late. please have the end-of-chapter exercises (the ones before the midterm) solved by then: a way for us to check this is to look at the commit history of your repository.
 
 # assignment
-the final assignment should be completed by mid December (precise date to be announced shortly) in form of a project:
+the final assignment should be completed in groups of 2-4 people by mid December (precise date to be announced shortly) in form of a project:
 1. hosted as a single repository on Github;
 2. having a well defined and concise structure;
 3. having a history of commits and merges;
