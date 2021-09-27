@@ -14,6 +14,7 @@
     - [4. roll back changes via a new commit](#4-roll-back-changes-via-a-new-commit)
   - [ignoring files](#ignoring-files)
   - [publishing changes](#publishing-changes)
+  - [tags](#tags)
   - [resources](#resources)
   - [exercises](#exercises)
 
@@ -120,6 +121,7 @@ Note however that
 
 To stop tracking a file, see [this answer](https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore).
 
+
 ## publishing changes
 If you want to share your project (or just make it accessible from everywhere), you would have to find a *remote* to store your repository. Places like [https://www.atlassian.com/](atlassian.com) and [https://github.com/](github.com) offer this possibility (but you could also set it up on an own server). Once you have an account, you can create a remote and point your local repository to it.
 ```
@@ -136,7 +138,20 @@ Having committed stuff, it is time to *push* it to the remote repo thus making t
 git push
 ```
 
+
+## tags
+A tag is a label placed on a particular commit that makes it more recognizable. A common use case for tags is versioning your code: "v1.0", "v1.1" etc. To place a tag, use (`-lw` for lightweight)
+```
+git tag <TAG NAME>-lw
+```
+You can use tags just like commit <SHA> to checkout stuff, but note that tags must be pushed explicitly:
+```
+git push origin <TAG NAME>
+```
+
+
 ## resources
+*   [undoing things in git](https://www.atlassian.com/git/tutorials/undoing-changes)
 *   [difference between `checkout`, `reset` and `revert`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting);
 *   [lots of useful path examples for .gitignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore);
 *   [lots of useful templates of `.gitignore` files](https://github.com/github/gitignore).
@@ -159,11 +174,11 @@ and exclude folder `data/` from being tracked;
 5.  Add and commit everything;
 6.  Add line reading 'THIS IS FINE' to `notes.txt`, commit the new version with message 'a fine change';
 7.  Change that line to 'THIS IS GOOD', commit the new version with message 'a good change' _overwriting the previous commit_ as if it never happened (make sure `git log` does not show 'a fine change');
-8.  Change that line to 'THIS IS BAD' and close the editor to make it impossible to use `Ctrl+Z`;
+8.  Change that line to 'THIS IS BAD', save the file and close the editor to make it impossible to use `Ctrl+Z`;
 9.  Try to restore `notes.txt` to the state where it reads 'THIS IS GOOD';
 10. Change that line to 'THIS IS THE BEST' and delete file `functions.py`, commit your changes giving your commit a name such as 'first-working';
 11. Undo the previous commit using `git revert`, makes sure `functions.py` does exist and the line reads 'THIS IS GOOD';
 8.  Create a remote repo on Github/Bitbucket and link your local repo to it;
 9.  Push all the commits to the remote;
-10. Try to revert the repo to the state where `notes.txt` read 'THIS IS FINE'.
-11. Commit and push all the commits to the remote.
+10. Try to revert `notes.txt` to the state where it reads 'THIS IS FINE' keeping all the other changes inplace;
+11. Commit everything pending and push to the remote.
