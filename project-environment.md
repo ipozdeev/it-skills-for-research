@@ -122,10 +122,11 @@ data = get_data_from_db(username=expand_var("$DB_USERNAME"),
 ## exercises
 1.  install Sublime Text;
 2.  install Package Control;
-3.  install a package to be able to count words;
-4.  install package 'Terminus' used to open a terminal right in the editor;
+3.  install a package to be able to count words and package 'Terminus' used to open a terminal within the editor;
 4.  create a directory for the group project you are supposed to hand in as the graded assignment for this course, then set up a basic structure for it;
-5.  create an environment variable referencing the folder with all your projects;
-6.  install Python using anaconda or miniconda and make sure `jupyter` is installed;
-7.  (optional) if unhappy with Python, install R or Julia;
-8.  install git and create an account on GitHub;
+5.  create an environment variable RESEARCH_PATH (don't forget about the platform-specific '&' and '%') referencing the folder with all your projects;
+6.  write a script that, when executed, would create a new directory of a given name in the folder above folder, referencing the latter with the created environment variable (make sure the script runs on any machine subject to the environment variable being set), and put the script in the directory you created in task 4;
+7.  install Python using anaconda or miniconda and make sure `jupyter` is installed;
+8.  (optional) if unhappy with Python, install R or Julia;
+9.  (very optional) if unhappy with all of the above, install something else;
+10.  install git and create an account on GitHub;
