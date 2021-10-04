@@ -36,7 +36,7 @@ If Alice's changes are not in conflict with Bob's, e.g. because Alice changed fi
 Sometimes, it might be useful to create a line of development separate from what is happening to the repository. For instance, your paper finally looks OK in terms of tables, figures and text, but the appearance needs polishing. In order to keep the appearance-related changes far from your econometrics code, you could create a **branch**, work on it, and then, when all seems safe enough, integrate the changes back. As the \[[atlassian](https://www.atlassian.com/git/tutorials/using-branches)\] puts it:
 > You can think of [a new branch] as a way to request a brand new working directory, staging area, and project history. New commits are recorded in the history for the current branch, which results in a fork in the history of the project.
 
-By default, you are on a branch too! The main branch, assigned by default to any new repository, is called `master`. You can create a new branch by issuing command `git branch <branch-name>`. This does not automatically switches to the newly created branch! To do the switch, use `git checkout <branch-name>`.
+By default, you are on a branch too! The main branch, assigned by default to any new repository, is called `master`. You can create a new branch by issuing command `git branch <branch-name>`. This does not automatically switch to the newly created branch! To do the switch, use `git checkout <branch-name>`.
 
 Now, you can work on files, add and commit and push the changes to the new branch as usual. Then, when you are happy with the development, you can merge the branch back into the `master` by checking it out first and then running `git merge`:
 ```
@@ -75,7 +75,6 @@ The whiteboards can be used for literally anything: task planning, brain-stormin
 1.  Create a slack group and invite your collaborators;
 2.  Install an app to create polls and the Zoom app;
 3.  Create an invitation to join a Zoom meeting;
-2.  In `digital-tools-for-finance`, channel `#questions`, search for messages containing 'merge' written before August 26, 2020;
 1.  Go to [miro.com](https://miro.com/) and log in or sign up;
 2.  Create a new whiteboard;
 3.  Invite another person to collaborate (miro can access slack).

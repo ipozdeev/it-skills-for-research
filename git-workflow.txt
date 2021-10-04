@@ -1,38 +1,40 @@
-db:
-- clone
-- in 'shared-folder' create file 'functions.txt', write 'THIS LINE IS OK' in it, add+commit+push
+alice:
+- set up
+- in 'test-alice' create file 'functions.txt', write 'THIS LINE IS OK' in it, add+commit+push
 
-ip:
-- pull
+bob:
+- pull (nb branch)
 - change line #1 to 'THIS LINE IS BAD'
 - pull (nothing changes)
 - add+commit+push
 
-db:
+alice:
 - add another line 'THIS #2 LINE IS OK', change line #1 to 'THIS LINE IS STILL OK'
 - pull (should fail, need to commit the changes first)
 - add+commit
 - pull, resolve conflicts
 - commit+push
 
-ip:
+bob:
+- git log to see identity of commits
 - pull (should see two lines)
 - want to continue working on the first line until it is ok
 - create a new branch 'feature-1'
 - change line #1 to 'THIS LINE IS BAD'
 - add+commit+push
 
-db:
+alice:
 - pull without switching branches (nothing changes)
 
-ip:
+bob:
 - change line #1 to 'THIS LINE IS FINALLY OK'
 - add+commit+push
 - open pull request
 
-db:
-- review request, write a comment
-- approve
+alice:
+- checkout
+- merge branch into main
+- push
 
-ip:
-- merge branch into master
+bob:
+- pull
