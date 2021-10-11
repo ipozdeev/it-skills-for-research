@@ -48,7 +48,7 @@ See [resources](#resources) for more info.
 ## setup
 To get latexing up and running we would need a format, an engine, a bibliography processor (to be discussed later) and a text editor. Here, we will use LaTeX, pdfLaTeX, biber and Sublime Text with the excellent LaTeXTools package respectively, but feel free to use your own favorites instead.
 
-Install and configure LaTeX and Sublime Text + LaTeXTools package as outlined in [setup guide](latex/setup.md#latex-installation-and-sublime-setup-guide-windows).
+Install and configure LaTeX and Sublime Text + LaTeXTools package as outlined in [setup guide](src/latex/setup.md).
 
 [Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) is a great option: it is an online tool for learning TeX and creating documents. It features tons of different templates and examples which you can modify and accommodate to your needs.
 
