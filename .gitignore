@@ -39,6 +39,6 @@ grading-checklist.txt
 todo.txt
 
 # file formats examples dfs
-src/
-!src/*.py
-!src/*.R
+*.pkl
+*.csv
+*.arrow

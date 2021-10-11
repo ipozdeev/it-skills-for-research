@@ -14,10 +14,18 @@ mpl.rcParams['font.size'] = 8
 mpl.rcParams['font.family'] = "serif"
 
 
+def reversed_ts_chart():
+    """
+    """
+    data = pd.read_csv("../../data/return_data.csv", index_col=0,
+                       parse_dates=True)
+
+    print(data)
+
+
 def get_findings():
     """Calculate betas."""
-    """Figure to show superiority of heatmap over tables."""
-    data = pd.read_csv("../data/return_data.csv", index_col=0,
+    data = pd.read_csv("../../data/return_data.csv", index_col=0,
                        parse_dates=True)
 
     y = data.drop("SPY", axis=1)
@@ -61,8 +69,10 @@ def fig_table_heatmap():
     ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
     ax.xaxis.tick_top()
     fig.tight_layout()
-    fig.savefig("../visualization/tex_examples/betas-hmap.pdf",
-                transparent=False)
+    # fig.savefig("../visualization/tex_examples/betas-hmap.pdf",
+    #             transparent=False)
+    fig.savefig("../visualization/figures/betas-hmap.png",
+                drpi=200)
 
 
 def fig_er_vs_b():
@@ -98,4 +108,6 @@ def table_table():
 if __name__ == '__main__':
     # fig_table_heatmap()
     # table_table()
-    fig_er_vs_b()
+    # fig_er_vs_b()
+    reversed_ts_chart()
+
