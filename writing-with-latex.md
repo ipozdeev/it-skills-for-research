@@ -32,7 +32,7 @@ Note that this workflow is different from using a word processor such as MS Word
 
 
 ## terminology
-For someone to be 'using LaTeX for the thesis' means to be using a special system of commands called LaTeX to set the formatting of the thesis's text. These commands placed here and there in the `.tex` file will be interpreted by a TeX engine to apply the formatting and produce a readable document. LaTeX is not the only such system, but the most popular one. Similarly, there are several TeX engines to interpret the commands.
+For someone to be 'using LaTeX for the thesis' means to be using a special system of commands called LaTeX to set the formatting of the thesis's text. These commands placed here and there in the `.tex` file will be interpreted by a TeX compiler (aka engine) to apply the formatting and produce a readable document. LaTeX is not the only such system, but the most popular one. Similarly, there are several TeX engines to interpret the commands.
 
 LaTeX is what is called a *format*: a convenient collection of macros (programming instructions) written in the programming language called TeX. TeX has been around for years, but is a little too flexible and complex for everyday tasks, which is why people have collected many frequently used TeX macros, e.g. those that change fonts and insert hyperlinks, and bundled them together to produce LaTeX and other formats. Without the latter you would have to write TeX code for every piece of formatting.
 
@@ -89,7 +89,8 @@ Packages that are not available through the package manager &ndash; e.g. those w
 ```
 pdflatex <filename>.tex
 ```
-to produce a readable pdf. In Sublime with LaTeXTools installed, you can use `Ctrl+B` instead.
+to produce a readable pdf. In Sublime with LaTeXTools installed, you can use `Ctrl+B` instead. Do read more about compilers [here](https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler).
+
 
 ## bibliography
 Bibliography is a collection of all references you cite in your work. As it is in general a bad idea to type citations by hand (at the bare minimum to avoid awkward spelling errors), a better idea is to organize them in a well structured database and point to its entries whenever needed. In a LaTeX document, this is achieved using two things, which you will always encounter in discussions of bibliography: a backend processor such as _biber_ and a package providing bibliography formats such as _biblatex_. The former takes a bibliography database (usually a `.bib` file) and processes it to produce a TeX-conforming file (usually with extension `.bbl`), while the latter uses a format's macros to place, point to and and keep track of citations.
@@ -182,8 +183,9 @@ If you are not happy with off-the-shelf solutions LaTeX has to offer or have a s
 
 
 ## resources
-*   [What LaTeX, TeX, pdflatex are all about](https://www.texfaq.org/FAQ-texthings);
 *   [LaTeX learning resources](http://www.tug.org/begin.html) (all recommended);
+*   [What LaTeX, TeX, pdflatex are all about](https://www.texfaq.org/FAQ-texthings);
+*   [Compilers](https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler).
 *   [bibliography backend processors and packages](https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib);
 *   [biblatex styles](https://tex.stackexchange.com/a/325099/218467);
 *   [bib guide](https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM);
@@ -194,7 +196,9 @@ If you are not happy with off-the-shelf solutions LaTeX has to offer or have a s
 1.  Install MiKTeX;
 2.  Setup Sublime Text for LaTeXing, including graphics preview and inverse search;
 3.  Install, if not present already, packages `threeparttable` and `blindtext`;
-4.  Create folder `text/` with subfloders `paper/` and `presentation/`;
+4.  Create folder `text/` with subfloders `paper/`, `presentation/` and `playground/`;
+5.  In folder `playground/`, write 4 lines of code producing a document with the single sentence 'my first line';
+6.  Compile the above document with `pdflatex`;
 5.  Install JabRef;
 6.  Locate the DOI of Milgrom's paper 'A Theory of Auctions and Competitive Bidding' and use it to auto-parse the info to JabRef;
 4.  Create a `.bib` file with two entries, a [published paper](https://www.journals.uchicago.edu/doi/10.1086/707735) and a [working paper](https://ssrn.com/abstract=3555917);
