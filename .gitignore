@@ -1,6 +1,6 @@
 # pycharm and ipython
 .idea/
-./ipynb_checkponts
+.ipynb_checkpoints/
 ./visualization/.ipynb_checkpoints
 
 # latex stuff
@@ -37,8 +37,12 @@ groups.txt
 submissions-2020
 grading-checklist.txt
 todo.txt
+latex/
 
 # file formats examples dfs
 *.pkl
 *.csv
 *.arrow
+
+# temp files, others
+*playground*
