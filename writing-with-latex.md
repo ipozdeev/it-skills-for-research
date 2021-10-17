@@ -7,12 +7,13 @@
   - [terminology](#terminology)
   - [setup](#setup)
   - [packages](#packages)
+    - [useful packages](#useful-packages)
   - [workflow](#workflow)
+  - [generating .tex exogenously](#generating-tex-exogenously)
   - [bibliography](#bibliography)
     - [structure](#structure)
     - [maintenance](#maintenance)
     - [implementation](#implementation)
-  - [useful tricks](#useful-tricks)
   - [beamer](#beamer)
   - [custom classes and packages](#custom-classes-and-packages)
   - [resources](#resources)
@@ -63,6 +64,12 @@ With some luck, you would be able to install it the easy way through the package
 Packages that are not available through the package manager &ndash; e.g. those written by you and/or distributed as files with extension `.sty` &ndash; can still be installed manually, although the process is a bit trickier. Please see [this thread](https://tex.stackexchange.com/questions/2063/how-can-i-manually-install-a-package-on-miktex-windows) for instructions.
 
 
+### useful packages
+*   package `threeparttable` and environment `tablenotes`;
+*   package `dcolumn` allowing to align columns on a separator, such as the decimal dot;
+*   package `endfloat` to push all figures and table to the end (please avoid it).
+
+
 ## workflow
 1. **Know your macros**. You are aware which macros produce the formats you need and in which packages those macros are to be found. For instance, multi-line equations require package *amsmath* and are inserted as follows:
 ```latex
@@ -90,6 +97,14 @@ Packages that are not available through the package manager &ndash; e.g. those w
 pdflatex <filename>.tex
 ```
 to produce a readable pdf. In Sublime with LaTeXTools installed, you can use `Ctrl+B` instead. Do read more about compilers [here](https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler).
+
+
+## generating .tex exogenously
+Often, you can use the same software that generates your research findings such as tables and figures to *latexify* them, or transcribe to LaTeX-interpretable code. It might be a function such as `xtable` in R, a method of a class, such as `pandas.DataFrame.to_latex()` in python or a button in the navigation bar as in gretl. In any case, before starting to manually input numbers into a .tex file, do search for a solution first! For instance:
+
+> [julia write table to latex](https://korsbo.github.io/Latexify.jl/stable/)
+
+> [jupyter notebook export to latex](https://stackoverflow.com/questions/32564415/how-to-convert-jupyter-ipython-notebooks-to-latex)
 
 
 ## bibliography
@@ -149,12 +164,6 @@ And to print the bibliography, put
 ```
 where it is supposed to appear.
 
-## useful tricks
-*   package `threeparttable` and environment `tablenotes`;
-*   package `dcolumn` allowing to align columns on a separator, such as the decimal dot;
-*   package `endfloat` to push all figures and table to the end (please avoid it);
-*   integration with jupyter notebooks (to be discussed later).
-
 
 ## beamer
 Package `beamer` provides functionality to create presentations with LaTeX. You should now be able to guess what it does: through a plethora of macros, it redefines the geometry of the canvas to have the usual 'presentation' aspect ratio (4:3) and size of print-outs (128x96mm), allocates one page per frame, creates titles and subtitles, meaningful footers etc. A simplest layout of a beamer-style presentation is as follows:
@@ -184,9 +193,9 @@ If you are not happy with off-the-shelf solutions LaTeX has to offer or have a s
 
 ## resources
 *   [LaTeX learning resources](http://www.tug.org/begin.html) (all recommended);
-*   [What LaTeX, TeX, pdflatex are all about](https://www.texfaq.org/FAQ-texthings);
-*   [Compilers](https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler).
-*   [bibliography backend processors and packages](https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib);
+*   [what LaTeX, TeX, pdflatex are all about](https://www.texfaq.org/FAQ-texthings);
+*   [compilers?](https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler).
+*   [bibliography backend processors and packages](https://tex.stackexchange.com/a/25702/218467);
 *   [biblatex styles](https://tex.stackexchange.com/a/325099/218467);
 *   [bib guide](https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM);
 *   [fantastic biblatex cheatsheet](http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf);
