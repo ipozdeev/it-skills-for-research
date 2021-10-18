@@ -187,14 +187,14 @@ More elaborate examples are in the [package documentation](https://ctan.org/pkg/
 
 
 ## custom classes and packages
-If you are not happy with off-the-shelf solutions LaTeX has to offer or have a strong preference for individuality in design, you can write your own packages and classes and `\usepackage{}` or `\documentclasss{}` them in the preamble of the document. [Here](https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files) is a short explanation when to use which. A frequent reason to write a `.sty` is indeed:
+If you are not happy with off-the-shelf solutions LaTeX has to offer or have a strong preference for individuality in design, you can write your own packages and classes and `\usepackage{}` or `\documentclasss{}` them in the preamble of the document. [Here](https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files) is a short explanation when to use which. A frequent reason to write a `.cls` is indeed:
 > [...] if a company needs branded reports that use a special font and have the logo of the company in the footer; you need a new class.
 
 
 ## resources
 *   [LaTeX learning resources](http://www.tug.org/begin.html) (all recommended);
 *   [what LaTeX, TeX, pdflatex are all about](https://www.texfaq.org/FAQ-texthings);
-*   [compilers?](https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler).
+*   [compilers?](https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler)
 *   [bibliography backend processors and packages](https://tex.stackexchange.com/a/25702/218467);
 *   [biblatex styles](https://tex.stackexchange.com/a/325099/218467);
 *   [bib guide](https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM);
