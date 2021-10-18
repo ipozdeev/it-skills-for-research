@@ -37,7 +37,6 @@ groups.txt
 submissions-2020
 grading-checklist.txt
 todo.txt
-latex/
 
 # file formats examples dfs
 *.pkl
@@ -46,3 +45,4 @@ latex/
 
 # temp files, others
 *playground*
+src/latex/*.pdf

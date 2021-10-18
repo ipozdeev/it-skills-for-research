@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+% Placeholder paragraphs with text
+\usepackage{blindtext}
+
+% No indent for new paragraphs
+\setlength\parindent{0pt}
+
+% bibliography
+\usepackage[
+    backend=biber,
+    style=bwl-FU,
+    url=false,
+    doi=false,
+    eprint=false
+]{biblatex}
+\addbibresource{template-biblio.bib}
+
+% ---------------------------------------------------------------------------
+
+\begin{document}
+
+\section{This is the highest level section header: some text}
+\blindtext[1]
+
+A new system to be aligned
+\begin{align}
+	x ^ 2 + y ^ 2 &= 1 \\
+	a \& b &\& c \& d = \omega
+\end{align}
+
+\cite{CieslakEtAlStockReturns} is a fine read.
+
+\printbibliography
+
+
+\end{document}
