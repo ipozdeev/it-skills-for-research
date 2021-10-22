@@ -187,7 +187,7 @@ More elaborate examples are in the [package documentation](https://ctan.org/pkg/
 
 
 ## custom classes and packages
-If you are not happy with off-the-shelf solutions LaTeX has to offer or have a strong preference for individuality in design, you can write your own packages and classes and `\usepackage{}` or `\documentclasss{}` them in the preamble of the document. [Here](https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files) is a short explanation when to use which. A frequent reason to write a `.cls` is indeed:
+If you are not happy with off-the-shelf solutions LaTeX has to offer or have a strong preference for individuality in design, you can write your own packages and classes and `\usepackage{}` or `\documentclass{}` them in the preamble of the document. [Here](https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files) is a short explanation when to use which. A frequent reason to write a `.cls` is indeed:
 > [...] if a company needs branded reports that use a special font and have the logo of the company in the footer; you need a new class.
 
 
