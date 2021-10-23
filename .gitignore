@@ -4,7 +4,7 @@
 ./visualization/.ipynb_checkpoints
 
 # latex stuff
-latex-templates/**/*.pdf
+src/latex/**/*.pdf
 *.aux
 *.log
 *.nav
@@ -20,6 +20,7 @@ latex-templates/**/*.pdf
 *.dvi
 *.bak
 *.run.xml
+*.bib.sav
 
 # R
 *.Rproj
@@ -45,4 +46,3 @@ todo.txt
 
 # temp files, others
 *playground*
-src/latex/*.pdf

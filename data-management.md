@@ -4,18 +4,13 @@
 
 - [data management](#data-management)
   - [introduction](#introduction)
-  - [downstream](#downstream)
-    - [memoization](#memoization)
-    - [chunking](#chunking)
-  - [upstream](#upstream)
-    - [api](#api)
-  - [database](#database)
-    - [database api structure](#database-api-structure)
-    - [example: folder with text files](#example-folder-with-text-files)
-  - [data file formats](#data-file-formats)
-    - [serialization of dataframes](#serialization-of-dataframes)
-    - [HDF](#hdf)
-    - [feather](#feather)
+  - [data storage](#data-storage)
+  - [data flow](#data-flow)
+  - [memoization](#memoization)
+  - [chunking](#chunking)
+  - [example: directory tree](#example-directory-tree)
+    - [file types](#file-types)
+    - [API](#api)
   - [example: SQL database](#example-sql-database)
   - [exercises](#exercises)
 
@@ -23,40 +18,59 @@
 
 ## introduction
 
-If your project is at least partially has to do with data manipulation, it is in general a good idea to organize the way your data is stored, updated and fed to the functions which produce any desired output.
+Efforts to optimize the way data enters your research pay off in the long run. Quite some time can be lost on finding that nice dataset of commodity prices you used two years ago; on updating it with fresh values; on sharing it with your colleagues or reusing in a different project. Even more time can get wasted on other people trying to reproduce your results with their own data. A well structured data management process could thus boost both your own efficiency and that of researchers following in your footsteps.
 
-Similar to oil, you can think of two steps it takes for data to enter your calculations:
-*   **upstream**: raw data from a data supplier enters your machine;
-*   **downstream**: data is delivered to your programs which process it.
+Data management consists of organizing both data storage and data flow. The former has to do with the structure and format of the stock of your data as well as whether data is project-specific or to be reused many times over; the latter deals with how that stock of data is being created and delivered to the endpoint functions. For an example of an endpoint function, think calculation of descriptive statistics.
 
-Sometimes the two are merged into one, but it is in general a good idea to keep them separate.
+The following assumes the data can be represented as a frame, as most economic and time series data does.
 
-## downstream
-Let us suppose you have a set of project-specific functions to fetch this or that piece of data for calculations, all stored in the script called `datafeed.*` (`*` substituted with `py`, `jl`, `R` etc. dependent on whatever software is in use) located in the project folder:
+
+## data storage
+
+In general (e.g. as suggested by the [cookiecutter data science project template](https://github.com/drivendata/cookiecutter-data-science)), each project is associated with project-specific data and calls for a dedicated storage within the project folder (here, `data/`):
 ```
 my-project/
-  readings/
-  text/
-  output/
-  datacache/
-  datafeed.py
-  core.py
+  data/
+  src/
   ...
 ```
-and the contents of `datafeed.py` resemble:
+However, if a dataset is reused at least once in a different project, it might be a good idea to put it in a centralized database where all projects would be able to access it.
+
+The centralized database can have any architecture: a directory tree with text or binary files, a local SQL database, an external provider etc. &ndash; as long as the data flow routines are coded *comme il faut*.
+
+
+## data flow
+
+Similar to oil, you can think of two ways data can flow:
+*   **upstream**: into a database for storage;
+*   **downstream**: from a database for usage in endpoint functions.
+
+Separating up- from downstream is a matter of taste, but does keep the code repository tidier. Functions responsible for the two are quite different: upstreams tend to run either once or regular intervals, whereas downstreams &ndash; each time an endpoint function is run (which happens dozens of times in early stages); downstreams are often memoisable (to be discussed later), whereas the upstreams are not; upstreams involve authentication more frequently; downstreams are most often shareable, whereas upstreams are most often not or useless in being such (think proprietary datasets).
+
+Together, the two constitute a database's application programming interface, or API &ndash; a way for endpoint functions to talk to the database. A good API would provide methods for:
+1.  establishing a connection to;
+2.  pulling data from;
+3.  putting data into;
+4.  updating data in
+
+the database. A common layout for a database API would be, using Python as the example:
 ```python
-def fetch_stock_prices(s_dt="1960", e_dt=None, mkt_cap_percentile=0.0):
-  pass
-
-def fetch_index_return() -> DataFrame:
-  pass
+research-data/
+  __init__.py
+  utilities.py
+  connect.py
+  downstream.py
+  upstream.py
+  recipes.py
 ```
-These functions ensure that whenever you need data to perform data manipulations in, say, `core.py`, you do not import data in `core.py`, but rather call a corresponding function from `datafeed.py`, which in turn would fetch the data from wherever it is located.
 
-Separating down- from upstream has two advantages. First, whenever you might change your data sources (for instance, switching from IMF to World Bank for GDP values), you would not have to mess with the calculations code, but with the data retrieval code and only make sure that the output is in the same format. Second, this allows to [memoise](https://en.wikipedia.org/wiki/Memoization) functions, that is, to return a cached version of the function output when the function is run with the same arguments. Since datafeed operations can be expensive (in terms of running time or literally, as the case with Bloomberg), memoization saves the researcher hours, so let us quickly discuss it here.
+Here, `connect` provides a way to establish a connection to the database to be reused in other modules. Functions and methods in `downstream` start with `get_`, those in `upstream` with `put_`. Module `recipes` keeps commonly used procedures to manipulate the raw data to deliver it to the endpoint functions, such as transformation of prices (delivered in the raw form by `downstream`) to returns.
 
-### memoization
-Again, memoization refers to remembering the results of a function call based on the input arguments and then returning the remembered result rather than computing the result again. Its _raison d'etre_ is the diverging price of hard disk space and the human coder's time. Based on the idea, it is pretty easy to write memoization functions yourself, but of course there are several solutions available for popular languages.
+
+## memoization
+
+Functions can be expensive to evaluate, such that much time is lost on waiting for them to finish. If such an expensive function is deterministic (produces the same output given the same input), it can be [memoised](https://en.wikipedia.org/wiki/Memoization), or made to return a cached version of the output when run with the same input. Since datafeed operations can be expensive (in terms of running time or literally, as the case with Bloomberg), memoization saves the researcher hours, so let us quickly discuss it here.
+Memoization refers to remembering the results of a function call based on the input arguments and then returning the remembered result rather than computing the result again. Its _raison d'etre_ is the diverging price of hard disk space and the human coder's time. Based on the idea, it is pretty easy to write memoization functions yourself, but of course there are several solutions available for popular languages.
 
 For Python, the amazing [`joblib`](https://joblib.readthedocs.io/en/latest/) library does the trick. In the preamble to `datafeed.py`, you provide the path to keep cache in, set up a Memory object and use it to decorate every function to be memoised:
 ```python
@@ -71,96 +85,148 @@ def expensive_function():
   pass
 ```
 
-For R, [memoise](https://cran.r-project.org/web/packages/memoise/index.html) is one solution, although this we cannot vouch for.
+For R, [memoise](https://cran.r-project.org/web/packages/memoise/index.html) looks like a solution.
 
-### chunking
+## chunking
 Sometimes (in machine learning applications, for instance) the amount of data needed for a task becomes large relative to the amount of RAM on your machine. When this happens, loading the complete dataset into the memory is no longer an option, and _chunking_ is needed. In most languages, _chunking_ is implemented as a [generator](https://en.wikipedia.org/wiki/Generator_(computer_programming)) and constitutes repeated calls to a database. See, for instance, `chunksize` parameter in `pandas` IO section.
 
-## upstream
-### api
-A common way to have data ready for manipulation is to download it to a `.csv` or `.xlsx` before reading in into the software of choice such as R or Julia. However, some data suppliers allow to skip the (rather cumbersome and often costly) intermediate step and streamline data retrieval by providing what is called an application programming interface, or API. For a website such as **quandl** or **WRDS**, the API usually gives the user access to a text file located under a URL link and containing the desired data.
 
-As an example, let us take a look at [**quandl**](https://www.quandl.com/tools/api), where section 'API Features' provides the details, and at the [**IMF**](http://datahelp.imf.org/knowledgebase/articles/667681-json-restful-web-service).
+## example: directory tree
 
-Since these are just text documents, you would have to write wrapper functions to further ease the upstream. More often than not however (all hail the XXI century), someone would have already written these functions for your favorite language, probably even the data supplier themselves. For example, **quandl** provides [libraries for Python](https://www.quandl.com/tools/python) &ndash; collections of wrappers to ease your access to their data. The **IMF**, on the other hand, did not bother, but helpful tips prepared by other users are available [here and there](https://www.bd-econ.com/imfapi1.html).
+A rather straightforward solution is to put all files that contain data in one folder outside your project &ndash; let's call it `research-database`. In general, it is a good idea is to upload this folder to cloud storage such as Google Drive, Yandex Disk or the like and ensure it being synchronized. To be able to reference the folder without specifying its absolute or relative path, let us also set up an [environment variable](./project-environment.md#environment-variables) called `RESEARCH_DATA_PATH` and set its value to wherever the folder is located.
 
 
-## database
-If you store any amount of research data locally, it is a good idea to do so in a centralized way, in other words, to set up an own database (DB). In the simplest case, the database can be a folder somewhere outside of all of your research project folders, where .csv files, possibly of different structure and format, are located. In a more complicated setup, it can be a SQL database of multiple tables and dependencies.
+### file types
 
-With a database comes your own API! When using Python or R, it is best organized as a package, called e.g. `mydatabase`, which you or everyone else can install and use. Functions therein provide apparatus to write to and fetch from the DB, update data and so on.
+#### text
+Text files such as `.csv`, `.xml` or `.json` are a frequent choice, being human- and Excel-readable and easily shareable. However, they are also bulky, slow to be input/output and subject to comma vs. dot, encoding and similar problems.
 
-With that being said, our `datafeed.py` file in the project above could start as follows:
+#### serialization of objects
+Serialization is the action of transforming an object such as a data frame to a string of bytes from which it can be recovered without a loss. It is a quick solution to preserve data, fast and relatively memory efficient, but not easily shareable across languages and even versions of the software used to perform the serialization.
+- Python: [`pickle`](https://docs.python.org/3/library/pickle.html) or [`pandas`/`pickle`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_pickle.html)
+- R: [`serialize`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/serialize.html)
+
+#### HDF
+[HDF](https://www.hdfgroup.org/solutions/hdf5/) is a format for storing hierarchical data. It is best suited for large (even gigantic) organized and reasonably stationary (not changing too frequently) datasets and allows to store metadata. HDF lets you query data in chunks in a memory-efficient way and is shareable across languages. On the other hand, it is somewhat inflexible (hard to recover space after deleting data).
+
+- Python: [`h5py`](https://www.h5py.org/) or [`pandas/hdf`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_hdf.html)
+- R: [`rhdf5`](https://bioconductor.org/packages/release/bioc/html/rhdf5.html)
+
+#### feather
+[Feather](https://arrow.apache.org/docs/python/feather.html) is a language-agnostic data frame storage, super handy for those switching between R, Python and Julia or having colleagues programming in a different language.
+
+- Python: [`pyarrow`](https://arrow.apache.org/docs/python/feather.html) or [`pandas/feather`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_feather.html)
+- R: [`arrow`](http://arrow.apache.org/docs/r/)
+
+
+### API
+Since the database is but a folder and files therein do not follow any structure, establishing a connection simply implies locating the folder. We can do it using the environment variable previously created:
 ```python
-from joblib import memory
-from mydatabase.api import fetch_fx_data, fetch_gdp_data
-
-cachedir = "./datacache"
-memory = Memory(cachedir, verbose=0)
-
-@memory.cache
-def prepare_fx_data(...):
-  data_from_db = fetch_fx_data(...)
-```
-Here, `fetch_fx_data` is the database-level function from the database API, and `prepare_fx_data` is the project-level function to fetch the data from the DB, maybe transform it somehow and return in a form suitable to project needs.
-
-### database api structure
-Necessary utilities include:
-1.  establishing a connection to;
-2.  pulling data from;
-3.  putting data into;
-4.  updating data in.
-
-### example: folder with text files
-A rather straightforward solution is to put all files that contain any data in one folder outside any project &ndash; let's call it `research_data`. To be able to detect the folder without specifying its absolute or relative path, let us also set up an [environment variable](https://www.architectryan.com/2018/08/31/how-to-change-environment-variables-on-windows-10/) called `$RESEARCHDATA` and set its value to wherever the folder is located.
-
-Now, let us write some API code. Since files in the DB do not follow any structure, establishing a connection is just to locate the DB folder. We can do it using the environment variable previously created:
-```python
-from os import path
+# connect.py
+import os
 
 # point to the DB
-datapath = path.expandvars("$RESEARCHDATA")
+DATAPATH = os.environ.get("RESEARCH_DATA_PATH")
 
 ```
 Now, for every piece of data, we would have to know the filename where it is stored, so we have to hardcode this information in every function:
 ```python
+# downstream.py
 import pandas as pd
+from connect import DATAPATH
 
-def fetch_fx_data(subset, s_dt="1960", e_dt="2020"):
-  """Fetch FX data from the DB."""
-  filename = "fx-data-1980-2020-d.csv"
+def get_fx_data(subset, start_dt="1960", end_dt="2020"):
+  """Get FX data from the DB."""
+  filename = DATAPATH + "fx-data-1980-2020-d.ftr"
 
-  data = pd.read_csv(filename)
+  data = pd.read_ftr(filename)
 
   return data
 ```
-Putting data into the DB and updating it would be done in a similar way.
 
-## data file formats
-You would be surprised, but `.csv` (or `.xml` or `.json` or any text file for that matter) might be not the best format to choose for storing your data. Sure, it is human-readable, Excel-readable and shareable, but also bulky, slow to input/output and subject to comma vs. dot and similar problems. Some alternatives are:
+Putting data into the DB and updating it would be done in a similar way (note how the authentication is done to retrieve data from an external provider).
+```python
+# upstream.py
+import pandas as pd
+import quandl
 
-### serialization of dataframes
-Serialization is the action of transforming an object to a string of bytes from which it is possible to uniquely recover the object. It is a quick solution to preserve the data as it appears in your code, fast and relatively memory efficient, but not shareable across languages.
-- Python: [pickle](https://docs.python.org/3/library/pickle.html)
-- R: [serialize](https://stat.ethz.ch/R-manual/R-devel/library/base/html/serialize.html)
+from connect import DATAPATH
 
-### HDF
-[HDF](https://www.hdfgroup.org/solutions/hdf5/) is a format for storing hierarchical data. It is best suited for large (even gigantic) organized and reasonably stationary (not changing too frequently) datasets and allows to store metadata. HDF lets you query data in chunks in a memory-efficient way and is shareable across languages. On the other hand, it is somehwat inflexible (hard to recover space after deleting data).
+quandl.ApiConfig.api_key = os.environ.get("QUANDL_API_KEY")
 
-- Python: `h5py` + support in `pandas`
-- R: `rhdf5`
+def put_fx_data():
+  """Store FX data to the DB."""
 
-### feather
-[Feather](https://arrow.apache.org/docs/python/feather.html) is a language-agnostic data frame storage. Not possilbe to read in chunks, but handy for those working with R, Python and Julia at the same time.
+  data = quandl.get_table('FXCM/H1', date='2021-01-01', symbol='EUR/CAD')
 
-- Python: `pyarrow` + support in `pandas`
-- R: `arrow`
+  filename = DATAPATH + "eurcad-hf-data.ftr"
+
+  data.to_feather(filename)
+
+```
+
 
 ## example: SQL database
-to be discussed in a separate section
+The directory tree is an example of an unstructured database. Things therein can be anything, and the only structure is the one noncommittally imposed by the user. An alternative is a relational databases powered by SQL. 
+
+SQL stands for Structured Query Language, and the SQL databases are characterized by data being stored and represented as rectangular tables with rows and columns. The power of such system comes from distributing different types of information across different tables, between which relations are created.
+
+SQL databases are lightning fast and can store huge amounts of data at little marginal cost.
+
+Lots of good introductions to SQL exist (see [resources](#resources) for some), way better than any effort we could produce, and we refer the reader to those. In what follows, we will set up a toy database to keep FX exchange rates.
+
+`fx.currency`:
+
+|   id | name              | iso_3   |
+|-----:|:------------------|:--------|
+|    1 | australian dollar | aud     |
+|    2 | swiss franc       | chf     |
+|    3 | us dollar         | usd     |
+
+`fx.data_type`:
+
+|   id | description_long   |
+|-----:|:-------------------|
+|    1 | spot price         |
+|    2 | forward price, 1m  |
+
+`fx.timeseries_data`:
+
+|   id |   base |   counter |   data_type | date       |   value |  |
+|-----:|-------:|----------:|------------:|:-----------|--------:|--:
+|    1 |      1 |         3 |           1 | 2021-01-05 |  0.1361 | <&ndash; audusd spot price |
+|    2 |      1 |         3 |           1 | 2021-01-06 |  0.4488 | <&ndash; audusd spot price |
+|    3 |      3 |         2 |           2 | 2021-01-05 |  0.6185 | <&ndash; usdchf 1m forward price |
+
+Note how `timeseries_data` uses the id of currencies in table `currency` and of data types in table `data_type` to identify own rows. In SQL jargon, `base`, `counter` and `data_type` are foreign keys. SQL is all about these relations.
+
+
+### API
+To connect to a SQL database using a programming language, a special library is needed, e.g. `sqlalchemy` in Python. The user needs to specify the dialect (MySQL, PostgreSQL), and the database name, and provide valid credentials.
+```python
+# connect.py
+import os
+import sqlalchemy
+
+dialect = "mysql"
+username = os.environ.get("DB_USERNAME")
+password = os.environ.get("DB_PASSWORD")
+db_name = "mydatabase"
+host = "localhost"
+port = 3306
+
+engine = f"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}"
+
+```
+
+The rest is easy, and along similar lines as in the example before.
+
+
+## resources
+*   [a brilliant SQL intro](https://www.youtube.com/watch?v=HXV3zeQKqGY).
+
 
 ## exercises
-1.  create file structure for a database of your own...
-2.  ...keeping upstream separate from downstream;
-3.  take a look at [iexfinance](https://addisonlynch.github.io/iexfinance/)'s api;
-4.  play around with writing to and reading from different data formats.
+1.  create a toy database of your choice;
+2.  organize up- and downstream to be able to put data into and get data from the database;
+3.  play around with writing to and reading from different data formats.
