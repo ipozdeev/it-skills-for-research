@@ -18,11 +18,11 @@
 
 ## introduction
 
-Efforts to optimize the way data enters your research pay off in the long run. Quite some time can be lost on finding that nice dataset of commodity prices you used two years ago; on updating it with fresh values; on sharing it with your colleagues or reusing in a different project. Even more time can get wasted on other people trying to reproduce your results with their own data. A well structured data management process could thus boost both your own efficiency and that of researchers following in your footsteps.
+Efforts to optimize the way data enters your research pay off in the long run. Quite some time can be lost on finding that nice dataset of commodity prices you used two years ago; on updating it with fresh values; on sharing it with your colleagues or reusing in a different project. Even more time can get wasted on other people trying to reproduce your results with their own data. A well structured data management process could boost both your own efficiency and that of researchers following in your footsteps.
 
-Data management consists of organizing both data storage and data flow. The former has to do with the structure and format of the stock of your data as well as whether data is project-specific or to be reused many times over; the latter deals with how that stock of data is being created and delivered to the endpoint functions. For an example of an endpoint function, think calculation of descriptive statistics.
+Data management consists of organizing both data storage and data flow. The former has to do with the structure and format of the stock of your data as well as whether data is project-specific or to be reused many times over; the latter deals with how that stock of data is being created and delivered to endpoint functions (for an example of an endpoint function, think calculation of descriptive statistics).
 
-The following assumes the data can be represented as a frame, as most economic and time series data does.
+The following assumes that data can be represented as a table, as most economic and time series data does.
 
 
 ## data storage
@@ -45,7 +45,7 @@ Similar to oil, you can think of two ways data can flow:
 *   **upstream**: into a database for storage;
 *   **downstream**: from a database for usage in endpoint functions.
 
-Separating up- from downstream is a matter of taste, but does keep the code repository tidier. Functions responsible for the two are quite different: upstreams tend to run either once or regular intervals, whereas downstreams &ndash; each time an endpoint function is run (which happens dozens of times in early stages); downstreams are often memoisable (to be discussed later), whereas the upstreams are not; upstreams involve authentication more frequently; downstreams are most often shareable, whereas upstreams are most often not or useless in being such (think proprietary datasets).
+Separating up- from downstream is a matter of taste, but does keep the code repository tidier. Functions responsible for the two are quite different: upstreams tend to run either once or at regular intervals, whereas downstreams &ndash; each time an endpoint function is run (which happens dozens of times  early into the project); downstreams are often memoizable (to be discussed later), whereas the upstreams are not; upstreams involve authentication more frequently; downstreams are most often shareable, whereas upstreams are most often not or useless in being such (think proprietary datasets).
 
 Together, the two constitute a database's application programming interface, or API &ndash; a way for endpoint functions to talk to the database. A good API would provide methods for:
 1.  establishing a connection to;
@@ -69,10 +69,10 @@ Here, `connect` provides a way to establish a connection to the database to be r
 
 ## memoization
 
-Functions can be expensive to evaluate, such that much time is lost on waiting for them to finish. If such an expensive function is deterministic (produces the same output given the same input), it can be [memoised](https://en.wikipedia.org/wiki/Memoization), or made to return a cached version of the output when run with the same input. Since datafeed operations can be expensive (in terms of running time or literally, as the case with Bloomberg), memoization saves the researcher hours, so let us quickly discuss it here.
+Functions can be expensive to evaluate, such that much time is lost on waiting for them to finish. If such an expensive function is deterministic (produces the same output given the same input), it can be [memoized](https://en.wikipedia.org/wiki/Memoization), or made to return a cached version of the output when run with the same input. Since datafeed operations can be expensive (in terms of time or, indeed, money, as subsequent calls to a commercial database such as Bloomberg can be costly), memoization saves the researcher hours, so let us quickly discuss it here.
 Memoization refers to remembering the results of a function call based on the input arguments and then returning the remembered result rather than computing the result again. Its _raison d'etre_ is the diverging price of hard disk space and the human coder's time. Based on the idea, it is pretty easy to write memoization functions yourself, but of course there are several solutions available for popular languages.
 
-For Python, the amazing [`joblib`](https://joblib.readthedocs.io/en/latest/) library does the trick. In the preamble to `datafeed.py`, you provide the path to keep cache in, set up a Memory object and use it to decorate every function to be memoised:
+For Python, the amazing [`joblib`](https://joblib.readthedocs.io/en/latest/) library does the trick. In the preamble to `datafeed.py`, you provide the path to keep cache in, set up a Memory object and use it to decorate every function to be memoized:
 ```python
 from joblib import memory
 
@@ -85,7 +85,7 @@ def expensive_function():
   pass
 ```
 
-For R, [memoise](https://cran.r-project.org/web/packages/memoise/index.html) looks like a solution.
+For R, [memoize](https://cran.r-project.org/web/packages/memoise/index.html) looks like a solution.
 
 ## chunking
 Sometimes (in machine learning applications, for instance) the amount of data needed for a task becomes large relative to the amount of RAM on your machine. When this happens, loading the complete dataset into the memory is no longer an option, and _chunking_ is needed. In most languages, _chunking_ is implemented as a [generator](https://en.wikipedia.org/wiki/Generator_(computer_programming)) and constitutes repeated calls to a database. See, for instance, `chunksize` parameter in `pandas` IO section.
@@ -93,7 +93,7 @@ Sometimes (in machine learning applications, for instance) the amount of data ne
 
 ## example: directory tree
 
-A rather straightforward solution is to put all files that contain data in one folder outside your project &ndash; let's call it `research-database`. In general, it is a good idea is to upload this folder to cloud storage such as Google Drive, Yandex Disk or the like and ensure it being synchronized. To be able to reference the folder without specifying its absolute or relative path, let us also set up an [environment variable](./project-environment.md#environment-variables) called `RESEARCH_DATA_PATH` and set its value to wherever the folder is located.
+A rather straightforward solution is to put all files that contain data in one folder outside your project &ndash; let's call it `research-database`. In general, it is a good idea is to upload this folder to cloud storage such as Google Drive, Yandex.Disk or the like and ensure it being synchronized. To be able to reference the folder without specifying its absolute or relative path, let us also set up an [environment variable](./project-environment.md#environment-variables) called `RESEARCH_DATA_PATH` and set its value to wherever the folder is located.
 
 
 ### file types
@@ -173,7 +173,7 @@ SQL stands for Structured Query Language, and the SQL databases are characterize
 
 SQL databases are lightning fast and can store huge amounts of data at little marginal cost.
 
-Lots of good introductions to SQL exist (see [resources](#resources) for some), way better than any effort we could produce, and we refer the reader to those. In what follows, we will set up a toy database to keep FX exchange rates.
+Lots of good introductions to SQL exist (see [resources](#resources) for some), way better than any effort we could produce, and we refer the reader to those. As an example, let's sketch the design of a toy database to keep FX exchange rates.
 
 `fx.currency`:
 
@@ -192,13 +192,13 @@ Lots of good introductions to SQL exist (see [resources](#resources) for some), 
 
 `fx.timeseries_data`:
 
-|   id |   base |   counter |   data_type | date       |   value |  |
+|   id |   base_id |   counter_id |   data_type_id | date       |   value |  |
 |-----:|-------:|----------:|------------:|:-----------|--------:|--:
 |    1 |      1 |         3 |           1 | 2021-01-05 |  0.1361 | <&ndash; audusd spot price |
 |    2 |      1 |         3 |           1 | 2021-01-06 |  0.4488 | <&ndash; audusd spot price |
 |    3 |      3 |         2 |           2 | 2021-01-05 |  0.6185 | <&ndash; usdchf 1m forward price |
 
-Note how `timeseries_data` uses the id of currencies in table `currency` and of data types in table `data_type` to identify own rows. In SQL jargon, `base`, `counter` and `data_type` are foreign keys. SQL is all about these relations.
+Note how `timeseries_data` uses the id of currencies in table `currency` and of data types in table `data_type`, setting up a relation between the tables. SQL is all about these relations.
 
 
 ### API
