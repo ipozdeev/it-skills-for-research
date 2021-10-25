@@ -1,5 +1,21 @@
 # web api
 
+<!-- TOC -->
+
+- [web api](#web-api)
+  - [introduction](#introduction)
+  - [before we start](#before-we-start)
+  - [terminology](#terminology)
+  - [implementation](#implementation)
+    - [stating a request](#stating-a-request)
+    - [sending the request](#sending-the-request)
+    - [parsing the response](#parsing-the-response)
+  - [data limits](#data-limits)
+  - [wrappers](#wrappers)
+  - [exercises](#exercises)
+
+<!-- /TOC -->
+
 ## introduction
 
 In addition to the functionality of bulk downloading data, some websites would provide a *web data API*.

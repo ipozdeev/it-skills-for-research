@@ -12,6 +12,8 @@
     - [file types](#file-types)
     - [API](#api)
   - [example: SQL database](#example-sql-database)
+    - [API](#api-1)
+  - [resources](#resources)
   - [exercises](#exercises)
 
 <!-- /TOC -->
@@ -167,7 +169,7 @@ def put_fx_data():
 
 
 ## example: SQL database
-The directory tree is an example of an unstructured database. Things therein can be anything, and the only structure is the one noncommittally imposed by the user. An alternative is a relational databases powered by SQL. 
+The directory tree is an example of an unstructured database. Things therein can be anything, and the only structure is the one noncommittally imposed by the user. An alternative is a relational databases powered by SQL.
 
 SQL stands for Structured Query Language, and the SQL databases are characterized by data being stored and represented as rectangular tables with rows and columns. The power of such system comes from distributing different types of information across different tables, between which relations are created.
 
