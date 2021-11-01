@@ -9,7 +9,7 @@ technical skills for academic (not only) research, may be a bit finance-centric
 | oct 11  | [writing with latex](./writing-with-latex.md) (p1)
 | oct 18  | [writing with latex](./writing-with-latex.md) (p2)
 | oct 25  | [data management](./data-management.md) (p1)
-| nov 1   | [web api](./data-management.md) (data management p2)
+| nov 1   | [web api](./web-api.md) (data management p2)
 |         | feedback
 | nov 8   | [visualization](./visualization.md)
 | nov 15  | [knowledge transfer](./knowledge-transfer.md)
