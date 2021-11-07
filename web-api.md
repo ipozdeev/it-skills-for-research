@@ -4,7 +4,6 @@
 
 - [web api](#web-api)
   - [introduction](#introduction)
-  - [before we start](#before-we-start)
   - [terminology](#terminology)
   - [implementation](#implementation)
     - [stating a request](#stating-a-request)
@@ -12,6 +11,7 @@
     - [parsing the response](#parsing-the-response)
   - [data limits](#data-limits)
   - [wrappers](#wrappers)
+  - [resources](#resources)
   - [exercises](#exercises)
 
 <!-- /TOC -->
@@ -28,15 +28,11 @@ the server might respond by sending you data from its database. It is the task o
 
 API comes in handy for those who would frequently need the freshest data possible or would like to automate data upstream without necessity to click on buttons.
 
-In what follows we will get familiar with the [Kraken API](https://docs.kraken.com/rest/) and code our own wrapper for it to be able to simply run
+In what follows we will get familiar with the [Kraken API](https://docs.kraken.com/rest/) and code our own wrapper to be able to simply run
 ```python
 data = get_trades("XBT", since="2020-01-15")
 ```
 every time we need Bitcoin trades details.
-
-## before we start
-[postman]() is an app that can be used to peek into API requests and is a good choice for educational purposes.
-
 
 ## terminology
 *   **request**: what you send to the server; set of instructions in the form of a link, e.g. `https://api.kraken.com/0/public/Trades?pair=XBTUSD` which tells the server what you want to retrieve;
@@ -77,6 +73,10 @@ Together, the limits imply that additional coding &ndash; and patience &ndash; i
 
 ## wrappers
 As much of the above can be easily coded up and distributed, chances are high that there exist a Python, R etc wrappers for the API of your interest, written either by the data provider (the case of [quandl](https://data.nasdaq.com/tools/python)), or by a third party. Google it! Sometimes not an implementation but helpful tips are available, as is the case with [IMF](https://www.bd-econ.com/imfapi1.html).
+
+
+## resources
+*   [postman](https://www.postman.com/) is an app that can be used to peek into API requests and is a good choice for educational purposes.
 
 
 ## exercises
