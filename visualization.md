@@ -18,7 +18,7 @@ It is in a researcher's best interest that other people understand their work: h
 
 A good first step is to present information in graphical form or supplement other means of communication with graphics. Having spent millennia as diurnal animals in hostile environments, humans rely disproportionately stronger on vision for information acquisition than on other senses and happen to be better graphics processing units than readers, listeners or smellers. Still, just showing pictures is not enough:
 
-<img src="visualization/figures/pie_chart.jpg" width=500>
+<img src="./src/visualization/pie_chart.jpg" width=500>
 
 ## gambits of visualization
 At its core, visualization is a method of information compression, one of transforming what we understand poorly (e.g. lengthy series of numbers and dates) into something more conveniently digestible (e.g. a line chart). In doing so, new information such as colors, shapes etc. is being introduced, and little gambits emerge: you add bits in order to economize on bytes.
