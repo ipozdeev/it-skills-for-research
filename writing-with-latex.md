@@ -214,7 +214,7 @@ If you are not happy with off-the-shelf solutions LaTeX has to offer or have a s
 4.  Create a simple article consisting of:
     *   title page with title, author(s), affiliation(s), date, abstract and thanks;
     *   two pages of dummy text (use `blindtext` for that);
-    *   two citations of the papers you added in step 5 above;
+    *   two citations of the papers you added above;
     *   a figure and a table, both with captions and notes;
     *   bibliography on a separate page.
 5.  Create a simple beamer presentation consisting of:
