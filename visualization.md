@@ -54,6 +54,7 @@ Not all parts of the visual field subconsciously receive the same priority. Most
 
 ### colors
 Color blindness is inability to distinguish colors, most frequently but not solely red and green. The latter form affects up to 8% of males and 0.5% of females: given prevalence of males in academia and finance, there is about 30% chance that among 20 audience members at least 1 person will see the following chart:
+
 <img src="./src/visualization/colorblind-0.png" width=500>
 
 as:
