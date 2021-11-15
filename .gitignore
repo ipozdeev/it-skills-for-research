@@ -46,3 +46,4 @@ todo.txt
 
 # temp files, others
 *playground*
+packrat/lib*/

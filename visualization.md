@@ -99,7 +99,7 @@ Speakers of different languages have different perception of colors. For instanc
 
 ## resources
 *   [*Nature* article on color blind-friendly visualizations](https://www.nature.com/articles/d41586-021-02696-z);
-*   [color blindness simulator](https://www.color-blindness.com/coblis-color-blindness-simulator)
+*   [color blindness simulator](https://www.color-blindness.com/coblis-color-blindness-simulator);
 *   Financial Times ranting about chart crimes, [p1](https://www.ft.com/content/ef0a5f01-14ad-49f2-a5f6-994f65489b91), [p2](https://www.ft.com/content/ebc7d70c-0d28-4dc9-8006-de9a8be11981);
 *   [xkcd comic on visual fields](https://xkcd.com/1080/).
 
