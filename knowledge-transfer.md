@@ -1,9 +1,25 @@
-# knowledge transfer and reproducibility
+# knowledge transfer / reproducibility
+<!-- TOC -->
+
+- [knowledge transfer / reproducibility](#knowledge-transfer--reproducibility)
+  - [coding environment](#coding-environment)
+  - [interactive apps](#interactive-apps)
+    - [R shiny](#r-shiny)
+    - [app structure](#app-structure)
+    - [how server and ui talk](#how-server-and-ui-talk)
+  - [notebooks](#notebooks)
+    - [what are (jupyter) notebooks?](#what-are-jupyter-notebooks)
+    - [why jupyter?](#why-jupyter)
+    - [installation](#installation)
+    - [starting a new notebook](#starting-a-new-notebook)
+  - [exercises](#exercises)
+
+<!-- /TOC -->
 The black-and-white paper appearing in a journal is by far the most used way of way of academic knowledge transfer, the runner-up being the conference talk. Both are for what it is worth a one-way channel, as there is limited to no chance for the intended audience to talk back. This might be a fine practice in disciplines like mathematics, but for everything that includes data analysis this regretfully means scarcer feedback, less credibility and quicker aging of results, to the point that the researcher themselves cannot reproduce the findings after some time has passed.
 
 As an example, consider a toy exercise of detecting the relation between stocks' market betas and expected returns. You have performed some data analysis and present the results as follows:
 
-![figures/beta-vs-mu.png](figures/beta-vs-mu.png)
+<img src=./src/knowledge-transfer/beta-vs-mu.png width=500>
 
 The audience start asking questions:<br>
 &ndash; What happens if you change the estimation window? <br>
@@ -15,9 +31,9 @@ Answering these questions has a flair of sharing your _research flow_ rather tha
 In this chapter we will discuss some modern alternatives to the black-and-white paper (beyond the paper in color) and where the concept of open source fits into the academic game.
 
 ## coding environment
-First, let us talk about how to share which software you use. This might be a non-trivial task if you are developing in `Python` or `R` and clearly relying on interdependent packages. A snapshot of these packages constitutes you working _environment_, and a precise description thereof is as essential for anyone interested in replicating your research as the data and the code itself.
+First, let us talk about how to share which software you use. This might be a non-trivial task if you are developing in Python or R and clearly relying on interdependent packages. A snapshot of these packages constitutes you working _environment_, and a precise description thereof is as essential for anyone interested in replicating your research as the data and the code itself.
 
-In `R`, a good solution is [`packrat`](http://rstudio.github.io/packrat/). When in the project folder, executing `packrat::init()` tells the library to create folder `packrat/` with a bunch of configuration files and to relocate your current working environment to this folder (it has familiar the `lib/`, `bin/` etc.). From now on, the packages that you once installed in the home `R` folder are ignored, and the ones you will install appear in `packrat/lib/`. More in [this great SE answer](https://stackoverflow.com/a/38949039/2835160).
+In `R`, a good solution is [`packrat`](http://rstudio.github.io/packrat/). When in the project folder, executing `packrat::init()` tells the library to create folder `packrat/` with a bunch of configuration files and to relocate your current working environment to this folder (it has the familiar `lib/`, `bin/` etc.). From now on, the packages that you once installed in the home `R` folder are ignored, and the ones you will install appear in `packrat/lib/`. More in [this great SE answer](https://stackoverflow.com/a/38949039/2835160).
 
 In Python, you would normally use a virtual environment to be easily created with [`venv`](https://docs.python.org/3/library/venv.html#module-venv) or [`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
@@ -26,7 +42,7 @@ In Python, you would normally use a virtual environment to be easily created wit
 ### R shiny
 What if you could make the chart able to answer these questions, as showcased in this `R shiny` app: [https://ipozdeev.shinyapps.io/r-shiny-tutorial/](https://ipozdeev.shinyapps.io/r-shiny-tutorial/).
 
-An `R shiny` app is a webpage that contains `R` components. Attached to it a server with an open session of `R`, such that the moment the user changes inputs on the webpage, these changes are passed on to `R` and reflected in the output. `R shiny` apps wrap the functionality of `R` in a pretty HTML/CSS design without the coder having to know much of HTML and CSS. You can create an entire page using nothing but `R`!
+An `R shiny` app is a webpage that contains `R` components. Attached to it is a server with an open session of `R`, such that the moment the user changes inputs on the webpage, these changes are passed on to `R` and reflected in the output. `R shiny` apps wrap the functionality of `R` in a pretty HTML/CSS design without the coder having to know much of HTML and CSS. You can create an entire page using nothing but `R`!
 
 For a researcher who uses `R` to do the coding, `R shiny` is a marginally inexpensive step to give voice to their research project.
 
@@ -138,14 +154,12 @@ To start a notebook open the command prompt, then navigate to the directory you 
 
 Happy coding!
 
-## secret topic
-TBA
-
 ## exercises
-1.  Create a pip/conda (`packrat`) environment if using `Python` (`R`);
-2.  Think how you would export this environment to another computer;
-3.  Clone/update `digital-tools-for-finance` repo and use `packrat` to install the dependencies needed to run the app in `r-shiny-tutorial/`;
-4.  Create a virtual environment with `venv` or `conda` and export it to a `.txt` file;
-1.  Add another input control to the `r-shiny-tutorial` app to add/exclude stocks from the OLS estimation and chart;
-2.  Create a jupyter notebook, produce some output.
-3.  Save, commit and push the notebook to Github; make sure it appears there with the output.
+1.  clone/update `digital-tools-for-finance` repo and use `packrat` to install the dependencies needed to run the app in `r-shiny-tutorial/`;
+4.  add another input control to the `r-shiny-tutorial` app to add/exclude stocks from the OLS estimation and chart;
+1.  create own virtual environment;
+2.  make it portable to another computer;
+5.  register the environment as a jupyter kernel;
+4.  create a new jupyter notebook and produce some output;
+3.  save, commit and push the notebook to Github; make sure it appears with the output.
+3.  clone the annotated transformer notebook and install the requirements, then make sure you can run the cells.
