@@ -29,6 +29,7 @@ src/latex/**/*.pdf
 *.Rhistory
 *.dcf
 .Rproj.user
+packrat/lib*/
 
 # sublime
 *.sublime-*
@@ -46,4 +47,3 @@ todo.txt
 
 # temp files, others
 *playground*
-packrat/lib*/
