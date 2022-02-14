@@ -1,3 +1,5 @@
+# collaboration-tools
+
 <!-- TOC -->
 
 - [collaboration-tools](#collaboration-tools)
@@ -14,7 +16,6 @@
 
 <!-- /TOC -->
 
-# collaboration-tools
 International collaborations account for almost one-quarter of all publications. They arise from people meeting each other at conferences, after guest seminars, through mutual friends, and clearly require some tools to be fruitful. In what follows, we will discuss how to collaborate using Git acquainted with before ever so slightly enhanced in functionality with software called Slack.
 
 ## git
