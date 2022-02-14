@@ -4,7 +4,7 @@
 ./visualization/.ipynb_checkpoints
 
 # latex stuff
-src/latex/**/*.pdf
+**/templates/**/*template.pdf
 *.aux
 *.log
 *.nav
@@ -36,7 +36,7 @@ packrat/lib*/
 
 # course-related
 groups.txt
-submissions-2020
+grading/
 grading-checklist.txt
 todo.txt
 
@@ -47,3 +47,4 @@ todo.txt
 
 # temp files, others
 *playground*
+**/joblib
