@@ -1,37 +1,53 @@
-technical skills for academic (not only) research, may be a bit finance-centric
+Technical skills for academic (not only) research, may be a bit finance-centric.
+
 
 # prerequisites
-*   intermediate knowledge of python or R: how to write a function, plot a chart, format string values, read to and write from text files etc.;
-*   previous exposure to research projects;
-*   an account on Slack: all communication takes place there.
+*   intermediate knowledge of Python or R: how to write a function, plot a chart, format string values, read to and write from text files etc.; 
+*   previous exposure to research projects.
+
 
 # table of contents
 | date    | topic
 | ----    | ----
-| tba  | [introduction](./introduction.md)<br/>[command line](./command-line.md)<br/>[project environment](./project-environment.md)
-| tba  | [version control](./version-control.md)
-| tba   | [collaboration tools](./collaboration-tools.md) (version control p2)
-| tba  | [latex](./writing-with-latex.md) (p1)
-| tba  | [latex](./writing-with-latex.md) (p2)
-| tba  | [data management](./data-management.md) (p1)
-| tba   | [data management](./data-management.md) (p2)
-|         | feedback
-| tba   | [visualization](./visualization.md)
-| tba  | [knowledge transfer](./knowledge-transfer.md)
+| week 1 | [introduction](./introduction.md)<br/>software<br/>[project management](./project-environment.md)
+| week 2 | [command line](./command-line.md)
+| week 3 | [version control p1: working solo](./version-control.md)
+| week 4 | [version control p2: collaboration](./collaboration-tools.md)
+| week 5 | [latex p1: setup and basic usage](./writing-with-latex.md)
+| week 6 | [latex p2: advanced topics](./writing-with-latex.md)
+| week 7 | [data management p1: setting up a database](./data-management.md)
+| week 8 | [data management p2: web api](./data-management.md)
+| week 9 | [data management p3: introduction to SQL](./data-management.md)
+| week 10 | [visualization](./visualization.md)
+| week 11 | [knowledge transfer](./knowledge-transfer.md)
+| week 12 | reproducibility
 
-# workflow
-please work in groups of 2-4 people and set up one (1) repository per group &ndash; this will be the place to keep your midterm and final assignments; groups must be formed before the 5th lecture starts (**date in 2022 tba**), the only allowed change after this deadline being leaving one.
 
-# midterm
-the midterm is there to make sure all the work is not being postponed until it is too late. please have the end-of-chapter exercises (the ones before the midterm) solved by **date tba** and pushed to branch 'midterm'.
+# software
+We will be using Slack, a command line terminal, Python or R plus jupyter (potentially with an IDE), an advanced text editor (such as Sublime Text, Atom or VS Code), SQL management software, git (potentially with dedicated software or integration into the text editor of choice), as well as LaTeX (potentially with dedicated editors).
 
-# assignment
-the final assignment should be completed in groups of 2-3 people by mid December (precise date to be announced shortly) in form of a project; here are the requirements:
-1. make it hosted as a single repository on Github with all group members being contributors;
-2. structure it neatly and concisely, avoid the clutter of folders and files for which third people have no use (use .gitignore);
-3. keep working on it consistently, avoid bulk commits;
-4. create a little well-documented database with the data you use, featuring possibility to update it with fresh values;
-5. write a short paper using LaTeX, with sections, a table of contents, tables and figures that you create with the data above;
-6. write a beamer presentation for your project using LaTeX;
-7. keep figures and tables in line with the visualization standards discussed in class;
-8. create one interactive app (R shiny or jupyter notebook) describing the main finding and presenting several robustness checks.
+
+# examination
+Please work in groups of 2-4 people and set up one repository per group -- this will be the place to keep the midterm and final assignments on separate branches. Groups must be formed before the 4th lecture starts, the only allowed change after this deadline being leaving one.
+
+## midterm
+
+(25\%, group assignment, same grade)
+
+Please do the first 6 end-of-chapter exercise sets by the beginning of the 7th lecture and push the solutions to branch `midterm`.
+
+## final
+
+(75\%, group assignment, same grade)
+
+Please submit a little research project adhering to the following requirements:
+
+*   make it hosted as a single repository on Github with all group members as contributors;
+*   structure it neatly and concisely, avoid the clutter of folders and files for which third people have no use (use .gitignore);
+*   keep working on it consistently, avoid bulk commits;
+*   create a little well-documented database with the data you use, featuring possibility to update it with fresh values;
+*   design figures and tables to support your findings, keeping them in line with visualization standards discussed in class;;
+*   write a short paper about it using LaTeX, populating it with sections, a table of contents, as well as the above tables and figures;
+*   write a beamer presentation for your project using LaTeX;
+*   create one interactive app (R shiny or jupyter notebook) describing the main finding and presenting several robustness checks;
+*   make sure the results are reproducible by ensuring that the coding environment is exported and concise documentation is present.
