@@ -48,3 +48,6 @@ todo.txt
 # temp files, others
 *playground*
 **/joblib
+
+# key pairs
+*.pem
