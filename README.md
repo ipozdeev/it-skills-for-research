@@ -1,5 +1,6 @@
 Technical skills for academic (not only) research, may be a bit finance-centric.
 
+See [syllabus](syllabus.pdf) for details.
 
 # prerequisites
 *   intermediate knowledge of Python or R: how to write a function, plot a chart, format string values, read to and write from text files etc.; 
