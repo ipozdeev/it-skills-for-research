@@ -10,9 +10,14 @@ instance types:
 *   Spot Instances: cost-efficient, but can be shut down if someone has paid for this capacity (good for simulations?);
 *   Reserved Instances
 
-create volume -> attach it to an EC2 instance
+Please refer to the (rather good and comprehensible) [official documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html), paying the most attention to: 
+*   [launching instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstances.html);
+*   [stopping instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html);
+*   [connecting to instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html);
+*   running your code;
+*   [transferring files to and from](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html);
+*   [installing software](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-software.html);
+*   creating virtual coding environments;
+*   [managing storage](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Storage.html);
+*   monitoring usage statistics;
 
-ssh concepts
-aws keeps the public, the user - the private key
-
-connection instructions: [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html)

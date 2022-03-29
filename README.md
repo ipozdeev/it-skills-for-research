@@ -13,14 +13,14 @@ Technical skills for academic (not only) research, may be a bit finance-centric.
 | week 2 | [command line](./command-line.md)
 | week 3 | [version control p1: working solo](./version-control.md)
 | week 4 | [version control p2: collaboration](./collaboration-tools.md)
-| week 5 | [latex p1: setup and basic usage](./writing-with-latex.md)
-| week 6 | [latex p2: advanced topics](./writing-with-latex.md)
-| week 7 | [data management p1: setting up a database](./data-management.md)
-| week 8 | [data management p2: web api](./data-management.md)
-| week 9 | [data management p3: introduction to SQL](./data-management.md)
-| week 10 | [visualization](./visualization.md)
-| week 11 | [knowledge transfer](./knowledge-transfer.md)
-| week 12 | reproducibility
+| week 5 | [latex](./writing-with-latex.md)
+| week 6 | [data management p1: setting up a database](./data-management.md)
+| week 7 | [data management p2: web api](./data-management.md)
+| week 8 | [data management p3: introduction to SQL](./data-management.md)
+| week 9 | [visualization](./visualization.md)
+| week 10 | [knowledge transfer](./knowledge-transfer.md)
+| week 11 | reproducibility
+| week 12 | [cloud computing](./cloud-computing.md)
 
 
 # software
