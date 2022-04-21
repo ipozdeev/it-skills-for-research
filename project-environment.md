@@ -7,9 +7,9 @@
   - [text editor](#text-editor)
   - [coding](#coding)
     - [scripting](#scripting)
-    - [ipython notebooks](#ipython-notebooks)
+    - [jupyter notebooks](#jupyter-notebooks)
     - [IDE](#ide)
-  - [version controls system](#version-controls-system)
+  - [version control system](#version-control-system)
   - [database](#database)
   - [environment variables](#environment-variables)
   - [resources](#resources)
@@ -72,16 +72,15 @@ Way two is to use jupyter notebooks, which we will cover in a later section. You
 Way three is to work in an IDE or a simpler coding environment such as Atom's `hydrogen` package.
 
 
-## version controls system
+## version control system
 A VCS has become a must in IT and must become a must in research. Skipping ahead to the next lecture, a VCS is
 > [...] not unlike the backup feature of an operating system or checkpoints in a computer game [...]
 
-yet way more powerful. If the existence of this course were to be justified by one topic, version control would easily.
+yet way more powerful. If the existence of this course were to be justified by one topic, version control would easily be it.
 
 
 ## database
 This is the research-specific, and not borrowed from IT, part of the environment. Since data is such a big deal in empirical research, investments into organizing it *comme il faut* pay off quickly. We will discuss the best practices and some examples down the road.
-
 
 ## environment variables
 
