@@ -66,4 +66,4 @@ server <- function(input, output) {
 }
 
 # run the app
-shinyApp(ui = ui, server = server)
+shinyApp(ui = ui, server = server, launch.browser = TRUE)
