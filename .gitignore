@@ -37,6 +37,7 @@ packrat/lib*/
 # course-related
 groups.txt
 grading/
+admin/
 grading-checklist.txt
 todo.txt
 
