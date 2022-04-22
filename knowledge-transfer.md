@@ -1,7 +1,6 @@
 # knowledge transfer / reproducibility
 
 - [knowledge transfer / reproducibility](#knowledge-transfer--reproducibility)
-  - [coding environment](#coding-environment)
   - [interactive apps](#interactive-apps)
     - [R shiny](#r-shiny)
     - [app structure](#app-structure)
@@ -28,14 +27,6 @@ The audience start asking questions:
 Answering these questions has a flair of sharing your *research flow* rather than just the results, and indeed, if you could teach the audience to re-tread your path, they would be able to answer all the above question themselves &ndash; and more, they would be able to *reproduce* your findings.
 
 In this chapter we will discuss some modern alternatives to the black-and-white paper (beyond the paper in color) and where the concept of open source fits into the academic game.
-
-## coding environment
-
-First, let us talk about how to share which software you use. This might be a non-trivial task if you are developing in Python or R and clearly relying on interdependent packages. A snapshot of these packages constitutes you working *environment*, and a precise description thereof is as essential for anyone interested in replicating your research as the data and the code itself.
-
-In `R`, a good solution is [`packrat`](http://rstudio.github.io/packrat/). When in the project folder, executing `packrat::init()` tells the library to create folder `packrat/` with a bunch of configuration files and to relocate your current working environment to this folder (it has the familiar `lib/`, `bin/` etc.). From now on, the packages that you once installed in the home `R` folder are ignored, and the ones you will install appear in `packrat/lib/`. More in [this great SE answer](https://stackoverflow.com/a/38949039/2835160).
-
-In Python, you would normally use a virtual environment to be easily created with [`venv`](https://docs.python.org/3/library/venv.html#module-venv) or [`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
 ## interactive apps
 
