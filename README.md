@@ -6,6 +6,7 @@ See [syllabus](syllabus.pdf) for details.
 
 ## prerequisites
 
+- a 'heard-it-somewhere' understanding of computer science: what an operating system is, how virtual differs from physical or local from remote, why command line exists etc.;
 - intermediate knowledge of Python or R: how to write a function, plot a chart, format string values, read to and write from text files etc.;
 - previous exposure to research projects.
 
@@ -13,8 +14,8 @@ See [syllabus](syllabus.pdf) for details.
 
 | date    | topic
 | ----    | ----
-| week 1 | [introduction](./introduction.md)<br/>software<br/>[project management](./project-environment.md)
-| week 2 | [command line](./command-line.md)
+| week 1 | [introduction](./introduction.md)<br/>[command line](./command-line.md)
+| week 2 | [project environment](./project-environment.md)<br/>[coding environment](./coding-environment.md)
 | week 3 | [version control p1: working solo](./version-control.md)
 | week 4 | [version control p2: collaboration](./collaboration-tools.md)
 | week 5 | [latex](./writing-with-latex.md)
