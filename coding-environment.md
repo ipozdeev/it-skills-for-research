@@ -1,6 +1,6 @@
-# project environment
+# coding environment
 
-- [project environment](#project-environment)
+- [coding environment](#coding-environment)
   - [local environment](#local-environment)
   - [virtual environment](#virtual-environment)
   - [docker](#docker)
