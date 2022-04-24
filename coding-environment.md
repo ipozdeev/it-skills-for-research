@@ -34,9 +34,9 @@ ans so on. The audience would then install everything from the list on the local
 
 ## virtual environment
 
-For dealing with Python and R only, there exists a better alternative called virtual (coding) environment.
+For some languages, most notably for Python, R and Julia, there exists a better alternative called virtual (coding) environment.
 
-A virtual environment is an isolated configuration of interpreters that can be used instead of the system-wide ones. You can think of it as a fully autonomous installation of Python and R that can be used to run scripts. Multiple such installations can be created, each tailored to a specific project. A program that does this job is called an environment (or package) manager. Python-specific are [venv](https://docs.python.org/3/library/venv.html), itself a package, and [poetry](https://python-poetry.org/docs/managing-environments/); R-specific is [packrat](https://rstudio.github.io/packrat/); [conda](https://docs.conda.io/en/latest/) can handle both. In any case, the idea is the same: somewhere on the local machine a directory is created that contains the interpreter and packages; this directory is isolated in the sense that changing or deleting it has no effect on other interpreters present; packages needed for the code to run smoothly are installed in it; the system is told to only use the interpreter from this folder for running the project scripts.
+A virtual environment is an isolated configuration of interpreters that can be used instead of the system-wide ones. You can think of it as a fully autonomous installation of, say, Python that can be used to run scripts. Multiple such installations can be created, each tailored to a specific project. A program that does this job is called an environment (or package) manager. Python-specific are [venv](https://docs.python.org/3/library/venv.html), itself a package, and [poetry](https://python-poetry.org/docs/managing-environments/); R-specific is [renv](https://rstudio.github.io/renv/articles/renv.html) (replacing [packrat](https://rstudio.github.io/packrat/)); [conda](https://docs.conda.io/en/latest/) can handle both; julia has an own integrated system 'Pkg'. In any case, the idea is the same: somewhere on the local machine a directory is created that contains the interpreter and packages; this directory is isolated in the sense that changing or deleting it has no effect on other interpreters present; packages needed for the code to run smoothly are installed in it; the system is told to only use the interpreter from this folder for running the project scripts.
 
 Follow the [conda tutorial](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to learn how to manage environments with conda.
 
@@ -84,7 +84,7 @@ where `docker run` tells the shell to run a container, tag `-it` imposes interac
 
 ### build your own image
 
-Instead of `pull`ing an image from the hub, you can `build` a custom one by creating a file called `Dockerfile` (no extension!) and putting the customization commands inside it as described [here](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/). For instance, you might want to pre-install additional julia packages or create an environment variable.
+Instead of `pull`ing an image from the hub, you can `build` a custom one by creating a file called `Dockerfile` (no extension!) and putting the customization commands inside it as described [here](https://docs.docker.com/engine/reference/builder/). For instance, you might want to pre-install additional julia packages or create an environment variable.
 
 As a short example, start a new text file, call it `Dockerfile` and place the following lines in it:
 
@@ -97,7 +97,7 @@ RUN julia -e 'using Pkg; Pkg.add("Example")'
 ENV twinprime=31
 ```
 
-where the first commented out line is there for [docker reasons](https://docs.docker.com/engine/reference/builder/#syntax); `FROM julia` means the base image is 'julia' from the hub; `RUN ...` executes a bash command, in our case one installing package 'Example'; `ENV ...` sets an environment variable, in our case one called 'twinprime' with the value set to 31.
+where the first line (commented out) is there for [docker reasons](https://docs.docker.com/engine/reference/builder/#syntax); `FROM julia` means the base image is 'julia' from the hub; `RUN ...` executes a bash command, in our case one installing package 'Example'; `ENV ...` sets an environment variable, in our case one called 'twinprime' with a value of 31.
 
 Finally, to build an image tagged 'julia-x' from your Dockerfile (located at `/path/to/Dockerfile`), use:
 
@@ -143,3 +143,4 @@ A more advanced (and convenient) way of persisting files from a container is to 
 - [a good thread on `packrat`](https://stackoverflow.com/a/38949039/2835160)
 - [`docker` docu](https://docs.docker.com)
 - [a good unofficial `docker` guide](https://docker-curriculum.com/)
+- [understanding the Dockerfile](https://linuxhint.com/understand_dockerfile/)
