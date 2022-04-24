@@ -1,7 +1,6 @@
 # pycharm and ipython
 .idea/
 .ipynb_checkpoints/
-./visualization/.ipynb_checkpoints
 
 # latex stuff
 **/templates/**/*template.pdf
