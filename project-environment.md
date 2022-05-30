@@ -75,7 +75,6 @@ to see the output.
 
 The configuration of the code interpreter, especially the information about the used packages, constitutes the coding environment. It is an absolute must to know and record this information, as shareability of code and reproducibility of results hinge it being done properly. This is a huge topic in itself and to be discussed separately in a later section.
 
-
 ## environment variables
 
 Environment variables are key-value pairs in the project environment, most commonly used where values are subject to frequent change. Two most common use cases are referencing paths and storing credentials.

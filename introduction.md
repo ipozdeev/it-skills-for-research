@@ -51,19 +51,19 @@ The developer's workhorse. There are some non-essential differences between Wind
 
 ### text
 
-Sublime Text, Atom, plus integrated development environments: PyCharm, Spyder, RStudio and the like. We will be using Sublime Text the most.
+**Sublime Text**, **Atom**, **VS Code** or integrated development environments: **PyCharm**, **Spyder**, **RStudio** and the like &ndash; are all good choices.
 
 ### coding
 
-Python, R, Julia, maybe wrapped as jupyter notebooks.
+**Python**, **R** or **Julia**, maybe in the form of jupyter notebooks.
 
 ### version control
 
-We will be using Git. Please also create an account on [Github](https://github.com/).
+**Git**. Please also create an account on [Github](https://github.com/).
 
 ### databases
 
-We will be using MySQL and maybe database libraries. An installation guide for Windows/Mac can be found [here](https://youtu.be/7S_tz1z_5bA?t=593).
+**MySQL** and maybe language-specific database libraries.
 
 ### cloud storage
 
@@ -71,8 +71,9 @@ We will be using MySQL and maybe database libraries. An installation guide for W
 
 ### collaboration
 
-We will be using **Slack**, **Zoom** and **Miro** (you can install all three locally or use from the browser). Please create an account with each of those or connect an existing one.
+**Slack**, **Zoom** and **Miro** (you can install all three locally or use from the browser). Please create an account with each of those or connect an existing one.
 
-## exercises
+## todos
 
-1. create an account on **Slack** and join the `dtff-2021` group (invite will be sent per email).
+1. create an account on **Slack** and join the `isfr-2022` group (invite will be sent per email).
+2. install a text editor of choice.
