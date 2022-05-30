@@ -30,8 +30,9 @@
 .Rproj.user
 packrat/lib*/
 
-# sublime
+# workspace
 *.sublime-*
+workspace.code-workspace
 
 # course-related
 groups.txt
