@@ -213,22 +213,22 @@ If you are not happy with off-the-shelf solutions LaTeX has to offer or have a s
 
 ## exercises
 
-1. Install MiKTeX;
-1. Setup Sublime Text for LaTeXing, including graphics preview and inverse search;
-1. Install, if not present already, packages `threeparttable` and `blindtext`;
-1. Create folder `text/` with subfloders `paper/`, `presentation/` and `playground/`;
-1. In folder `playground/`, write 4 lines of code producing a document with the single sentence 'my first line';
-1. Compile the above document with `pdflatex`;
-1. Install JabRef;
-1. Locate the DOI of Milgrom's paper 'A Theory of Auctions and Competitive Bidding' and use it to auto-parse the info to JabRef;
-1. Create a `.bib` file with two entries, a [published paper](https://www.journals.uchicago.edu/doi/10.1086/707735) and a [working paper](https://ssrn.com/abstract=3555917);
-1. Create a simple article consisting of:
+1. Install MiKTeX or TeXLive;
+2. Setup your favourite text editor for LaTeXing;
+3. Install, if not present already, packages `threeparttable` and `blindtext`;
+4. Create folder `text/` with subfloders `paper/`, `presentation/` and `playground/`;
+5. In folder `playground/`, write 4 lines of code producing a document with the single sentence 'my first line';
+6. Compile the above document with `pdflatex`;
+7. Install JabRef;
+8. Locate the DOI of Milgrom's paper 'A Theory of Auctions and Competitive Bidding' and use it to auto-parse the info to JabRef;
+9. Create a `.bib` file with two entries, a [published paper](https://www.journals.uchicago.edu/doi/10.1086/707735) and a [working paper](https://ssrn.com/abstract=3555917);
+10. Create a simple article consisting of:
     - title page with title, author(s), affiliation(s), date, abstract and thanks;
     - two pages of dummy text (use `blindtext` for that);
     - two citations of the papers you added above;
     - a figure and a table, both with captions and notes;
     - bibliography on a separate page.
-1. Create a simple beamer presentation consisting of:
+11. Create a simple beamer presentation consisting of:
     - title frame with title, author(s), affiliation(s) and date;
     - three frames with titles and subtitles;
     - some equations and a theorem (use the special `theorem` environment);

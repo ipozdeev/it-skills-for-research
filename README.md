@@ -18,12 +18,12 @@ See [syllabus](syllabus.pdf) for details.
 | week 2 | [project environment](./project-environment.md)<br/>[coding environment](./coding-environment.md)
 | week 3 | [version control p1: working solo](./version-control.md)
 | week 4 | [version control p2: collaboration](./collaboration-tools.md)
-| week 5 | [latex](./writing-with-latex.md)
-| week 6 | [data management p1: setting up a database](./data-management.md)
-| week 7 | [data management p2: web api](./data-management.md)
-| week 8 | [data management p3: introduction to SQL](./data-management.md)
-| week 9 | [visualization](./visualization.md)
-| week 10 | [knowledge transfer](./knowledge-transfer.md)
+| week 5 | [data management p1: setting up a database](./data-management.md)
+| week 6 | [data management p2: web api](./data-management.md)
+| week 7 | [data management p3: introduction to SQL](./data-management.md)
+| week 8 | [visualization](./visualization.md)
+| week 9 | [publication p1: latex](./writing-with-latex.md)
+| week 10 | [publication p2: apps](./apps.md)
 | week 11 | reproducibility
 | week 12 | [cloud computing](./cloud-computing.md)
 

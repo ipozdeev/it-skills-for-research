@@ -1,6 +1,6 @@
-# knowledge transfer / reproducibility
+# apps
 
-- [knowledge transfer / reproducibility](#knowledge-transfer--reproducibility)
+- [apps](#apps)
   - [interactive apps](#interactive-apps)
     - [R shiny](#r-shiny)
     - [app structure](#app-structure)
@@ -16,7 +16,7 @@ The black-and-white paper appearing in a journal is by far the most used way of 
 
 As an example, consider a toy exercise of detecting the relation between stocks' market betas and expected returns. You have performed some data analysis and present the results as follows:
 
-<img src=./src/knowledge-transfer/beta-vs-mu.png width=500>
+<img src=./src/apps/beta-vs-mu.png width=500>
 
 The audience start asking questions:
 
