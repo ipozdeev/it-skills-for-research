@@ -10,7 +10,7 @@
     - [databases](#databases)
     - [cloud storage](#cloud-storage)
     - [collaboration](#collaboration)
-  - [exercises](#exercises)
+  - [todos](#todos)
 
 This course's sole purpose is to introduce an aspiring researcher to certain useful software and IT concepts which are to research what icing is to cake: not the defining part but not inessential either. After all, research is not only idea generation, data analysis and publication (which universities do a good job at teaching): there are elements such as project and data management, collaboration, knowledge transfer etc. (which are often underrepresented in curricula). Addressing these elements properly boosts the researcher's efficiency and the impact of the end product. This is exactly what we will try to learn in the following weeks.
 
