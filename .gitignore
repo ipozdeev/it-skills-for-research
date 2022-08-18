@@ -29,6 +29,8 @@
 *.dcf
 .Rproj.user
 packrat/lib*/
+renv/
+.Rprofile
 
 # workspace
 *.sublime-*
