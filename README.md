@@ -33,7 +33,7 @@ We will be using Slack, a command line terminal, Python or R plus jupyter (poten
 
 ## examination
 
-Please work in groups of 2-4 people and set up one repository per group -- this will be the place to keep the midterm and final assignments on separate branches. Groups must be formed before the 4th lecture starts, the only allowed change after this deadline being leaving one.
+Please work in groups of 2-4 people and set up one repository per group &ndash; this will be the place to keep the midterm and final assignments on separate branches. Groups must be formed before the 4th lecture starts, the only allowed change after this deadline being leaving one.
 
 ### midterm
 
@@ -50,9 +50,11 @@ Please submit a little research project adhering to the following requirements:
 - make it hosted as a single repository on Github with all group members as contributors;
 - structure it neatly and concisely, avoid the clutter of folders and files for which third people have no use (use .gitignore);
 - keep working on it consistently, avoid bulk commits;
-- create a little well-documented database with the data you use, featuring possibility to update it with fresh values;
+- create a little well-documented database with the data you use, ideally with update functionality;
 - design figures and tables to support your findings, keeping them in line with visualization standards discussed in class;;
-- write a short paper about it using LaTeX, populating it with sections, a table of contents, as well as the above tables and figures;
+- write a short paper about it using LaTeX or Jupyter/Shiny, populating it with sections, a table of contents, as well as the above tables and figures;
 - write a beamer presentation for your project using LaTeX;
-- create one interactive app (R shiny or jupyter notebook) describing the main finding and presenting several robustness checks;
+- create one interactive app (Shiny or Jupyter notebook) describing the main finding and presenting several robustness checks;
 - make sure the results are reproducible by ensuring that the coding environment is exported and concise documentation is present.
+
+You can pick a topic from the [list of suggested topics](./research-topics.md), but are encouraged to come up with one of your own or choose to replicate a result from a paper (which does not have an open-source implementation yet).
