@@ -17,6 +17,9 @@ ui <- fluidPage(
                   choices = list("daily" = "daily", 
                                  "monthly" = "monthly",
                                  "yearly" = "yearly"), selected = "daily"),
+      br(),
+      p("data until:"),
+      textOutput("last_date")
       
     ),
     
@@ -63,6 +66,8 @@ server <- function(input, output) {
     fig
     
   })
+  
+  output$last_date = renderText(as.character(tail(index(r), 1)))
 }
 
 # run the app

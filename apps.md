@@ -32,7 +32,7 @@ In this chapter we will discuss some modern alternatives to the black-and-white 
 
 ### R shiny
 
-What if you could make the chart able to answer these questions, as showcased in this `R shiny` app: [https://ipozdeev.shinyapps.io/r-shiny-tutorial/](https://ipozdeev.shinyapps.io/r-shiny-tutorial/).
+What if you could make the chart able to answer these questions, as showcased in this `R shiny` app: [https://ipozdeev.shinyapps.io/r-shiny/](https://ipozdeev.shinyapps.io/r-shiny)?
 
 An `R shiny` app is a webpage that contains `R` components. Attached to it is a server with an open session of `R`, such that the moment the user changes inputs on the webpage, these changes are passed on to `R` and reflected in the output. `R shiny` apps wrap the functionality of `R` in a pretty HTML/CSS design without the coder having to know much of HTML and CSS. You can create an entire page using nothing but `R`!
 
