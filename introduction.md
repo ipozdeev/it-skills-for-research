@@ -63,7 +63,7 @@ The developer's workhorse. There are some non-essential differences between Wind
 
 ### databases
 
-**MySQL** and maybe language-specific database libraries.
+**PostgreSQL** and maybe language-specific database libraries.
 
 ### cloud storage
 
@@ -76,4 +76,5 @@ The developer's workhorse. There are some non-essential differences between Wind
 ## todos
 
 1. create an account on **Slack** and join the `isfr-2022` group (invite will be sent per email).
-2. install a text editor of choice.
+2. install a text editor of choice;
+3. create an account on GitHub.
