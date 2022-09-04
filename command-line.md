@@ -28,25 +28,25 @@ A command such as `echo` or `pdflatex` can be run in a shell as long as the shel
 
 With that in mind, `echo` can be run because it is an internal command; `pdflatex` can because `pdflatex.exe` has been put into one of the directories from the **PATH** variable.
 
-Commands tend to have *parameters*: for instance,
+Commands tend to have *arguments*: for instance,
 
 ```bash
 pdflatex presentation.tex
 ```
 
-would compile and create a .pdf from file `presentation.tex`, the latter being the parameter to the command.
+would compile and create a .pdf from file `presentation.tex`, the latter being the argument to the command.
 
 Commands can also have options, indicated with a double dash: for instance,
 
 ```bash
-pdflatex presentation.tex --output-directory=DIR
+pdflatex presentation.tex -output-directory=DIR
 ```
 
 would use existing `DIR` as the destination for generated files, instead of the current working directory. An option parameter (such as `DIR`) can be separated from the option name (such as `output-directory`) by a space ' ', equality sign '=' or colon ':'.
 
 ## scripts
 
-Shell commands can be packaged as scripts to be run "in bulk". Scripts are  shell-specific, although for the most basic purposes the differences are minor. Scripts intended for Linux `bash` tend to have extension ".sh", Windows `cmd` scripts &ndash; ".bat", Windows PowerShell &ndash; ".ps1" and so on. A simplest example of a bash script would be a text file called 'todo-creator.sh' with the following line of code:
+Shell commands can be packaged as scripts to be run "in bulk". Scripts are  shell-specific, although for the most basic purposes the differences are minor. Scripts intended for `bash` on Linux tend to have extension '.sh', Windows `cmd` scripts &ndash; '.bat', Windows PowerShell &ndash; '.ps1' and so on. A simplest example of a bash script would be a text file called 'todo-creator.sh' with the following line of code:
 
 ```bash
 echo "" > todo.txt
@@ -58,13 +58,13 @@ When executed:
 ./todo-creator
 ```
 
-this script creates file `todo.txt` in the current directory (and write some stuff in it too). Note that executing bash scripts may require [changing the permissions](https://www.redhat.com/sysadmin/introduction-chmod).
+this script creates file `todo.txt` in the current directory (and write some stuff in it too). Note that executing bash scripts may require [changing permissions](https://www.redhat.com/sysadmin/introduction-chmod).
 
-It is possible (and quite handy) to write scripts that accept parameters and options, just like a command would.
+It is possible (and quite handy) to write scripts that accept arguments and options, just like a command would.
 
 ## automating tasks
 
-Scripts can be executed automatically at a specified time. All you need is a working script (with correct permissions as note above), correct path references and a task in the task scheduler of choice (**Task Scheduler** on Windows, **crontab** on Linux/Mac). As an example, web scraping or mail feed can be automated.
+Scripts can be executed automatically at a specified time. All you need is a working script (with correct permissions as note above), correct path references and a task in the task scheduler of choice (**Task Scheduler** on Windows, `crontab` on Linux/Mac). As an example, web scraping or mail feed can be automated.
 
 On Linux, `crontab` is used to manage tasks.
 
@@ -78,7 +78,7 @@ On Linux, `crontab` is used to manage tasks.
 
 Using the shell of your choice:
 
-- write a bash script (one you could execute on a Linux server) called "runner.sh" which prints the message provided by the user as a parameter to the script; for instance,
+- write a bash script (one you could execute on a Linux server) called 'runner.sh' which prints the message provided by the user as an argument to the script; for instance,
 
   ```bash
   ./runner.sh 'hello'
