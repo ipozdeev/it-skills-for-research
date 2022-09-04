@@ -52,24 +52,24 @@ Many a concept to be taught in this course are no big news in software developme
 Learn some of the best practices required to efficiently conduct research today:
 
 \begin{itemize}[topsep=0pt, itemsep=4pt, partopsep=0pt, parsep=0pt]
-    \item \textbf{project management}:\par
-        development environment, directory layout, text editors, coding modes;
     \item \textbf{command line}:\par
         use cases, commands, scripts, environment variables, file manipulations, remote connection, authentication, cronjob;
+    \item \textbf{project management}:\par
+        development environment, directory layout, text editors, coding modes;
     \item \textbf{version control (git)}:\par
         use cases, installation, git areas, tracking and ignoring files, undoing things, concurrent editing, branching, github;
-    \item \textbf{latex}:\par
-        installation, formats and engines, command line interface, packages, beamer, custom styles, bibliographies;
     \item \textbf{data management}:\par
         organizing a database, database api, memoization, data file types, web api, introduction to SQL;
-    \item \textbf{visualization}:\par
+        \item \textbf{visualization}:\par
         cognition science basics, colors, tricks for better visuals;
-    \item \textbf{knowledge transfer}:\par
-        interactive apps, jupyter notebooks;
-    \item \textbf{cloud computing}:\par
-        remote connections, virtual machines, Amazon Web Services (AWS);
+    \item \textbf{latex}:\par
+        installation, formats and engines, command line interface, packages, beamer, custom styles, bibliographies;
+    \item \textbf{research apps}:\par
+        interactivity, jupyter notebooks, R shiny apps;
     \item \textbf{reproducibility}:\par
         open source concepts, environment export, makefiles, testing.
+    \item \textbf{cloud computing}:\par
+        remote connections, virtual machines, Amazon Web Services (AWS);
 \end{itemize}
 
 % section objectives (end)
@@ -85,16 +85,16 @@ Intermediate knowledge of Python or R: how to write a function, plot a chart, fo
 \label{sec:schedule}
 
 \begin{tabularx}{0.7\textwidth}{Xl}
-    week 1 & introduction + software + project management \\
-    week 2 & command line \\
+    week 1 & introduction + software + command line \\
+    week 2 & environment \\
     week 3 & version control p1: working solo \\
     week 4 & version control p2: collaboration \\
-    week 5 & latex \\
-    week 6 & data management p1: setting up a database \\
-    week 7 & data management p2: web api \\
-    week 8 & data management p3: introduction to SQL \\
-    week 9 & visualization \\
-    week 10 & knowledge transfer \\
+    week 5 & data management p1: setting up a database \\
+    week 6 & data management p2: web api \\
+    week 7 & data management p3: introduction to SQL \\
+    week 8 & visualization \\
+    week 9 & publication p1: latex \\
+    week 10 & publication p2: apps \\
     week 11 & reproducibility \\
     week 12 & cloud computing
 \end{tabularx}
@@ -117,7 +117,7 @@ Please work in groups of 2-4 people and set up one repository per group -- this 
 
 \textbf{(25\%, group assignment, same grade)}
 
-Please do the first 6 end-of-chapter exercise sets by the beginning of the 7th lecture and push the solutions to branch ``midterm''.
+Please do the first 6 end-of-chapter exercise sets by the beginning of the 7th lecture and push the solutions to branch `midterm`.
 
 \label{sub:midterm}
 
@@ -134,12 +134,13 @@ Please submit a little research project adhering to the following requirements:
     \item make it hosted as a single repository on Github with all group members as contributors;
     \item structure it neatly and concisely, avoid the clutter of folders and files for which third people have no use (use .gitignore);
     \item keep working on it consistently, avoid bulk commits;
-    \item create a little well-documented database with the data you use, featuring possibility to update it with fresh values;
-    \item design figures and tables to support your findings, keeping them in line with visualization standards discussed in class;;
-    \item write a short paper about it using LaTeX, populating it with sections, a table of contents, as well as the above tables and figures;
+    \item create a little well-documented database with the data you use, ideally with update methods;
+    \item design figures and tables to support your findings, keeping them in line with visualization standards discussed in class;
+    \item write a short paper about it using LaTeX or Jupyter/Shiny, populating it with sections, a table of contents, as well as the above tables and figures;
     \item write a beamer presentation for your project using LaTeX;
-    \item create one interactive app (R shiny or jupyter notebook) describing the main finding and presenting several robustness checks;
-    \item make the results reproducible by ensuring that the coding environment is exported and concise documentation is present.
+    \item create one interactive app (Shiny or Jupyter notebook) describing the main finding and presenting several robustness checks;
+    \item make sure the results are reproducible by ensuring that the coding environment is exported and concise documentation is present;
+    \item in the ideal case, anyone who could pass this course should be able to see and reproduce your findings from scratch.
 \end{itemize}
 
 % subsection final (end)
