@@ -23,10 +23,14 @@ Advanced text editors offer a possibility to open a terminal at the root of the 
 A command such as `echo` or `pdflatex` can be run in a shell as long as the shell knows where to find the executable file of the same name. How can it know? It searches the following places in the stated order:
 
 1. the list of internal (embedded in the shell) commands;
-2. executables in the current directory;
-3. executables in **PATH**.
+2. executables specified in environment variable called `$PATH`.
 
-With that in mind, `echo` can be run because it is an internal command; `pdflatex` can because `pdflatex.exe` has been put into one of the directories from the **PATH** variable.
+With that in mind, `echo` can be run because it is an internal command; `pdflatex` can because `pdflatex.exe` has been put into one of the directories from the `$PATH` variable.
+
+Environment variables will be covered in more detail later; for now, it suffices to know that `$PATH` is a long string referencing all the places to look for executables:
+```bash
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:
+```
 
 Commands tend to have *arguments*: for instance,
 
@@ -36,7 +40,7 @@ pdflatex presentation.tex
 
 would compile and create a .pdf from file `presentation.tex`, the latter being the argument to the command.
 
-Commands can also have options, indicated with a double dash: for instance,
+Commands can also have options, indicated with a single or double dash: for instance,
 
 ```bash
 pdflatex presentation.tex -output-directory=DIR
@@ -76,6 +80,23 @@ On Linux, `crontab` is used to manage tasks.
 
 ## exercises
 
+- study command `grep` and the pipe operator `|`;
+
+Create text file 'commandline-cheatsheet.txt', where for each of the following tasks, there is a line with the command(s) that does(do) it:
+
+- create directory `temp/`;
+- change working directory to `temp/` (assuming `temp/` exists);
+- write 'hello world' to file called `hello.txt`;
+- list all files and folders in the *parent* folder of `temp/`;
+- list all currently processes running;
+- kill process with ID 666;
+- write the contents of environment variable `$PATH` to file `path.txt`;
+- find file 'hello.txt' in the parent of the current directory;
+- find all `.png` files in your home directory and subdirectories;
+- find where the executable of command `echo` is located;
+- find text 'Select all processes' in the manual of command `ps` (that is, in the output of command `man ps`);
+- write the last 20 commands you've executed to file `commands.txt`.
+
 Using the shell of your choice:
 
 - write a bash script (one you could execute on a Linux server) called 'runner.sh' which prints the message provided by the user as an argument to the script; for instance,
@@ -85,5 +106,5 @@ Using the shell of your choice:
   ```
 
   is supposed to display "hello";  
-- write a text document describing the steps necessary for a user without superuser privileges to create a cron job on a Linux server that runs every second day at 17:00 executing script "runner.sh 'hello'";
-- place both files above in folder "homework/week1" (you will commit and push them once we've covered version control).
+- write a text document describing the steps necessary for a user without superuser privileges to create a cron job on a Linux server that runs every second day at 17:00 executing script "runner.sh 'hello'" (no need to create the job, just describe the steps);
+- place all files above in folder "homework/week1" (you will commit and push them once we've covered version control).
