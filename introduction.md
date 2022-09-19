@@ -30,11 +30,11 @@ Though much of the following might still be unclear (will be clear as spring wat
 ```bash
 |-- projects/
 |   |-- project_1/
-|   |-- src/
-|   |-- text/
-|   |-- literature/
-|   |-- notes.txt
-|   |-- ...
+|   |   |-- src/
+|   |   |-- text/
+|   |   |-- literature/
+|   |   |-- notes.txt
+|   |   |-- ...
 ```
 
 Each project can be cloned and its results reproduced because hard references such as `c://users//alan.smithee/...` are avoided and the coding environment is exported. LaTeX files feature a common style, itself maintained as a project.
@@ -67,7 +67,7 @@ The developer's workhorse. There are some non-essential differences between Wind
 
 ### cloud storage
 
-**Google Drive**, **Yandex.Disk**, **OneDrive** and **Dropbox** are decent solutions here, together offering about 45 Gb of free cloud storage space. Data protection concerns apply though: the servers where your data is copied are located where you sometimes do not want sensitive (e.g. related to a private sector job) data to appear.
+Google Drive, Yandex.Disk, OneDrive and Dropbox are decent solutions here, together offering about 45 Gb of free cloud storage space. Data protection concerns apply though: the servers where your data is copied are located where you sometimes do not want sensitive (e.g. related to a private sector job) data to appear.
 
 ### collaboration
 

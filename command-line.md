@@ -74,7 +74,9 @@ On Linux, `crontab` is used to manage tasks.
 
 ## resources
 
+- [one option for an online terminal](https://cocalc.com/);
 - [command line tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line) from mozilla;
+- [command line challenge](https://cmdchallenge.com);
 - [bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners);
 - [crontab reference](https://www.tutorialspoint.com/unix_commands/crontab.htm).
 
