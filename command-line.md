@@ -48,6 +48,8 @@ pdflatex presentation.tex -output-directory=DIR
 
 would use existing `DIR` as the destination for generated files, instead of the current working directory. An option parameter (such as `DIR`) can be separated from the option name (such as `output-directory`) by a space ' ', equality sign '=' or colon ':'.
 
+> [What's the difference between one dash and two dashes?](https://superuser.com/q/372203/1731633)
+
 ## scripts
 
 Shell commands can be packaged as scripts to be run "in bulk". Scripts are  shell-specific, although for the most basic purposes the differences are minor. Scripts intended for `bash` on Linux tend to have extension '.sh', Windows `cmd` scripts &ndash; '.bat', Windows PowerShell &ndash; '.ps1' and so on. A simplest example of a bash script would be a text file called 'todo-creator.sh' with the following line of code:
@@ -74,11 +76,12 @@ On Linux, `crontab` is used to manage tasks.
 
 ## resources
 
-- [one option for an online terminal](https://cocalc.com/);
+- [an online terminal to learn the basics](https://cocalc.com/);
 - [command line tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line) from mozilla;
 - [command line challenge](https://cmdchallenge.com);
 - [bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners);
-- [crontab reference](https://www.tutorialspoint.com/unix_commands/crontab.htm).
+- [crontab reference](https://www.tutorialspoint.com/unix_commands/crontab.htm);
+- [future of the command line](https://github.com/readme/featured/future-of-the-command-line) from github.
 
 ## exercises
 
