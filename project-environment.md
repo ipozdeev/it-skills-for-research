@@ -28,6 +28,10 @@ A project environment is everything that makes your project work. Borrowing from
 
 Your project lives somewhere. A good idea is to allocate a folder for all your projects and never leave it when starting a new one. The folder will most likely be located on your hard drive, which we call 'local', but an even better idea is to back it up where it cannot get deleted, which we call 'remote'. Websites such as [https://github.com/](https://github.com/) or [https://www.atlassian.com/](https://www.atlassian.com/) that offer hosting for version-controlled projects (to be covered later) are one solution for remote storage, albeit for medium-size files only &ndash; for everything else cloud drives such as **Google Drive** are the way to go. These have a space limit which up to a point in your research career you are not going to max out, and if it happens, you can move on to a competitor, such as **Yandex.Disk** or **Dropbox**.
 
+The importance of having a logical, tidy and, most importantly, consistent and appropriate project tree cannot be stressed enough: it fosters comprehensibility and reproducibilty and boost efficiency. A tidy project tree makes it easy to navigate through the project: data is located in folder `data/`, and code in folder `src/`, and folder `text/figures` contains the figures to be used in your reports. A consistent project tree saves you time (no need to think how to structure a new project!) and makes it easier for other people to follow your research. An appropriate project tree &ndash; the one that is consistent across projects and researchers &ndash; is an important pillar of reproducibility.
+
+The [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/overview.html) project was started to tackle the above considerations; its [data science layout](http://drivendata.github.io/cookiecutter-data-science/) is a great fit for this course, so take your time to explore it.
+
 ## text editor
 
 *NB: Make sure you understand the difference between a text editor and word processor (refer to [the LaTeX introduction](https://github.com/ipozdeev/digital-tools-for-finance/blob/master/writing-with-latex.md#introduction) for details).*
@@ -132,15 +136,17 @@ This is the research-specific, and not borrowed from IT, part of the environment
 
 ## resources
 
-- [gretl](http://gretl.sourceforge.net/) is a free powerful open-source alternative to **EViews** and **Stata**, perfectly balanced for peek-in estimations and more advanced projects.
+- [cookiecutter](https://cookiecutter.readthedocs.io/en/latest/overview.html);
+- [gretl](http://gretl.sourceforge.net/) is a free powerful open-source alternative to **EViews** and **Stata**, perfectly balanced for peek-in estimations and more advanced projects;
 - [python-dotenv](https://pypi.org/project/python-dotenv/) is a handy tools for managing environment variables in Python.
 
 ## exercises
 
-1. install Sublime Text or VS Code or your favorite text editor;
-2. create a directory for the group project you are supposed to hand in as the graded assignment for this course, then set up a basic structure for it;
-3. create an environment variable RESEARCH_PATH (don't forget about the platform-specific '&' and '%') referencing the folder with all your projects;
-4. write a script that, when executed, would create a new directory of a given name in the folder above folder, referencing the latter with the created environment variable (make sure the script runs on any machine subject to the environment variable being set), and put the script in the directory you created earlier;
-5. install Python using anaconda or miniconda and make sure `jupyter` is installed too;
+1. install a nice text editor;
+2. install Python (best with anaconda or miniconda) and make sure you can run `pip` or `conda` from the command line;
+3. install `cookiecutter`;
+4. create a directory for the group project you are supposed to hand in as the graded assignment for this course and set up a basic structure for it (best by using cookiecutter and trimming unnecessary stuff);
+5. create an environment variable `RESEARCH_PATH` (don't forget about the platform-specific '&' and '%') referencing the folder with all your projects;
 6. (optional) if unhappy with Python, install R or Julia or anything of your choice;
-7. install git and create an account on GitHub.
+7. install git and create an account on GitHub;
+8. make sure you can run `git` from the command line (on Windows, you can install **git bash** to emulate the terminal for git-related commands).
