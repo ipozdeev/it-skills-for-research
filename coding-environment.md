@@ -11,6 +11,7 @@
     - [file transfer](#file-transfer)
     - [useful tricks](#useful-tricks)
   - [resources](#resources)
+  - [exercises](#exercises)
 
 For every project, there exists a set of necessary and sufficient *dependencies*: hardware (such as a GPU with CUDA support), software (Python v3.9.0 with package 'scipy' v1.8.0), data (a feather file containing stock prices), scripts (setting environment variables) and so on. This set is called the project environment, and the subset thereof that only involves the software &ndash; the coding environment. The possibility to export and share the environment is crucial for developers and should become such for researchers, as reproducibility and knowledge transfer hinges on it to a big extent.
 
@@ -36,13 +37,13 @@ ans so on. The audience would then install everything from the list on the local
 
 For some languages, most notably for Python, R and Julia, there exists a better alternative called virtual (coding) environment.
 
-A virtual environment is an isolated configuration of interpreters that can be used instead of the system-wide ones. You can think of it as a fully autonomous installation of, say, Python that can be used to run scripts. Multiple such installations can be created, each tailored to a specific project. A program that does this job is called an environment (or package) manager. Python-specific are [venv](https://docs.python.org/3/library/venv.html), itself a package, and [poetry](https://python-poetry.org/docs/managing-environments/); R-specific is [renv](https://rstudio.github.io/renv/articles/renv.html) (replacing [packrat](https://rstudio.github.io/packrat/)); [conda](https://docs.conda.io/en/latest/) can handle both; julia has an own integrated system 'Pkg'. In any case, the idea is the same: somewhere on the local machine a directory is created that contains the interpreter and packages; this directory is isolated in the sense that changing or deleting it has no effect on other interpreters present; packages needed for the code to run smoothly are installed in it; the system is told to only use the interpreter from this folder for running the project scripts.
+A virtual environment is an isolated configuration of interpreters that can be used instead of the system-wide ones. You can think of it as a fully autonomous installation of, say, Python that can be used to run scripts. Multiple such installations can be created, each tailored to a specific project. A program that does this job is called an environment (or package) manager. Python-specific are [venv](https://docs.python.org/3/library/venv.html), itself a package, and [poetry](https://python-poetry.org/docs/managing-environments/); R-specific is [renv](https://rstudio.github.io/renv/articles/renv.html) (replacing [packrat](https://rstudio.github.io/packrat/)); [conda](https://docs.conda.io/en/latest/) and its improved peer [mamba](https://github.com/mamba-org/mamba) can handle both; julia has an own integrated system 'Pkg'. In any case, the idea is the same: somewhere on the local machine a directory is created that contains the interpreter and packages; this directory is isolated in the sense that changing or deleting it has no effect on other interpreters present; packages needed for the code to run smoothly are installed in it; the system is told to only use the interpreter from this folder for running the project scripts.
 
 Follow the [conda tutorial](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to learn how to manage environments with conda.
 
 ## docker
 
-Some projects require more than Python or R: there might be a dependency on TeX Live or PostgreSQL or gretl or even a whole operating system such as Ubuntu. These are impossible to install with `conda` or `packrat`, and a different solution is needed.
+Some projects require more than Python or R: there might be a dependency on TeX Live or PostgreSQL or gretl or even a whole operating system such as Ubuntu. These are impossible to install with `conda` or `renv`, and a different solution is needed.
 
 [Docker](https://docs.docker.com/) provides one such solution by packaging software into 'containers' which can be used as isolated environments ('container' is a telling term in this respect: everything needed is packaged, sealed and ready for dispatch).
 
@@ -138,9 +139,14 @@ A more advanced (and convenient) way of persisting files from a container is to 
 
 ## resources
 
-- [`venv` docu](https://docs.python.org/3/library/venv.html)
-- [`poetry` docu](https://python-poetry.org/docs/managing-environments/)
-- [a good thread on `packrat`](https://stackoverflow.com/a/38949039/2835160)
-- [`docker` docu](https://docs.docker.com)
-- [a good unofficial `docker` guide](https://docker-curriculum.com/)
-- [understanding the Dockerfile](https://linuxhint.com/understand_dockerfile/)
+- [`venv` docu](https://docs.python.org/3/library/venv.html);
+- [a good thread on `packrat`](https://stackoverflow.com/a/38949039/2835160) &ndash; conceptually useful;
+- [a guide to `renv`](https://rstudio.github.io/renv/articles/renv.html);
+- [`docker` docu](https://docs.docker.com);
+- [a good unofficial `docker` guide](https://docker-curriculum.com/);
+- [understanding the Dockerfile](https://linuxhint.com/understand_dockerfile/).
+
+## exercises
+
+- in your favorite language, write a script to plot data in `data/coding-environment-exercise.csv`;
+- write a `Dockerfile` that would allow anyone to do the same plotting that you did, in the same language, given that the .csv file above is present in folder `data/`; anyone should be able to `cd` into some folder, copy your Dockerfile and `data/coding-environment-exercise.csv` therein, build the image, create a container, plot the data and either see the plot or be able to copy it to the local machine.
