@@ -6,9 +6,10 @@
   - [starting to version control](#starting-to-version-control)
   - [git areas](#git-areas)
   - [tracking changes](#tracking-changes)
+  - [branching](#branching)
   - [fixing the screwed-up](#fixing-the-screwed-up)
     - [1. roll back recent changes](#1-roll-back-recent-changes)
-    - [2. go back to a particular commit](#2-go-back-to-a-particular-commit)
+    - [2. go back to a particular point in history](#2-go-back-to-a-particular-point-in-history)
     - [3. roll back all changes](#3-roll-back-all-changes)
     - [4. roll back changes via a new commit](#4-roll-back-changes-via-a-new-commit)
   - [ignoring files](#ignoring-files)
@@ -37,7 +38,7 @@ Follow the instructions on the webpage to install Git. Now, to operate Git you c
 - use a specialized third software such as Sublime Merge.
 Choose whatever you like! In this tutorial, we will stick to the first option. Obviously, the same commands we will be executing power the Git features of your favorite text editor or third software.
 
-> \[[git-book](https://git-scm.com/book/en/v2)\] The first thing you should do when you install Git is to set your user name and email address.
+> \[[git-book](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)\] The first thing you should do when you install Git is to set your user name and email address.
 
 ## starting to version control
 
@@ -74,7 +75,7 @@ git add todo.txt
 Now you have made the file *staged*: on the next commit the file as it looks right now will become part of the local repository. Note that:
 > \[[git-book](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)\] If you modify a file after you run `git add`, you have to run `git add` again to stage the latest version of the file.
 
-To commit means to persist changes in the repository. The files in the repo can be reverted back to any committed version. You can think of this similar to the multiverse theory: with each commit, the universe of your project branches, so that if you are unhappy with a branch you are perching on, you can go back to where the branch originated and take a parallel branch. Do not ignore the commit message &mdash; these make it easier to navigate through the change history!
+To commit means to persist changes in the repository. The files in the repo can be reverted back to any committed version. Do not ignore the commit message &mdash; these make it easier to navigate through the change history!
 
 ```bash
 git commit -m "initial commit of todo.txt"
@@ -85,6 +86,29 @@ git commit -m "initial commit of todo.txt"
 ```bash
 git log --oneline
 ```
+
+## branching
+
+Sometimes, it might be useful to create a line of development separate from what is happening in the repository. For instance, your paper finally looks OK in terms of tables, figures and text, but the appearance needs polishing. In order to keep the appearance-related changes far from your econometrics code, you could create a **branch**, work on it, and then, when all seems safe enough, integrate the changes back. As the \[[atlassian](https://www.atlassian.com/git/tutorials/using-branches)\] puts it:
+> You can think of [a new branch] as a way to request a brand new working directory, staging area, and project history. New commits are recorded in the history for the current branch, which results in a fork in the history of the project.
+
+By default, you are on a branch too! The main branch, assigned by default to any new repository, is called `master`. You can create a new branch by issuing command `git branch <branch-name>`. This does not automatically switch to the newly created branch! To do the switch, use `git checkout <branch-name>`. Thanks to its clever innards, branching in git is for free in terms of hard drive spacetime!
+
+Now, you can work on files, add and commit and push the changes to the new branch as usual. Then, when you are happy with the development, you would need to make your changes visible on the master branch. For this you have two options. You can either merge the branch back into the `master` by checking out `master` first and then running `git merge`:
+
+```bash
+git checkout master
+git merge <branch-name>
+```
+
+Alternatively, you can rebase the master branch onto the current one:
+
+```bash
+git rebase master
+```
+
+The main difference between `merge` and `rebase` is that the former keeps the merged branch away from the rest, whereas the latter makes it part of the something else; the details are important and interesting and discussed [here](https://www.atlassian.com/git/tutorials/merging-vs-rebasing).
+
 
 ## fixing the screwed-up
 
@@ -98,15 +122,23 @@ Reason: the changes made to a file since the previous commit (or clone/pull) are
 git restore <filename>
 ```
 
-### 2. go back to a particular commit
+### 2. go back to a particular point in history
 
-Reason: I want to see what a file looked like at a particular point in time:
+Reason 1: I want to take a look at/restore *one file* to a particular state:
 
 ```bash
 git checkout SHA <filename>
 ```
 
-where `SHA` is the hash ID of a particular commit. At the beginner level of Git proficiency this is only advised to look at the files, maybe run tests etc., eventually undoing all changes since `git checkout` and going back to the main development branch via `git checkout main`.
+where `SHA` is the hash ID of a particular commit, and `<filename>` if the name of the file. 
+
+Reason 2: I want to take a look at/restore the whole repo to a particular state:
+
+```bash
+git checkout SHA
+```
+
+This would put ypur repo in the 'detached HEAD state', meaning that all changes/commits done from here are 'orphaned' and to be deleted by the git garbage collector. If you need to persist them, create and checkout a branch, work on it and then merge as discussed above.
 
 ### 3. roll back all changes
 
@@ -144,6 +176,9 @@ Note however that
 > Git will continue to track any files that are already being tracked.
 
 To stop tracking a file, see [this answer](https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore).
+
+Empty folders are not added to the repo! A simple workaround is to add an empty file, usually called `.gitkeep`, to the folder you want to push.
+
 
 ## publishing changes
 
@@ -193,7 +228,8 @@ git push origin <TAG NAME>
 1. Install Git;
 1. Create an account on Github (or use an existing if you want);
 1. Set up a local repository in your project folder;
-1. Within it, create the following two folders and two files:
+2. Create folder `homework/week3`;
+3. Within it, create the following two folders and two files:
 
 ```bash
 data/
@@ -214,4 +250,5 @@ and exclude folder `data/` from being tracked;
 1. Create a remote repo on Github/Bitbucket and link your local repo to it;
 1. Push all the commits to the remote;
 1. Try to revert `notes.txt` to the state where it reads 'THIS IS GOOD' keeping all the other changes in place;
-1. Commit everything pending and push to the remote.
+1. Commit everything pending and push to the remote;
+1. Commit and push the previous homework.

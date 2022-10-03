@@ -4,7 +4,6 @@
   - [git](#git)
     - [participating in project](#participating-in-project)
     - [distributed workflow](#distributed-workflow)
-    - [branching](#branching)
     - [pull requests](#pull-requests)
   - [slack](#slack)
     - [searchable conversations](#searchable-conversations)
@@ -33,20 +32,6 @@ Let there be two users: [Alice and Bob](https://en.wikipedia.org/wiki/Alice_and_
 > [Why it might be a bad idea to use `git pull` instead](https://longair.net/blog/2009/04/16/git-fetch-and-merge/)
 
 If Alice's changes are not in conflict with Bob's, e.g. because Alice changed file `alice.txt` and Bob changed `bob.bib`, the merge would run smoothly. Otherwise, e.g. if both of them worked on the same file, conflicts arise which need to be solved by Bob by either discarding Alice's changes, or his, or carefully weaving the changes into the fabric of the file. Software like Atom and PyCharm offer fantastic user interface for doing so.
-
-### branching
-
-Sometimes, it might be useful to create a line of development separate from what is happening to the repository. For instance, your paper finally looks OK in terms of tables, figures and text, but the appearance needs polishing. In order to keep the appearance-related changes far from your econometrics code, you could create a **branch**, work on it, and then, when all seems safe enough, integrate the changes back. As the \[[atlassian](https://www.atlassian.com/git/tutorials/using-branches)\] puts it:
-> You can think of [a new branch] as a way to request a brand new working directory, staging area, and project history. New commits are recorded in the history for the current branch, which results in a fork in the history of the project.
-
-By default, you are on a branch too! The main branch, assigned by default to any new repository, is called `master`. You can create a new branch by issuing command `git branch <branch-name>`. This does not automatically switch to the newly created branch! To do the switch, use `git checkout <branch-name>`.
-
-Now, you can work on files, add and commit and push the changes to the new branch as usual. Then, when you are happy with the development, you can merge the branch back into the `master` by checking it out first and then running `git merge`:
-
-```bash
-git checkout master
-git merge <branch-name>
-```
 
 ### pull requests
 
