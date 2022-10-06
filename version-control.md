@@ -249,6 +249,6 @@ and exclude folder `data/` from being tracked;
 1. Undo the previous commit using `git revert`, makes sure `functions.py` does exist and the line reads 'THIS IS GOOD';
 1. Create a remote repo on Github/Bitbucket and link your local repo to it;
 1. Push all the commits to the remote;
-1. Try to revert `notes.txt` to the state where it reads 'THIS IS GOOD' keeping all the other changes in place;
+1. Try to revert `notes.txt` to the state where it reads 'THIS IS FINE' keeping all the other changes in place;
 1. Commit everything pending and push to the remote;
 1. Commit and push the previous homework.
