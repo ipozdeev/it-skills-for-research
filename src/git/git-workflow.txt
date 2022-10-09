@@ -12,7 +12,7 @@ alice:
 - add another line 'THIS #2 LINE IS OK', change line #1 to 'THIS LINE IS STILL OK'
 - pull (should fail, need to commit the changes first)
 - add+commit
-- pull, resolve conflicts
+- pull, resolve conflicts by accepting line 1 from bob and line 2 from self
 - commit+push
 
 bob:
@@ -20,7 +20,7 @@ bob:
 - pull (should see two lines)
 - want to continue working on the first line until it is ok
 - create a new branch 'feature-1'
-- change line #1 to 'THIS LINE IS BAD'
+- change line #1 to 'THIS LINE WAS BAD BUT NOW IS OK'
 - add+commit+push
 
 alice:
