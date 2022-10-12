@@ -9,13 +9,10 @@
   - [example: directory tree](#example-directory-tree)
     - [file types](#file-types)
       - [text](#text)
-      - [serialization of objects](#serialization-of-objects)
-      - [HDF](#hdf)
-      - [feather](#feather)
+      - [column data formats](#column-data-formats)
+      - [serialized objects](#serialized-objects)
     - [directory tree API](#directory-tree-api)
-  - [example: SQL database](#example-sql-database)
-    - [SQL database API](#sql-database-api)
-  - [resources](#resources)
+  - [data and git](#data-and-git)
   - [exercises](#exercises)
 
 ## introduction
@@ -104,28 +101,31 @@ A rather straightforward solution is to put all files that contain data in one f
 
 #### text
 
-Text files such as `.csv`, `.xml` or `.json` are a frequent choice, being human- and Excel-readable and easily shareable. However, they are also bulky, slow to be input/output and subject to comma vs. dot, encoding and similar problems.
+Text files such as `.csv`, `.xml`, `.json` or `.yaml` are a frequent choice, being human-readable and easily shareable. However, they are also bulky, slow to be read in/write out and subject to comma vs. dot, encoding and similar problems.
 
-#### serialization of objects
+#### column data formats
+
+- [HDF](https://www.hdfgroup.org/solutions/hdf5/) is a format for storing hierarchical data. It is best suited for large (even gigantic) organized and reasonably stationary (not changing too frequently) datasets and allows to store metadata. HDF lets you query data in chunks in a memory-efficient way and is shareable across languages. On the other hand, it is somewhat inflexible (hard to recover space after deleting data).
+
+  - Python: [`h5py`](https://www.h5py.org/) or [`pandas/hdf`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_hdf.html);
+  - R: [`rhdf5`](https://bioconductor.org/packages/release/bioc/html/rhdf5.html).
+
+- [Feather](https://arrow.apache.org/docs/python/feather.html) is a language-agnostic data frame storage, super handy for those switching between R, Python and Julia or having colleagues programming in a different language.
+
+  - Python: [`pyarrow`](https://arrow.apache.org/docs/python/feather.html) or [`pandas/feather`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_feather.html);
+  - R: [`arrow`](http://arrow.apache.org/docs/r/).
+
+- [Parquet](https://parquet.apache.org/docs/overview/motivation/) is similar to Feather.
+  - Python: [`pyarrow`](https://arrow.apache.org/docs/python/parquet.html) or [pandas/parquet](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_parquet.html);
+  - R: [`arrow`](http://arrow.apache.org/docs/r/).
+
+#### serialized objects
 
 Serialization is the action of transforming an object such as a data frame to a string of bytes from which it can be recovered without a loss. It is a quick solution to preserve data, fast and relatively memory efficient, but not easily shareable across languages and even versions of the software used to perform the serialization.
 
 - Python: [`pickle`](https://docs.python.org/3/library/pickle.html) or [`pandas`/`pickle`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_pickle.html)
 - R: [`serialize`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/serialize.html)
 
-#### HDF
-
-[HDF](https://www.hdfgroup.org/solutions/hdf5/) is a format for storing hierarchical data. It is best suited for large (even gigantic) organized and reasonably stationary (not changing too frequently) datasets and allows to store metadata. HDF lets you query data in chunks in a memory-efficient way and is shareable across languages. On the other hand, it is somewhat inflexible (hard to recover space after deleting data).
-
-- Python: [`h5py`](https://www.h5py.org/) or [`pandas/hdf`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_hdf.html)
-- R: [`rhdf5`](https://bioconductor.org/packages/release/bioc/html/rhdf5.html)
-
-#### feather
-
-[Feather](https://arrow.apache.org/docs/python/feather.html) is a language-agnostic data frame storage, super handy for those switching between R, Python and Julia or having colleagues programming in a different language.
-
-- Python: [`pyarrow`](https://arrow.apache.org/docs/python/feather.html) or [`pandas/feather`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_feather.html)
-- R: [`arrow`](http://arrow.apache.org/docs/r/)
 
 ### directory tree API
 
@@ -178,66 +178,8 @@ def put_fx_data():
 
 ```
 
-## example: SQL database
-
-The directory tree is an example of an unstructured database. Things therein can be anything, and the only structure is the one noncommittally imposed by the user. An alternative is a relational databases powered by SQL.
-
-SQL stands for Structured Query Language, and the SQL databases are characterized by data being stored and represented as rectangular tables with rows and columns. The power of such system comes from distributing different types of information across different tables, between which relations are created.
-
-SQL databases are lightning fast and can store huge amounts of data at little marginal cost.
-
-Lots of good introductions to SQL exist (see [resources](#resources) for some), way better than any effort we could produce, and we refer the reader to those. As an example, let's sketch the design of a toy database to keep FX exchange rates.
-
-`fx.currency`:
-
-|   id | name              | iso_3   |
-|-----:|:------------------|:--------|
-|    1 | australian dollar | aud     |
-|    2 | swiss franc       | chf     |
-|    3 | us dollar         | usd     |
-
-`fx.data_type`:
-
-|   id | description_long   |
-|-----:|:-------------------|
-|    1 | spot price         |
-|    2 | forward price, 1m  |
-
-`fx.timeseries_data`:
-
-|   id |   base_id |   counter_id |   data_type_id | date       |   value |  |
-|-----:|-------:|----------:|------------:|:-----------|--------:|--:
-|    1 |      1 |         3 |           1 | 2021-01-05 |  0.1361 | <&ndash; audusd spot price |
-|    2 |      1 |         3 |           1 | 2021-01-06 |  0.4488 | <&ndash; audusd spot price |
-|    3 |      3 |         2 |           2 | 2021-01-05 |  0.6185 | <&ndash; usdchf 1m forward price |
-
-Note how `timeseries_data` uses the id of currencies in table `currency` and of data types in table `data_type`, setting up a relation between the tables. SQL is all about these relations.
-
-### SQL database API
-
-To connect to a SQL database using a programming language, a special library is needed, e.g. `sqlalchemy` in Python. The user needs to specify the dialect (MySQL, PostgreSQL), and the database name, and provide valid credentials.
-
-```python
-# connect.py
-import os
-import sqlalchemy
-
-dialect = "mysql"
-username = os.environ.get("DB_USERNAME")
-password = os.environ.get("DB_PASSWORD")
-db_name = "mydatabase"
-host = "localhost"
-port = 3306
-
-engine = f"{dialect}+pymysql://{username}:{password}@{host}:{port}/{db_name}"
-
-```
-
-The rest is easy, and along similar lines as in the example before.
-
-## resources
-
-- [a brilliant SQL intro](https://www.youtube.com/watch?v=HXV3zeQKqGY).
+## data and git
+TBD
 
 ## exercises
 
