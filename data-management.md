@@ -13,7 +13,6 @@
       - [serialized objects](#serialized-objects)
     - [directory tree API](#directory-tree-api)
   - [data and git](#data-and-git)
-  - [exercises](#exercises)
 
 ## introduction
 
@@ -57,7 +56,7 @@ Together, the two constitute a database's application programming interface, or 
 the database. A common layout for a database API would be, using Python as the example:
 
 ```bash
-|-- research-data/
+|-- datafeed/
 |   |-- __init__.py
 |   |-- utilities.py
 |   |-- connect.py
@@ -105,7 +104,7 @@ Text files such as `.csv`, `.xml`, `.json` or `.yaml` are a frequent choice, bei
 
 #### column data formats
 
-- [HDF](https://www.hdfgroup.org/solutions/hdf5/) is a format for storing hierarchical data. It is best suited for large (even gigantic) organized and reasonably stationary (not changing too frequently) datasets and allows to store metadata. HDF lets you query data in chunks in a memory-efficient way and is shareable across languages. On the other hand, it is somewhat inflexible (hard to recover space after deleting data).
+- [HDF](https://www.hdfgroup.org/solutions/hdf5/) is a format for storing hierarchical data. It is best suited for large organized and reasonably stationary (not changing too frequently) datasets and allows to store metadata. HDF lets you query data in chunks in a memory-efficient way and is shareable across languages. On the other hand, it is somewhat inflexible (hard to recover space after deleting data).
 
   - Python: [`h5py`](https://www.h5py.org/) or [`pandas/hdf`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_hdf.html);
   - R: [`rhdf5`](https://bioconductor.org/packages/release/bioc/html/rhdf5.html).
@@ -149,7 +148,7 @@ from connect import DATAPATH
 
 def get_fx_data(subset, start_dt="1960", end_dt="2020"):
   """Get FX data from the DB."""
-  filename = DATAPATH + "fx-data-1980-2020-d.ftr"
+  filename = DATAPATH + "/fx-data-d.ftr"
 
   data = pd.read_ftr(filename)
 
@@ -179,10 +178,5 @@ def put_fx_data():
 ```
 
 ## data and git
-TBD
 
-## exercises
-
-1. create a toy database of your choice;
-1. organize up- and downstream to be able to put data into and get data from the database;
-1. play around with writing to and reading from different data formats.
+In general, you should avoid tracking your data files, especially if they are in a binary format such as HDF or Feather: uploading these to a cloud storage where other people can fetch them from is a better option. Nor is it an easy thing to do: if you try to push a file larger than 50 MB, git will issue a warning, and it will block files larger than 100 MB altogether. For large files, `git lfs` is a solution.
