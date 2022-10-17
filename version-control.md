@@ -218,6 +218,7 @@ git push origin <TAG NAME>
 
 ## resources
 
+- [git internals](https://www.youtube.com/watch?v=P6jD966jzlk) for those who want to understand how git works;
 - [undoing things in git](https://www.atlassian.com/git/tutorials/undoing-changes)
 - [difference between `checkout`, `reset` and `revert`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting);
 - [lots of useful path examples for .gitignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore);
