@@ -53,3 +53,6 @@ todo.txt
 
 # key pairs
 *.pem
+
+# data
+src/data-management/
