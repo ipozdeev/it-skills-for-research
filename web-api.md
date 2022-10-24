@@ -8,6 +8,10 @@
     - [sending the request](#sending-the-request)
     - [parsing the response](#parsing-the-response)
   - [data limits](#data-limits)
+  - [auth(orization/entication)](#authorizationentication)
+    - [API key auth](#api-key-auth)
+    - [Basic auth](#basic-auth)
+    - [OAuth](#oauth)
   - [wrappers](#wrappers)
   - [resources](#resources)
   - [exercises](#exercises)
@@ -22,7 +26,7 @@ Why does it work? First, note that whenever you click on an ordinary URL link su
 [https://api.stlouisfed.org/fred/series/observations?series_id=DGS10](https://api.stlouisfed.org/fred/series/observations?series_id=DGS10)
 the server might respond by sending you data from its database. It is the task of the server developer to write an API which can be used to access the data behind the curtains.
 
-API comes in handy for those who would frequently need the freshest data possible or would like to automate data upstream without necessity to click on buttons.
+API comes in handy for those who would frequently need the freshest data possible or would like to automate data upstream or downstream without necessity to click on buttons.
 
 In what follows we will get familiar with the [Kraken API](https://docs.kraken.com/rest/) and code our own wrapper to be able to simply run
 
@@ -74,13 +78,31 @@ time.sleep(2)  # 2 seconds of idleness
 
 Together, the limits imply that additional coding &ndash; and patience &ndash; is needed to download large datasets.
 
+## auth(orization/entication)
+
+Many APIs would require authorization to operate; some popular methods are API key auth, basic auth and open auth (OAuth).
+
+### API key auth
+
+This type involves generating an API key and inserting it into the request string. Used by FRED.
+
+### Basic auth
+
+Involves a username and password to be sent in http headers, and is often the first part of the OAuth.
+
+### OAuth
+
+Involves authenticating at the server 'in person', generating a (possibly expiring) token and using it to authorize requests. Used by Reddit, Spotify and many others.
+
 ## wrappers
 
 As much of the above can be easily coded up and distributed, chances are high that there exist a Python, R etc wrappers for the API of your interest, written either by the data provider (the case of [quandl](https://data.nasdaq.com/tools/python)), or by a third party. Google it! Sometimes not an implementation but helpful tips are available, as is the case with [IMF](https://www.bd-econ.com/imfapi1.html).
 
 ## resources
 
-- [postman](https://www.postman.com/) is an app that can be used to peek into API requests and is a good choice for educational purposes.
+- [postman](https://www.postman.com/) is an app that can be used to peek into API requests and is a good choice for educational purposes;
+- [postman api tutorial](https://learning.postman.com/docs/getting-started/introduction/) (recommended!);
+- [a good api video](https://www.youtube.com/watch?v=GZvSYJDk-us&t=660s).
 
 ## exercises
 
@@ -88,7 +110,7 @@ The first part is about the [Binance API](https://github.com/binance/binance-spo
 
 - What is the root URL?
 - What is the endpoint to retrieve klines (open-high-low-close data) for a specific cryptocurrency?
-- Specify a request string to retrieve 75 observations of klines data for BTCUSDT since 2021-06-15.
+- Specify a request string to retrieve 75 observations of klines data for BTCUSDT since 2022-09-01.
 - Write a function (in Python, R or Julia) that retrieves 75 observations of klines data for a generic currency pair since a generic date. The function should take the currency pair and start date as input parameters.
 
 The rest is about the [FRED API](https://fred.stlouisfed.org/docs/api):
