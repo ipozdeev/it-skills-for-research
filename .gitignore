@@ -55,4 +55,4 @@ todo.txt
 *.pem
 
 # data
-src/data-management/
+src/data-management/data
