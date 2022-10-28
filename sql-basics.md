@@ -1,5 +1,15 @@
 # basics of sql
 
+- [basics of sql](#basics-of-sql)
+  - [building blocks](#building-blocks)
+    - [table](#table)
+    - [restrictions](#restrictions)
+    - [primary key](#primary-key)
+    - [foreign keys](#foreign-keys)
+  - [flavours](#flavours)
+  - [connectors](#connectors)
+  - [data types](#data-types)
+
 SQL is a language for data queries created to efficiently manipulate data in relational databases. Do not be discouraged be the effort it takes to learn it: once in your toolbox, it will improve your research and job market game significantly!
 
 'Relational' means that there is a way to structure the data as a set of relations, whereby related things can be either placed in the same row of a table or explicitly linked across tables. Utilizing the established relations allows for a great computational power, and the better the structure of a relational database, the quicker data queries will be.
@@ -21,3 +31,15 @@ One important restriction is called the 'primary key': it is a field or a collec
 ### foreign keys
 
 A row from one table can be referenced in a different table using the 'foreign key'; for instance, imagine a table containing countries, each country having several attributes such as the name, the phone code and the official currency. The user can put any value in the currency column, of course: maybe the ISO code or the full name, &ndash; but if they choose to put there the primary key from table 'currency', they would add a layer of security by minimizing the chance of typos ('franc' vs 'franck') and also unlock the possibility to quickly look up the attributes of the currency from the other table and make questions such as 'is the currency of switzerland free-floating?' easy to answer.
+
+## flavours
+
+- postgres
+- musql
+
+## connectors
+
+- sqlalchemy
+
+## data types
+- do not mix
