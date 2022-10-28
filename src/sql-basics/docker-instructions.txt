@@ -1,0 +1,10 @@
+# assuming the container has port 5432 exposed and port 5432 being
+# used already, redirect port 5432 from container to a free port, e.g. 5435
+# the following starts container called 'postgres-demo' in detached state
+docker run --name postgres-demo -e POSTGRES_PASSWORD=<choose password> -p 5435:5432 -d postgres 
+
+# now, it is possible to access it, and e.g. run bash, psql etc.
+docker exec -it postgres-demo bash
+
+# psql must be run with user postgres created above
+root@<container-hash>:/# psql -U postgres
