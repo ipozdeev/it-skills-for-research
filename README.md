@@ -20,7 +20,7 @@ See [syllabus](syllabus.pdf) for details.
 | week 4 | [version control p2: collaboration](./collaboration-tools.md)
 | week 5 | [data management p1: setting up a database](./data-management.md)
 | week 6 | [data management p2: web api](./web-api.md)
-| week 7 | [data management p3: introduction to SQL](./data-management.md)
+| week 7 | [data management p3: introduction to SQL](./sql-basics.md)
 | week 8 | [visualization](./visualization.md)
 | week 9 | [publication p1: latex](./writing-with-latex.md)
 | week 10 | [publication p2: apps](./apps.md)
@@ -43,7 +43,7 @@ Please do the first 6 end-of-chapter exercise sets by the beginning of the 7th l
 
 ### final
 
-(75\%, group assignment, same grade)
+(75\%, group assignment, same grade, deadline 19-Dec-2022)
 
 Please submit a little research project adhering to the following requirements:
 
