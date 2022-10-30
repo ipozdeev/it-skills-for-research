@@ -17,8 +17,8 @@ CREATE TABLE data_type (
 );
 
 INSERT INTO data_type (meta_data_type, name_long, name_short) VALUES
-    ('float', 'spot price',    'p')      ,
-    ('float', 'forward price', 'fwd_1m') ;
+    ('num', 'spot price',    'p')      ,
+    ('num', 'forward price', 'fwd_1m') ;
 
 CREATE TABLE provider (
     id              SERIAL      PRIMARY KEY ,
@@ -52,3 +52,10 @@ CREATE TABLE time_series_num (
     value       NUMERIC,
     add_date    DATE 
 );
+
+INSERT INTO time_series_num (series_id, 
+                             obs_date, 
+                             value) VALUES
+    (1, '2015-01-14', 1.20),
+    (1, '2015-01-15', 1.00),
+    (1, '2015-01-16', 1.01);
