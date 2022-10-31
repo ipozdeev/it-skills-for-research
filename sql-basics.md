@@ -56,7 +56,7 @@ Programming languages feature interface for working with SQL databases (duh).
    > entity, data type, observation date, observation value;
 3. Think about possible ways that the data can change in the future, extending the number of attributes to *K*:
    > entity, data type, observation date, observation value, data provider, record date;
-4. Pivot this table in a way to minimize the number of data points to M < NxK.
+4. Pivot this table in a way to maximize comprehensibility.
 
 Point 3, the thinking ahead, is underrated.
 
