@@ -1,14 +1,3 @@
-CREATE TABLE currency (
-    id    SERIAL        PRIMARY KEY ,
-    iso_3 VARCHAR(3)    UNIQUE      , 
-    name  VARCHAR(79)
-);
-
-INSERT INTO currency (iso_3, name) VALUES 
-    ('chf', 'swiss franc')          ,
-    ('eur', 'euro')                 ,
-    ('usd', 'united states dollar') ;
-
 CREATE TABLE data_type (
     id              SERIAL       PRIMARY KEY ,
     meta_data_type  VARCHAR(3)               , -- one of 'str', 'num'

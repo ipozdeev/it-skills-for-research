@@ -15,6 +15,9 @@ root@<container hash>:/# psql -U postgres
 # create a new database
 create database <database name>;
 
+# connect to it
+\c <database name>
+
 # copy sql script to container
 docker cp path/to/source/file.sql <container hash>:path/to/target/file.sql
 
