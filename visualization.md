@@ -89,11 +89,15 @@ Some features of perception come as evolutionary baggage, such as our tendency t
 
 to make the audience understand your message better.
 
+In the context of shapes, differences in length and 2D position are better quantitatively perceived than those in other attributes:
+
+<img src="./src/visualization/shape-attributes.png" width=325>
+
 A lot of what we see is influenced by our cultural upbringing. Take colors, for example. The Democratic party of the US has blue as its primary color, while the Republican party has red. Coca-Cola is strongly associated with red, while Pepsi with blue. Whenever these are featured in your visualizations, it is a good idea to match the colors you use in the legend with what the audience subconsciously expect the colors to be.
 
 <img src="./src/visualization/democrat-republican-blue-red.png" width=500>
 
-Speakers of different languages have different perception of colors. For instance, Russians have an easier time discriminating between shades of blue, as there are distinct words for those in everyday use ('синий' for 'blue' and 'голубой' for 'light blue').
+Speakers of different languages have different perception of colors. For instance, Russians may have an easier time discriminating between shades of blue, as there are distinct words for those in everyday use ('синий' for 'blue' and 'голубой' for 'light blue').
 
 ## resources
 
