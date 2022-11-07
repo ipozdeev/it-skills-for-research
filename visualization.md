@@ -14,7 +14,7 @@
 
 It is in a researcher's best interest that other people understand their work: higher clarity leads to wider recognition and more nuanced feedback &ndash; a precious commodity in scientific circles. At the same time, understanding is a hard and resource-intensive task for us humans who have evolved to excel in anything but comparing decimals and heeding values in parentheses. Thus, extra effort is required to *nudge* us into understanding.
 
-A good first step is to present information in graphical form or supplement other means of communication with graphics. Having spent millennia as diurnal animals in hostile environments, humans rely disproportionately stronger on vision for information acquisition than on other senses and happen to be better graphics processing units than readers, listeners or smellers. Still, just showing pictures is not enough:
+A good first step is to present information in graphical form or supplement other means of communication with graphics. Having spent millennia as diurnal animals in hostile environments, humans rely disproportionately stronger on vision for information acquisition than on other senses and happen to be better graphics processing units than readers, listeners or smellers. Still, just showing pictures is not enough.
 
 <img src="./src/visualization/pie_chart.jpg" width=500>
 
@@ -99,12 +99,12 @@ Speakers of different languages have different perception of colors. For instanc
 
 - [*Nature* article on color blind-friendly visualizations](https://www.nature.com/articles/d41586-021-02696-z);
 - [color blindness simulator](https://www.color-blindness.com/coblis-color-blindness-simulator);
-- Financial Times ranting about chart crimes, [p1](https://www.ft.com/content/ef0a5f01-14ad-49f2-a5f6-994f65489b91), [p2](https://www.ft.com/content/ebc7d70c-0d28-4dc9-8006-de9a8be11981);
-- [xkcd comic on visual fields](https://xkcd.com/1080/).
+- Financial Times ranting about chart crimes, [p1](https://www.ft.com/content/ef0a5f01-14ad-49f2-a5f6-994f65489b91), [p2](https://www.ft.com/content/ebc7d70c-0d28-4dc9-8006-de9a8be11981). [p3](https://www.ft.com/content/c81a3d20-a320-490f-86fa-13e17104fa78);
+- [xkcd comic on visual fields](https://xkcd.com/1080/);
+- [ten guidelines for efficient visualizations](http://dx.doi.org/10.1016/j.envsoft.2010.12.006).
 
 ## exercises
 
-- create a table with package `dcolumn`;
 - create a table as a heatmap;
 - create a line plot with at least four lines using a color blind-friendly palette;
 - putting grid on plots looks like a dominating strategy: why? is it a pre-attentive attribute? a pattern?
