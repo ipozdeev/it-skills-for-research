@@ -43,11 +43,7 @@ See [resources](#resources) for more info.
 
 ## setup
 
-To get latexing up and running we would need a format, an engine, a bibliography processor (to be discussed later) and a text editor. Here, we will use LaTeX, pdfLaTeX, biber and Sublime Text with the excellent LaTeXTools package respectively, but feel free to use your own favorites instead.
-
-Install and configure LaTeX and Sublime Text + LaTeXTools package as outlined in [setup guide](src/latex/setup.md).
-
-[Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) is a great option: it is an online tool for learning TeX and creating documents. It features tons of different templates and examples which you can modify and accommodate to your needs.
+To get latexing up and running we would need a format, an engine, a bibliography processor (to be discussed later) and a text editor. You can either install these locally as a distribution (see above), or use docker (pull [texlive/texlive](https://hub.docker.com/r/texlive/texlive)), or use the app called [Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) to work on your documents online. Note that a local installation gives you the most control, but can be frustrating when things don't work; Overleaf is neat, but doesn't allow for an easy integration with your favorite text editor, and docker has docker problems.a
 
 ## packages
 
@@ -55,9 +51,9 @@ If you would like to install a missing package, e.g. [`threeparttable`](https://
 
 <img src="src/latex/package-on-ctan.png" width="500"/>
 
-With some luck, you would be able to install it the easy way through the package manager: open the MiKTeX console, navigate to tab `Packages` and type in the name of the package as it appears under 'Contained in' on CTAN, then click the `+` button to install it.
+With some luck, you would be able to install it the easy way through the package manager.
 
-Packages that are not available through the package manager &ndash; e.g. those written by you and/or distributed as files with extension `.sty` &ndash; can still be installed manually, although the process is a bit trickier. Please see [this thread](https://tex.stackexchange.com/questions/2063/how-can-i-manually-install-a-package-on-miktex-windows) for instructions.
+Packages that are not available through the package manager &ndash; e.g. those written by you and/or distributed as files with extension `.sty` &ndash; can still be installed manually, although the process is a bit trickier. Please see the documentation and threads [on MiKTeX](https://tex.stackexchange.com/questions/2063/how-can-i-manually-install-a-package-on-miktex-windows) or [Tex Live](https://www.tug.org/texlive/tlmgr.html) for instructions.
 
 ### useful packages
 
@@ -96,7 +92,7 @@ Packages that are not available through the package manager &ndash; e.g. those w
 pdflatex <filename>.tex
 ```
 
-to produce a readable pdf. In Sublime with LaTeXTools installed, you can use `Ctrl+B` instead. Do read more about compilers [here](https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler).
+to produce a readable pdf. In a text editor such as Sublime Text with LaTeX integration enabled, you can compile a .tex file from the editor directly. Do read more about compilers [here](https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler).
 
 ## generating .tex exogenously
 
@@ -213,23 +209,19 @@ If you are not happy with off-the-shelf solutions LaTeX has to offer or have a s
 
 ## exercises
 
-1. Install MiKTeX or TeXLive;
-2. Setup your favourite text editor for LaTeXing;
-3. Install, if not present already, packages `threeparttable` and `blindtext`;
-4. Create folder `text/` with subfloders `paper/`, `presentation/` and `playground/`;
-5. In folder `playground/`, write 4 lines of code producing a document with the single sentence 'my first line';
-6. Compile the above document with `pdflatex`;
+1. Install a TeX distribution or familiarize yourself with image texlive/texlive or learn how Overleaf works;
+2. Setup your favorite text editor for LaTeXing;
+3. Make sure that packages `threeparttable` and `blindtext` are installed;
+4. In your repo create folder `text/` with subfloders `paper/` and, `presentation/`;
+5. In folder `paper/` create the .tex file that will become your report and lay out the basic structure;
+6. Compile it with `pdflatex` to produce a .pdf;
 7. Install JabRef;
-8. Locate the DOI of Milgrom's paper 'A Theory of Auctions and Competitive Bidding' and use it to auto-parse the info to JabRef;
-9. Create a `.bib` file with two entries, a [published paper](https://www.journals.uchicago.edu/doi/10.1086/707735) and a [working paper](https://ssrn.com/abstract=3555917);
-10. Create a simple article consisting of:
-    - title page with title, author(s), affiliation(s), date, abstract and thanks;
-    - two pages of dummy text (use `blindtext` for that);
-    - two citations of the papers you added above;
-    - a figure and a table, both with captions and notes;
+8. Locate the DOI a paper that you will cite and use it to auto-parse the info to JabRef;
+9. Create a `.bib` file with the entry for it;
+10. Sketch a draft of your final report consisting of:
+    - a title page with title, author(s), affiliation(s), date, abstract and thanks;
+    - the usual sections: introduction, data, methodology, results etc. filled with actual or dummy text (use `blindtext` for that);
     - bibliography on a separate page.
-11. Create a simple beamer presentation consisting of:
-    - title frame with title, author(s), affiliation(s) and date;
-    - three frames with titles and subtitles;
-    - some equations and a theorem (use the special `theorem` environment);
-    - a figure with two panels.
+11. Sketch a draft of a simple beamer presentation.
+
+You will be able to use this template for your actual text and presentation later.
