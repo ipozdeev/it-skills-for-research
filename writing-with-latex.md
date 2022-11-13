@@ -49,7 +49,7 @@ To get latexing up and running we would need a format, an engine, a bibliography
 
 If you would like to install a missing package, e.g. [`threeparttable`](https://ctan.org/pkg/threeparttable?lang=en), google it first. Almost all packages you will ever need are registered on [CTAN](https://ctan.org/); in this case, check if the package is contained in your distribution:
 
-<img src="src/latex/package-on-ctan.png" width="500"/>
+<img src="src/latex/figures/package-on-ctan.png" width="500"/>
 
 With some luck, you would be able to install it the easy way through the package manager.
 
@@ -135,13 +135,13 @@ Surely, it is too time-consuming to manually type in every one of hundreds of bi
 
 [https://www.nber.org/papers/w27638](https://www.nber.org/papers/w27638)
 
-<img src="src/latex/bibtex-file-loc-example-nber.png" width="500"/>
+<img src="src/latex/figures/bibtex-file-loc-example-nber.png" width="500"/>
 
 or
 
 [https://www.jstor.org/stable/10.1086/605130](https://www.jstor.org/stable/10.1086/605130 )
 
-<img src="src/latex/bibtex-file-loc-example-jstor.png" width="500"/>
+<img src="src/latex/figures/bibtex-file-loc-example-jstor.png" width="500"/>
 
 *JabRef* is a nice little reference manager that helps the user collect and organize references. Among other things, it can boast an auto-collect feature based on document identifiers such as [*ISBN*](https://en.wikipedia.org/wiki/International_Standard_Book_Number) or [*DOI*](https://en.wikipedia.org/wiki/Digital_object_identifier). Take a look at the [user's guide](https://docs.jabref.org/) for more information.
 
@@ -209,10 +209,10 @@ If you are not happy with off-the-shelf solutions LaTeX has to offer or have a s
 
 ## exercises
 
-1. Install a TeX distribution or familiarize yourself with image texlive/texlive or learn how Overleaf works;
+1. Install a TeX distribution or familiarize yourself with docker image `texlive/texlive` or learn how Overleaf works;
 2. Setup your favorite text editor for LaTeXing;
 3. Make sure that packages `threeparttable` and `blindtext` are installed;
-4. In your repo create folder `text/` with subfloders `paper/` and, `presentation/`;
+4. In your repo create folder `text/` with subfloders `paper/` and `presentation/`;
 5. In folder `paper/` create the .tex file that will become your report and lay out the basic structure;
 6. Compile it with `pdflatex` to produce a .pdf;
 7. Install JabRef;
@@ -224,4 +224,4 @@ If you are not happy with off-the-shelf solutions LaTeX has to offer or have a s
     - bibliography on a separate page.
 11. Sketch a draft of a simple beamer presentation.
 
-You will be able to use this template for your actual text and presentation later.
+Do use this template for your actual text and presentation later.
