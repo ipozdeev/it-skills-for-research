@@ -43,7 +43,7 @@ See [resources](#resources) for more info.
 
 ## setup
 
-To get latexing up and running we would need a format, an engine, a bibliography processor (to be discussed later) and a text editor. You can either install these locally as a distribution (see above), or use docker (pull [texlive/texlive](https://hub.docker.com/r/texlive/texlive)), or use the app called [Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) to work on your documents online. Note that a local installation gives you the most control, but can be frustrating when things don't work; Overleaf is neat, but doesn't allow for an easy integration with your favorite text editor, and docker has docker problems.a
+To get latexing up and running we would need a format, an engine, a bibliography processor (to be discussed later) and a text editor. You can either install these locally as a distribution (see above), or use docker (pull [texlive/texlive](https://hub.docker.com/r/texlive/texlive)), or use the app called [Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) to work on your documents online. Note that a local installation gives you the most control, but can be frustrating when things don't work; Overleaf is neat, but doesn't allow for an easy integration with your favorite text editor, and docker has docker problems.
 
 ## packages
 
