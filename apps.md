@@ -7,10 +7,10 @@
     - [how server and ui talk](#how-server-and-ui-talk)
     - [starting with shiny](#starting-with-shiny)
   - [notebooks](#notebooks)
-    - [text in jupyter](#text-in-jupyter)
     - [starting with jupyter](#starting-with-jupyter)
       - [locally](#locally)
       - [using docker](#using-docker)
+    - [text in jupyter](#text-in-jupyter)
   - [resources](#resources)
   - [exercises](#exercises)
 
@@ -83,31 +83,14 @@ A Jupyter notebook is an app that runs in a web browser and allows to create and
 
 One jupyter notebook can be all you need to complete, present and publish a research project! It is code, formatted text, visuals, interactivity and reproducibility all in one document that can be easily shared or displayed. Notebooks provide a high didactic value allowing the target audience to better grasp the core concepts of research with hands-on examples.
 
-For example, [the transformer architecture](https://arxiv.org/abs/1706.03762) currently dominates other models in many natural language processing tasks. The original paper, however, is extremely dense and would take days to replicate from scratch. Fortunately, Alexander Rush from the Harvard NLP team implemented the paper line-by-line in a [jupyter notebook](https://nlp.seas.harvard.edu/2018/04/03/attention.html).
-
-### text in jupyter
-
-The text in a notebook is styled using markdown, which is a markup language like LaTeX:
-
-> Markdown is a lightweight markup language for creating formatted text using a plain-text editor. ([wiki](https://en.wikipedia.org/wiki/Markdown))
-
-"Lightweight" speaks for itself: markdown is way, way simpler than LaTeX and is totally comprehensible even without compiling (try to open any .md from this repo in a plain text editor!). To achieve this simplicity, it gives up a ton of power and flexibility, but there is hope:
-
-> Markdown is a text-to-HTML conversion tool for web writers. ([daringfireball](https://daringfireball.net/projects/markdown/))
-
-Markdown is essentially HTML, and HTML is nothing but a markup language like LaTeX itself!
-
-> The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. ([wiki](https://en.wikipedia.org/wiki/HTML))
-
-This means that for any style that is not covered by Markdown's syntax, you simply use HTML itself, just like in the R shiny apps.
-
-Obviously, Github speaks markdown (you are looking at a proof), and can be used to publish your notebooks! With a suitable extension installed, a notebook with all its output can be converted to a .tex document or compiled to a .pdf directly.
+For example, the paper on the [transformer architecture](https://arxiv.org/abs/1706.03762) that currently dominates other models in natural language processing tasks, is quite dense and would take long to replicate from scratch. Fortunately, Alexander Rush from the Harvard NLP team implemented the paper line-by-line in a [jupyter notebook](https://nlp.seas.harvard.edu/2018/04/03/attention.html) for the interested reader to click through.
 
 ### starting with jupyter
 
 #### locally
 
 To run `jupyter` notebooks locally you need a web browser and a `Python` installation. The recommended way is to install Anaconda distribution which comes with pre-packaged `jupyter` along with a suite of tools for data science.
+
 To register additional kernels, e.g. `R`, you would need to install them from the language interpreter and make known to `jupyter`:
 
 ```R
@@ -127,11 +110,30 @@ For other configurations check [the official documentation](https://jupyter.org/
 
 #### using docker
 
-The easier way though is to start jupyter from a container using one of [docker images](https://hub.docker.com/u/jupyter).
+The easier way though is to use a container from one of [docker images](https://hub.docker.com/u/jupyter).
+
+### text in jupyter
+
+The text in a jupyter notebook is styled using markdown, which is a markup language like LaTeX:
+
+> Markdown is a lightweight markup language for creating formatted text using a plain-text editor. ([wiki](https://en.wikipedia.org/wiki/Markdown))
+
+"Lightweight" speaks for itself: markdown is way, way simpler than LaTeX and is totally comprehensible even without rendering (try to open any .md from this repo in a plain text editor!). In exchange for this simplicity it gives up a ton of power &ndash; a questionable trade-off unless you note that:
+
+> Markdown is a text-to-HTML conversion tool for web writers. ([daringfireball](https://daringfireball.net/projects/markdown/))
+
+meaning that markdown is essentially HTML, and HTML is nothing but a markup language itself!
+
+> The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. ([wiki](https://en.wikipedia.org/wiki/HTML))
+
+This way, for any style that is not covered by Markdown's syntax, you can simply use the powerful HTML, just like in R shiny apps.
+
+Obviously, Github speaks markdown (you are looking at a proof), and hence is a good place to publish your notebooks. Also, with a suitable extension installed, a notebook with all its output can be converted to a .tex document or compiled to a .pdf directly.
 
 ## resources
 
-- [getting started with markdown](https://www.markdownguide.org/getting-started).
+- [getting started with markdown](https://www.markdownguide.org/getting-started);
+- interactivity in ipython: [ipywidgets](https://ipywidgets.readthedocs.io/en/latest/).
 
 ## exercises
 
@@ -139,5 +141,6 @@ The easier way though is to start jupyter from a container using one of [docker 
 2. add another input control to the `r-shiny-tutorial` app to include/exclude stocks from the OLS estimation and chart;
 3. create a jupyter kernel of a virtual environment;
 4. create a new jupyter notebook with code and markdown-styled text cells;
-5. save, commit and push the notebook to Github; make sure it appears with the output;
-6. clone the annotated transformer notebook and install the requirements, then make sure you can run the cells.
+5. use `ipywidgets` to add interactive elements to your notebook;
+6. save, commit and push the notebook to Github; make sure it appears with the output (the interactive elements won't work of course);
+7. clone the annotated transformer notebook and install the requirements, then make sure you can run the cells.
