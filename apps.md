@@ -5,11 +5,13 @@
     - [R shiny](#r-shiny)
     - [app structure](#app-structure)
     - [how server and ui talk](#how-server-and-ui-talk)
+    - [starting with shiny](#starting-with-shiny)
   - [notebooks](#notebooks)
-    - [what are (jupyter) notebooks?](#what-are-jupyter-notebooks)
-    - [why jupyter?](#why-jupyter)
-    - [installation](#installation)
-    - [starting a new notebook](#starting-a-new-notebook)
+    - [text in jupyter](#text-in-jupyter)
+    - [starting with jupyter](#starting-with-jupyter)
+      - [locally](#locally)
+      - [using docker](#using-docker)
+  - [resources](#resources)
   - [exercises](#exercises)
 
 The black-and-white paper appearing in a journal is by far the most used way of way of academic knowledge transfer, the runner-up being the conference talk. Both are for what it is worth a one-way channel, as there is limited to no chance for the intended audience to talk back. This might be a fine practice in disciplines like mathematics, but for everything that includes data analysis this regretfully means scarcer feedback, less credibility and quicker aging of results, to the point that the researcher themselves cannot reproduce the findings after some time has passed.
@@ -38,7 +40,7 @@ An `R shiny` app is a webpage that contains `R` components. Attached to it is a 
 
 For a researcher who uses `R` to do the coding, `R shiny` is a marginally inexpensive step to give voice to their research project.
 
-The following is based on the [video tutorial](https://shiny.rstudio.com/tutorial/) and [documentation](https://shiny.rstudio.com/articles/basics.html) you are encouraged to sit through.
+The following is based on the [documentation](https://shiny.rstudio.com/articles/basics.html) and a [video tutorial](https://shiny.rstudio.com/tutorial/) you are encouraged to sit through.
 
 ### app structure
 
@@ -69,71 +71,43 @@ Output functions, producing the reverse information flow and ending in `...Outpu
 
 One important feature of this communication is reactivity. Whenever an input value changes, for instance, when the slider is moved or a different element selected from a drop-out menu, this change must be passed on downstream to the receiver of this input. Unless the receiver is capable of understanding the change, the change is useless. Simple `R` functions, such as `plot_ly()`, are unable to understand this, which is the reason reactive functions, such as `renderPlotly`, are needed here, otherwise an error will be raised.
 
-Here is the source of the betas-vs-returns app:
+### starting with shiny
 
-```R
-# UI is a fluid environment with (1) a title, (2) a sidebar with controls and
-#   (3) a main plotting area
-ui <- fluidPage(
-  # (1) draw a panel containing the title as a h1-level header.
-  titlePanel(h1("market betas vs. average returns")),
-
-  sidebarLayout(
-    # (2) controls with an h2-level header
-    sidebarPanel(
-      h2("controls"),
-      br(),
-      selectInput("frequency",
-                  label = "select frequency",
-                  choices = list("daily" = "daily",
-                                 "monthly" = "monthly",
-                                 "yearly" = "yearly"),
-                  selected = "daily"),
-    ),
-    # (3) plotting area with an h2-level header
-    mainPanel(
-      h2("results"),
-      plotlyOutput("plot")
-    )
-  )
-)
-
-# server logic: 1) fetch the data, 2) calculate betas based on the input from
-#   controls above, 3) render a plot
-server <- function(input, output) {
-  # get data
-  r <- get_stock_data()
-
-  # calculate betas based on the input data frequency
-  inputB = reactive({
-    calculate_betas(r, freq = input$frequency, mkt_col = "SPY")
-  })
-
-  # plot
-  output$plot <- renderPlotly({<some code to plot>})
-}
-
-# this runs the app
-shinyApp(ui = ui, server = server)
-```
+The easiest way to run a shiny app is to build a custom image from [rocker/shiny](https://hub.docker.com/r/rocker/shiny) installing the necessary R packages, and follow the [instructions](https://github.com/rocker-org/shiny) to run the app in a container exposing port 3838.
 
 ## notebooks
 
-Instead of letting your findings talk back to audience, you might as well teach the audience how to replicate your findings. In 99% cases this is easily achieved with Jupyter Notebooks.
+Instead of letting your findings talk back to audience, you might as well teach the audience how to reproduce your findings. In most cases this is easily achieved with Jupyter notebooks.
 
-### what are (jupyter) notebooks?
+A Jupyter notebook is an app that runs in a web browser and allows to create and share interactive documents structured as cells that contain code, visualizations, equations and explanatory text. Jupyter has evolved from IPython and now accommodates many different programming languages: `R`, `Julia`, `C++`, etc. Jupyter is open source.
 
-The jupyter notebook is a way for the coder to make guided tours through their work. It is an app that runs within a web browser and allows to create and share interactive documents that contain code, visualizations, equations and explanatory text. Jupyter has evolved from IPython and now accommodates many different programming languages: `R`, `Julia`, `C++`, etc. Jupyter is open source.
-
-### why jupyter?
-
-Notebooks are easy to share and are a perfect medium to communicate the exact step-by-step process leading to the results of a research project. Hence their importance for reproducibility. Notebooks are interactive and hence provide a high didactic value allowing the target audience to better grasp the core concepts of research given hands-on examples. Notebooks are a promising alternative to slides-based presentations, just as interactive apps are to papers.
+One jupyter notebook can be all you need to complete, present and publish a research project! It is code, formatted text, visuals, interactivity and reproducibility all in one document that can be easily shared or displayed. Notebooks provide a high didactic value allowing the target audience to better grasp the core concepts of research with hands-on examples.
 
 For example, [the transformer architecture](https://arxiv.org/abs/1706.03762) currently dominates other models in many natural language processing tasks. The original paper, however, is extremely dense and would take days to replicate from scratch. Fortunately, Alexander Rush from the Harvard NLP team implemented the paper line-by-line in a [jupyter notebook](https://nlp.seas.harvard.edu/2018/04/03/attention.html).
 
-### installation
+### text in jupyter
 
-To run `jupyter` notebooks you need a `Python` installation. The recommended way is to install Anaconda distribution which comes with pre-packaged `jupyter` along with a suite of tools for data science.
+The text in a notebook is styled using markdown, which is a markup language like LaTeX:
+
+> Markdown is a lightweight markup language for creating formatted text using a plain-text editor. ([wiki](https://en.wikipedia.org/wiki/Markdown))
+
+"Lightweight" speaks for itself: markdown is way, way simpler than LaTeX and is totally comprehensible even without compiling (try to open any .md from this repo in a plain text editor!). To achieve this simplicity, it gives up a ton of power and flexibility, but there is hope:
+
+> Markdown is a text-to-HTML conversion tool for web writers. ([daringfireball](https://daringfireball.net/projects/markdown/))
+
+Markdown is essentially HTML, and HTML is nothing but a markup language like LaTeX itself!
+
+> The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. ([wiki](https://en.wikipedia.org/wiki/HTML))
+
+This means that for any style that is not covered by Markdown's syntax, you simply use HTML itself, just like in the R shiny apps.
+
+Obviously, Github speaks markdown (you are looking at a proof), and can be used to publish your notebooks! With a suitable extension installed, a notebook with all its output can be converted to a .tex document or compiled to a .pdf directly.
+
+### starting with jupyter
+
+#### locally
+
+To run `jupyter` notebooks locally you need a web browser and a `Python` installation. The recommended way is to install Anaconda distribution which comes with pre-packaged `jupyter` along with a suite of tools for data science.
 To register additional kernels, e.g. `R`, you would need to install them from the language interpreter and make known to `jupyter`:
 
 ```R
@@ -151,19 +125,19 @@ python -m ipykernel install --user --name fresh-crisp-env
 
 For other configurations check [the official documentation](https://jupyter.org/install).
 
-### starting a new notebook
+#### using docker
 
-To start a notebook open the command prompt, then navigate to the directory you will be working in and type in `jupyter notebook`. The command will start a notebook server which should be running while you are working in the notebook. For additional information like running the server using a custom IP or port, refer to [this page](https://jupyter.readthedocs.io/en/latest/running.html). The notebook will run in your browser. The first thing you see will be a dashboard where you can navigate in different directories and create new notebooks.
+The easier way though is to start jupyter from a container using one of [docker images](https://hub.docker.com/u/jupyter).
 
-Happy coding!
+## resources
+
+- [getting started with markdown](https://www.markdownguide.org/getting-started).
 
 ## exercises
 
-1. clone/update `digital-tools-for-finance` repo and use `packrat` to install the dependencies needed to run the app in `r-shiny-tutorial/`;
-1. add another input control to the `r-shiny-tutorial` app to add/exclude stocks from the OLS estimation and chart;
-1. create own virtual environment;
-1. make it portable to another computer;
-1. register the environment as a jupyter kernel;
-1. create a new jupyter notebook and produce some output;
-1. save, commit and push the notebook to Github; make sure it appears with the output.
-1. clone the annotated transformer notebook and install the requirements, then make sure you can run the cells.
+1. clone/update `digital-tools-for-finance` repo and use `renv` to install the dependencies needed to run the app in `src/apps/r-shiny` or use docker to do so;
+2. add another input control to the `r-shiny-tutorial` app to include/exclude stocks from the OLS estimation and chart;
+3. create a jupyter kernel of a virtual environment;
+4. create a new jupyter notebook with code and markdown-styled text cells;
+5. save, commit and push the notebook to Github; make sure it appears with the output;
+6. clone the annotated transformer notebook and install the requirements, then make sure you can run the cells.
