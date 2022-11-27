@@ -111,6 +111,7 @@ Often, you can use the same software that generates your research findings such 
 Bibliography is a collection of all references you cite in your work. As it is in general a bad idea to type citations by hand (at the bare minimum to avoid awkward spelling errors), a better idea is to organize them in a well structured database and point to its entries whenever needed. In a LaTeX document, this is achieved using two things, which you will always encounter in discussions of bibliography: a backend processor such as *biber* and a package providing bibliography formats such as *biblatex*. The former takes a bibliography database (usually a `.bib` file) and processes it to produce a TeX-conforming file (usually with extension `.bbl`), while the latter uses a format's macros to place, point to and and keep track of citations.
 
 <!-- TODO: how does biber work? -->
+<!-- TODO: add scikit-learn citation -->
 
 We will be working with *biber* and *biblatex*. The latter contains many possible bibliography variants such as `bwl-FU`, differing in the way names are abbreviated and ordered, mnemonics defined etc.
 
