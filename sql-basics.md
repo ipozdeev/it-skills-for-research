@@ -51,12 +51,12 @@ Programming languages feature interface for working with SQL databases (duh).
 
 ## database design
 
-1. Think of some examples: daily CHFUSD spot exchange rate, USDJPY 1 month forward points, dates of the FOMC meetings, musical sentiment and inflation rate in a certain country, and so on;
+1. Think of the data points that you have: EURCHF spot exchange rate on 14-Jan-2015 and 15-Jan-2015 (from Bloomberg), USDCHF 1 month forward points on 15-Jan-2015 (from Bloomberg) and on 22-Jan-2015 (from Quandl), EURCHF 12 month forward points on 22-Jan-2015 (from Bloomberg), etc.;
 2. For each of *N* data points think of *k* possible attributes that would *uniquely identify every data point*, arriving at a *Nxk* table:
-   > entity, data type, observation date, observation value;
-3. Think about possible ways that the data can change in the future, extending the number of attributes to *K*:
-   > entity, data type, observation date, observation value, data provider, record date;
-4. Pivot this table in a way to maximize comprehensibility.
+   > base currency, counter currency, data type, provider, observation date, observation value;
+3. Think of data points that you might have later on: CPI index in Switzerland in May 2022 (including vintage data), musical sentiment in the Eurozone in May 2022, etc. &ndash; and all the extra attributes, extending the number of attributes to *K*;
+4. Think of how you might want to to query the data, for instance, select all spot rates, select all data relating to a particular currency etc.
+5. Pivot this table to maximize readability.
 
 Point 3, the thinking ahead, is underrated.
 
