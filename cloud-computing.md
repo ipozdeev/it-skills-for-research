@@ -50,7 +50,7 @@ More on connecting to a running instance is here: [link](https://docs.aws.amazon
 
 ### transferring files to/from instance
 
-Remember that `git` can (and must) be installed on a virtual machine, and is definitely the preferred solution to transfer anything from Github. For larger files deposited on your local or for bulky results of computations on the virtual machine, copying can be achieved from a separate terminal using a file transfer utility, such as `scp` on Linux. More information in the usual place: [link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
+Remember that `git` can (and must) be installed on a virtual machine, and is definitely the preferred solution to transfer anything from Github. For larger files deposited on your local or for bulky results of computations on the virtual machine, copying can be achieved from a separate terminal using a file transfer utility, such as `scp` on Linux. More information in the usual place: [link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html#AccessingInstancesLinuxSCP).
 
 ### installing software
 
@@ -91,4 +91,5 @@ Can be done from the console view.
 
 ## resources
 
-- [public key cryptography from computerphile](https://www.youtube.com/watch?v=GSIDS_lvRv4&list=PL0LZxT9Dgnxfu1ILW0XnLnq3mb0L5mUPr).
+- [public key cryptography videos](https://www.youtube.com/watch?v=GSIDS_lvRv4&list=PL0LZxT9Dgnxfu1ILW0XnLnq3mb0L5mUPr) from computerphile;
+- short [cloud computing course](https://zi-training.zi.uzh.ch/en/page/scientific-computing/science-it-sciencecloud-base) from uzh.
