@@ -9,6 +9,8 @@
     - [transferring files to/from instance](#transferring-files-tofrom-instance)
     - [installing software](#installing-software)
     - [managing storage](#managing-storage)
+  - [monitoring usage statistics](#monitoring-usage-statistics)
+  - [resources](#resources)
 
 The idea of cloud computing is to connect to a remote server which is more powerful and/or reliable than a local machine and run code 'there', retrieving results upon completion. This effectively allows a researcher to rent costly equipment that is necessary or preferred for doing computations, GPUs for training neural network being an obvious example.
 
@@ -68,8 +70,25 @@ Also pre-installed would be a text editor such as `vim` or `nano`: these can be 
 
 Further instruction and examples are here: [link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-software.html);
 
-So far, with a `nano` instance running Amazon Linux, the following is enough to create the virtual environment from the 
+So far, with an instance running Amazon Linux, the following is enough to create the virtual environment of the [crypto fx strategies project](https://github.com/ipozdeev/crypto-fx-strategies):
 
-### managing storage 
-- [managing storage](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Storage.html);
-- monitoring usage statistics.
+```bash
+yum install git
+git clone https://github.com/ipozdeev/crypto-fx-strategies.git
+cd crypto-fx-strategies
+python3 -m venv pyenv
+source pyenv/bin/activate
+pip install -r requirements.txt
+```
+
+### managing storage
+
+Documentation here: [link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Storage.html).
+
+## monitoring usage statistics
+
+Can be done from the console view.
+
+## resources
+
+- [public key cryptography from computerphile](https://www.youtube.com/watch?v=GSIDS_lvRv4&list=PL0LZxT9Dgnxfu1ILW0XnLnq3mb0L5mUPr).
