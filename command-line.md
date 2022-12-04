@@ -4,6 +4,7 @@
   - [installation](#installation)
   - [commands](#commands)
   - [scripts](#scripts)
+  - [text editors](#text-editors)
   - [automating tasks](#automating-tasks)
   - [resources](#resources)
   - [exercises](#exercises)
@@ -67,6 +68,10 @@ When executed:
 this script creates file `todo.txt` in the current directory (and write some stuff in it too). Note that executing bash scripts may require [changing permissions](https://www.redhat.com/sysadmin/introduction-chmod).
 
 It is possible (and quite handy) to write scripts that accept arguments and options, just like a command would.
+
+## text editors
+
+TODO: vim and nano.
 
 ## automating tasks
 
