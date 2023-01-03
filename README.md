@@ -35,7 +35,7 @@ We will be using Slack, a command line terminal, Python or R plus jupyter (poten
 
 Please work in groups of 2-4 people and set up one repository per group &ndash; this will be the place to keep the midterm and final assignments on separate branches. Groups must be formed before the 4th lecture starts, the only allowed change after this deadline being leaving one.
 
-The repository (specifically, its main branch) must represent your final project (details below) as if it were an actual research project of yours: there is a README file briefly describing your research question and findings, as well as the steps needed to reproduce the latter.
+The repository (specifically, its main branch) must represent your final project (details below) as if it were an actual research project of yours: please, call it accordingly (not 'DigitalToolsForFinance', 'final-project' and the like) and create an informative README file briefly describing your research question and findings, as well as the steps needed to reproduce the latter.
 
 Branch `midterm` hosts the homework, one folder per week:
 
