@@ -13,23 +13,23 @@
   - [resources](#resources)
   - [exercises](#exercises)
 
-For every project, there exists a set of necessary and sufficient *dependencies*: hardware (such as a GPU with CUDA support), software (Python v3.9.0 with package 'scipy' v1.8.0), data (a feather file containing stock prices), scripts (setting environment variables) and so on. This set is called the project environment, and the subset thereof that only involves the software &ndash; the coding environment. The possibility to export and share the environment is crucial for developers and should become such for researchers, as reproducibility and knowledge transfer hinges on it to a big extent.
+For every project, there exists a set of necessary and sufficient *dependencies*: hardware (such as a GPU with CUDA support), software (Python v3.9.0 with package 'scipy' v1.8.0), data (a feather file containing stock prices), scripts (setting environment variables) and so on. This set is called the project environment, and the subset thereof that only involves the software &ndash; the coding environment. The possibility to export and share the environment is crucial for developers and should become such for researchers, as reproducibility and knowledge transfer hinge on it.
 
-Let's take this course as an example. To achieve ones of its goals &mdash; getting the hang of LaTeX &mdash; the audience would need a laptop and certain software installed on it. How can these software requirements be communicated?
+Let's take this course as an example. To achieve one of its goals &ndash; getting the hang of LaTeX &ndash; the audience would need a laptop and certain software installed on it. How can these software requirements be communicated?
 
 ## local environment
 
-The easiest (for the author of the content) way would be to simply lay out all the things to be installed in a list like this:
+The seemingly easiest (at least for the author) way would be to simply lay out all the software requirements in a list like this:
 
 - Ubuntu Linux v20.04 with `wget`;
-- Python v.3.9 with `pandas v1.4`, `scipy v1.8`;
+- Python v3.9 with `pandas v1.4`, `scipy v1.8`;
 - R v4.0 with `shiny v1.7`;
 - Julia v1.7
 - gretl v2022a
 - TeX Live 2022
 - PostgreSQL v14.2
 
-ans so on. The audience would then install everything from the list on the local machine, creating a local environment.
+ans so on. The audience would then manually install everything from the list on the local machine, creating a local environment.
 
 > Q: What are the disadvantages of this approach?
 
@@ -37,21 +37,21 @@ ans so on. The audience would then install everything from the list on the local
 
 For some languages, most notably for Python, R and Julia, there exists a better alternative called virtual (coding) environment.
 
-A virtual environment is an isolated configuration of interpreters that can be used instead of the system-wide ones. You can think of it as a fully autonomous installation of, say, Python that can be used to run scripts. Multiple such installations can be created, each tailored to a specific project. A program that does this job is called an environment (or package) manager. Python-specific are [venv](https://docs.python.org/3/library/venv.html), itself a package, and [poetry](https://python-poetry.org/docs/managing-environments/); R-specific is [renv](https://rstudio.github.io/renv/articles/renv.html) (replacing [packrat](https://rstudio.github.io/packrat/)); [conda](https://docs.conda.io/en/latest/) and its improved peer [mamba](https://github.com/mamba-org/mamba) can handle both; julia has an own integrated system 'Pkg'. In any case, the idea is the same: somewhere on the local machine a directory is created that contains the interpreter and packages; this directory is isolated in the sense that changing or deleting it has no effect on other interpreters present; packages needed for the code to run smoothly are installed in it; the system is told to only use the interpreter from this folder for running the project scripts.
+A virtual environment is an isolated configuration of interpreters that can be used instead of the system-wide ones. You can think of it as a fully autonomous installation of, say, Python that can be used to run scripts. Multiple such installations can be created, each tailored to a specific project. A program that does this job is called an environment (or package) manager. Python-specific are [venv](https://docs.python.org/3/library/venv.html), itself a package, and [poetry](https://python-poetry.org/docs/managing-environments/); R-specific is [renv](https://rstudio.github.io/renv/articles/renv.html) (replacing [packrat](https://rstudio.github.io/packrat/)); [conda](https://docs.conda.io/en/latest/) and its improved peer [mamba](https://github.com/mamba-org/mamba) can handle both; julia has an own integrated system `Pkg`. In any case, the idea is the same: somewhere on the local machine a directory is created that contains the interpreter and packages; this directory is isolated in the sense that changing or deleting it has no effect on other interpreters present; packages needed for the code to run smoothly are installed in it; the system is told to only use the interpreter from this folder for running the project scripts.
 
-Follow the [conda tutorial](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to learn how to manage environments with conda.
+Follow the [conda tutorial](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to learn how to manage environments with conda, but make sure to use mamba instead (just replace 'conda' with 'mamba').
 
 ## docker
 
 Some projects require more than Python or R: there might be a dependency on TeX Live or PostgreSQL or gretl or even a whole operating system such as Ubuntu. These are impossible to install with `conda` or `renv`, and a different solution is needed.
 
-[Docker](https://docs.docker.com/) provides one such solution by packaging software into 'containers' which can be used as isolated environments ('container' is a telling term in this respect: everything needed is packaged, sealed and ready for dispatch).
+[Docker](https://docs.docker.com/) provides one such solution by packaging all the necessary software into a 'container' &ndash; an isolated environment from which you can run your programs ('container' is a telling term in this respect: everything needed is packaged, sealed and ready for dispatch).
 
 One important thing to understand from the very start is that containers are really, *really* isolated, which necessitates extra steps for ordinary tasks. To name a few examples, file transfer would happen via either copy commands from an extra terminal or mounts, and mapping of ports would be needed to serve an app such as jupyter notebook from a container.
 
 ### installation
 
-Here, we will be using the command line interface (CLI) for docker, but there are also desktop apps available for Windows and Mac which you are free to opt for.
+Here, we will be using the command line interface (CLI) for docker, but there are also desktop apps available which you are free to opt for.
 
 Follow the official manual to install docker.
 
