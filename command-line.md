@@ -69,10 +69,6 @@ this script creates file `todo.txt` in the current directory (and write some stu
 
 It is possible (and quite handy) to write scripts that accept arguments and options, just like a command would.
 
-## text editors
-
-TODO: vim and nano.
-
 ## automating tasks
 
 Scripts can be executed automatically at a specified time. All you need is a working script (with correct permissions as note above), correct path references and a task in the task scheduler of choice (**Task Scheduler** on Windows, `crontab` on Linux/Mac). As an example, web scraping or mail feed can be automated.

@@ -7,7 +7,7 @@ See [syllabus](syllabus.pdf) for details.
 ## prerequisites
 
 - a 'heard-it-somewhere' understanding of computer science: what an operating system is, how virtual differs from physical or local from remote, why command line exists etc.;
-- intermediate knowledge of Python or R: how to write a function, plot a chart, format string values, read to and write from text files etc.;
+- intermediate knowledge of Python, R or Julia: how to write a function, plot a chart, format string values, read to and write from text files etc.;
 - previous exposure to research projects.
 
 ## table of contents

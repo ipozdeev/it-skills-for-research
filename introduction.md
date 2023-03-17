@@ -67,7 +67,7 @@ The developer's workhorse. There are some non-essential differences between Wind
 
 ### cloud storage
 
-Google Drive, Yandex.Disk, OneDrive and Dropbox are decent solutions here, together offering about 45 Gb of free cloud storage space. Data protection concerns apply though: the servers where your data is copied are located where you sometimes do not want sensitive (e.g. related to a private sector job) data to appear.
+Google Drive, OneDrive and Dropbox are decent solutions here, together offering about 45 Gb of free cloud storage space. Data protection concerns apply though: the servers where your data is copied are located where you sometimes do not want sensitive (e.g. related to a private sector job) data to appear.
 
 ### collaboration
 

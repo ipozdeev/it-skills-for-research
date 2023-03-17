@@ -32,8 +32,6 @@ The importance of having a logical, tidy and, most importantly, consistent and a
 
 The [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/overview.html) project was started to tackle the above considerations; its [data science layout](http://drivendata.github.io/cookiecutter-data-science/) is a great fit for this course, so take your time to explore it.
 
-TODO: all commands are intended to be run from project root unless otherwise stated in a readme file. Please keep that in mind when thinking about reproducibility!
-
 ## text editor
 
 *NB: Make sure you understand the difference between a text editor and word processor (refer to [the LaTeX introduction](https://github.com/ipozdeev/digital-tools-for-finance/blob/master/writing-with-latex.md#introduction) for details).*
