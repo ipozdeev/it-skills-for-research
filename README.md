@@ -7,7 +7,7 @@ See [syllabus](syllabus.pdf) for details.
 ## prerequisites
 
 - a 'heard-it-somewhere' understanding of computer science: what an operating system is, how virtual differs from physical or local from remote, why command line exists etc.;
-- intermediate knowledge of Python or R: how to write a function, plot a chart, format string values, read to and write from text files etc.;
+- intermediate knowledge of Python, R or Julia: how to write a function, plot a chart, format string values, read to and write from text files etc.;
 - previous exposure to research projects.
 
 ## table of contents
@@ -34,6 +34,18 @@ We will be using Slack, a command line terminal, Python or R plus jupyter (poten
 ## examination
 
 Please work in groups of 2-4 people and set up one repository per group &ndash; this will be the place to keep the midterm and final assignments on separate branches. Groups must be formed before the 4th lecture starts, the only allowed change after this deadline being leaving one.
+
+The repository (specifically, its main branch) must represent your final project (details below) as if it were an actual research project of yours: please, call it accordingly (not 'DigitalToolsForFinance', 'final-project' and the like) and create an informative README file briefly describing your research question and findings, as well as the steps needed to reproduce the latter.
+
+Branch `midterm` hosts the homework, one folder per week:
+
+```bash
+|-- week1/
+|   |-- ...
+|-- week2/
+|   |-- ...
+|-- ...
+```
 
 ### midterm
 
