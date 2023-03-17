@@ -4,7 +4,6 @@
   - [installation](#installation)
   - [commands](#commands)
   - [scripts](#scripts)
-  - [text editors](#text-editors)
   - [automating tasks](#automating-tasks)
   - [resources](#resources)
   - [exercises](#exercises)
