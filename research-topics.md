@@ -1,13 +1,11 @@
 # research topics
 
-For the final exam, please work on a research question, e.g.:
-
-- do commodity prices grow faster than global inflation?
+- can latitude/longitude explain european differences in inflation dynamics?
 - which of the G10 currencies is the riskiest to hold for a Swiss resident?
-- how do cryptocurrency exchange rates react to Fed rate changes?
-- has there been a rise in crime rates in Germany and the United States post-covid?
 - what is the average human attention span judging by google trends?
-- does the stock market capitalization grow faster than the GDP?
+- which assets give a swiss investor a good hedge against inflation?
 - what is the markowitz-optimal portfolio of inflation constituents in some country?
 - what has been the average return on a cross-country real estate portfolio in Europe?
+- do cryptocurrencies extend the mean-variance frontier of an equity investor?
 - are cryptocurrencies priced by equity factors?
+- what has been the best lookback period for a momentum strategy on the set of us industry portfolios?

@@ -29,35 +29,19 @@ See [syllabus](syllabus.pdf) for details.
 
 ## software
 
-We will be using Slack, a command line terminal, Python or R plus jupyter (potentially with an IDE), an advanced text editor (such as Sublime Text, Atom or VS Code), SQL management software, git (potentially with dedicated software or integration into the text editor of choice), as well as LaTeX (potentially with dedicated editors).
+We will be using Slack, a command line terminal, Python or R plus jupyter (potentially with an IDE), an advanced text editor (such as Sublime Text or VS Code), SQL management software, git (potentially with dedicated software or integration into the text editor of choice), as well as LaTeX (potentially with dedicated editors).
 
 ## examination
 
-Please work in groups of 2-4 people and set up one repository per group &ndash; this will be the place to keep the midterm and final assignments on separate branches. Groups must be formed before the 4th lecture starts, the only allowed change after this deadline being leaving one.
+Please work in groups of 2-4 people and set up one repository per group &ndash; this will be the place to keep the final assignment. Groups must be formed before the 4th lecture starts, the only allowed change after this deadline being leaving one. Working alone is not allowed with no exceptions; if your group members have left you alone, please find a group to join on `#groups-exchange` channel in slack.
 
-The repository (specifically, its main branch) must represent your final project (details below) as if it were an actual research project of yours: please, call it accordingly (not 'DigitalToolsForFinance', 'final-project' and the like) and create an informative README file briefly describing your research question and findings, as well as the steps needed to reproduce the latter.
+The repository (specifically, its main branch) must represent your final project (details below) as if it were an actual research project of yours: please, call it accordingly (not 'DigitalToolsForFinance', 'final-project', 'DTfFSubmission' and the like) and create an informative README file briefly describing your research question and findings, as well as the steps needed to reproduce the latter.
 
-Branch `midterm` hosts the homework, one folder per week:
+### final exam
 
-```bash
-|-- week1/
-|   |-- ...
-|-- week2/
-|   |-- ...
-|-- ...
-```
+(100\%, group assignment, same grade, deadline 11-Dec-2023, defense by 18-Dec-2023)
 
-### midterm
-
-(25\%, group assignment, same grade)
-
-Please do the first 6 end-of-chapter exercise sets by the beginning of the 7th lecture and push the solutions to branch `midterm`.
-
-### final
-
-(75\%, group assignment, same grade, deadline 19-Dec-2022)
-
-Please submit a little research project adhering to the following requirements:
+Please submit and defend in person a little research project adhering to the following requirements:
 
 - make it hosted as a single repository on Github with all group members as contributors;
 - structure it neatly and concisely, avoid the clutter of folders and files for which third people have no use (use .gitignore);
@@ -70,4 +54,8 @@ Please submit a little research project adhering to the following requirements:
 - make sure the results are reproducible by ensuring that the coding environment is exported and concise documentation is present;
 - in the ideal case, anyone who could pass this course should be able to see and reproduce your findings from scratch.
 
+For the defense, you will be asked to present the project and reproduce your findings _on my computer_, answering my questions down the road.
+
 You can pick a topic from the [list of suggested topics](./research-topics.md), but own topics are strongly encouraged! You can also choose to replicate a result from a paper (which does not have an open-source implementation yet).
+
+

@@ -45,13 +45,17 @@ Lots to cover!
 
 Below is on overview of what we will encounter in this course.
 
+### chatgpt
+
+The most powerful productivity tool you can learn in a couple of days. Strongly recommended to invest in the paid version or to use the Bing chat.
+
 ### command line
 
 The developer's workhorse. There are some non-essential differences between Windows and Linux/Mac.
 
 ### text
 
-**Sublime Text**, **Atom**, **VS Code** or integrated development environments: **PyCharm**, **Spyder**, **RStudio** and the like &ndash; are all good choices.
+**VS Code**, **Sublime Text** or integrated development environments: **PyCharm**, **Spyder**, **RStudio** and the like &ndash; are all good choices.
 
 ### coding
 
@@ -61,9 +65,13 @@ The developer's workhorse. There are some non-essential differences between Wind
 
 **Git**. Please also create an account on [Github](https://github.com/).
 
+### docker
+
+[**Docker Desktop**](https://docs.docker.com/get-docker/) is the preferred solution.
+
 ### databases
 
-**PostgreSQL** and maybe language-specific database libraries.
+**PostgreSQL** and maybe language-specific database libraries for the programming language of choice.
 
 ### cloud storage
 
@@ -71,10 +79,12 @@ Google Drive, OneDrive and Dropbox are decent solutions here, together offering 
 
 ### collaboration
 
-**Slack**, **Zoom** and **Miro** (you can install all three locally or use from the browser). Please create an account with each of those or connect an existing one.
+**Slack**. Please create an account and connect to our workspace.
 
 ## todos
 
-1. create an account on **Slack** and join the `isfr-2022` group (invite will be sent per email).
-2. install a text editor of choice;
-3. create an account on GitHub.
+1. (if on Windows) install [`wsl`](https://learn.microsoft.com/en-us/windows/wsl/install);
+1. create an account on Slack and join the `dtff-2023` group (invite will be sent per email);
+1. install a text editor of choice;
+1. familiarize yourself with ChatGPT;
+1. create an account on GitHub.
