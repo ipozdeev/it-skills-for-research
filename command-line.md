@@ -20,7 +20,7 @@ Advanced text editors offer a possibility to open a terminal at the root of the 
 
 ## commands
 
-A command such as `echo` or `pdflatex` can be run in a shell as long as the shell knows where to find the executable file of the same name. How can it know? It searches the following places in the stated order:
+A command such as `pwd`, `echo` or `pdflatex` can be run in a shell as long as the shell knows where to find the executable file of the same name. How can it know? It searches the following places in the stated order:
 
 1. the list of internal (embedded in the shell) commands;
 2. executables specified in environment variable called `$PATH`.
@@ -50,6 +50,11 @@ would use existing `DIR` as the destination for generated files, instead of the 
 
 > [What's the difference between one dash and two dashes?](https://superuser.com/q/372203/1731633)
 
+## paths
+
+A path is the address of a file or folder, such as `/home/alan.smithee/projects/project_1/README.md` or `C:\Users\Alan.Smithee\Downloads`. There are absolute and relative paths: the former give the 'full' address and uniquely identify an object, while the latter give the address relative to the current directory. You can always check your whereabouts with `pwd`, and change them with `cd`. If your programs cannot find a file, it is often the case that the path to the file is misspecified.
+
+
 ## scripts
 
 Shell commands can be packaged as scripts to be run "in bulk". Scripts are  shell-specific, although for the most basic purposes the differences are minor. Scripts intended for `bash` on Linux tend to have extension '.sh', Windows `cmd` scripts &ndash; '.bat', Windows PowerShell &ndash; '.ps1' and so on. A simplest example of a bash script would be a text file called 'todo-creator.sh' with the following line of code:
@@ -72,13 +77,11 @@ It is possible (and quite handy) to write scripts that accept arguments and opti
 
 Scripts can be executed automatically at a specified time. All you need is a working script (with correct permissions as note above), correct path references and a task in the task scheduler of choice (**Task Scheduler** on Windows, `crontab` on Linux/Mac). As an example, web scraping or mail feed can be automated.
 
-On Linux, `crontab` is used to manage tasks.
-
 ## resources
 
 - [an online terminal to learn the basics](https://cocalc.com/);
 - [command line tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line) from mozilla;
-- [command line course](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html#AccessingInstancesLinuxSCP) from uzh;
+- [command line course](https://zi-training.zi.uzh.ch/en/page/operating-systems-programming/science-it-linux-command-line) from uzh;
 - [command line challenge](https://cmdchallenge.com);
 - [bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners);
 - [crontab reference](https://www.tutorialspoint.com/unix_commands/crontab.htm);
@@ -95,7 +98,8 @@ Create text file 'commandline-cheatsheet.txt', where for each of the following t
 - write 'hello world' to file called `hello.txt`;
 - list all files and folders in the *parent* folder of `temp/`;
 - list all currently processes running;
-- kill process with ID 666;
+- using `grep` find the id of process 'slack' which is behind the Slack software;
+- kill it ~~with fire~~using `kill`;
 - write the contents of environment variable `$PATH` to file `path.txt`;
 - find file 'hello.txt' in the parent of the current directory;
 - find all `.png` files in your home directory and subdirectories;
@@ -112,5 +116,4 @@ Using the shell of your choice:
   ```
 
   is supposed to display "hello";  
-- write a text document describing the steps necessary for a user without superuser privileges to create a cron job on a Linux server that runs every second day at 17:00 executing script "runner.sh 'hello'" (no need to create the job, just describe the steps);
-- place all files above in folder "homework/week1" (you will commit and push them once we've covered version control).
+- write a text document describing the steps necessary for a user without superuser privileges to create a cron job on a Linux server that runs every second day at 17:00 executing script "runner.sh 'hello'".
