@@ -1,7 +1,7 @@
 # research topics
 
 - can latitude/longitude explain european differences in inflation dynamics?
-- which of the G10 currencies is the riskiest to hold for a Swiss resident?
+- which of the g10 currencies is the riskiest to hold for a Swiss resident?
 - what is the average human attention span judging by google trends?
 - which assets give a swiss investor a good hedge against inflation?
 - what is the markowitz-optimal portfolio of inflation constituents in some country?
@@ -9,3 +9,4 @@
 - do cryptocurrencies extend the mean-variance frontier of an equity investor?
 - are cryptocurrencies priced by equity factors?
 - what has been the best lookback period for a momentum strategy on the set of us industry portfolios?
+- does the zurich street parade lead to excess mortality?
