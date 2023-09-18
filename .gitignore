@@ -1,6 +1,7 @@
 # pycharm and ipython
 .idea/
 .ipynb_checkpoints/
+.vscode/
 
 # latex stuff
 **/templates/**/*template.pdf
@@ -56,3 +57,6 @@ todo.txt
 
 # data
 src/data-management/data
+
+# temp
+temp/
