@@ -2,7 +2,11 @@
 
 - [command line](#command-line)
   - [installation](#installation)
+  - [prompt](#prompt)
   - [commands](#commands)
+  - [paths](#paths)
+  - [superuser privileges](#superuser-privileges)
+  - [tricks](#tricks)
   - [scripts](#scripts)
   - [automating tasks](#automating-tasks)
   - [resources](#resources)
