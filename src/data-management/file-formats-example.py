@@ -1,14 +1,13 @@
 import pandas as pd
 import numpy as np
 import os
-import pyarrow.feather as feather
 
 # create data ---------------------------------------------------------------
 # dataframe w/random numbers
-df = pd.DataFrame(np.random.normal(size=(1000000, 3)),
-                  columns=["alpha", "bravo", "charlie"],
+df = pd.DataFrame(np.random.normal(size=(1000000, 5)),
+                  columns=["a", "b", "c", "d", "e"],
                   dtype=np.float32)
-df.loc[:, "delta"] = 1
+df.loc[:, "f"] = 1.0000000001
 
 # write out -----------------------------------------------------------------
 # to csv
@@ -26,7 +25,7 @@ f"file size (Mb): {os.path.getsize('temp/abc.pkl') / 1e06}"
 f"file size (Mb): {os.path.getsize('temp/abc.h5') / 1e06}"
 
 # to feather
-%time feather.write_feather(df, "temp/abc.arrow")
+%time df.to_feather("temp/abc.arrow")
 f"file size (Mb): {os.path.getsize('temp/abc.arrow') / 1e06}"
 
 # read in -------------------------------------------------------------------

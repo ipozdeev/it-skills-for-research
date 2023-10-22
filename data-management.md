@@ -87,7 +87,7 @@ def expensive_function():
   pass
 ```
 
-For R, [memoize](https://cran.r-project.org/web/packages/memoise/index.html) looks like a solution.
+A similar solution exists in other languages, e.g. [memoize](https://cran.r-project.org/web/packages/memoise/index.html) in R or [Memoize.jl](https://www.juliapackages.com/p/memoization) in Julia.
 
 ## chunking
 
