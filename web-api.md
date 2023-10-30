@@ -48,7 +48,7 @@ every time we need Bitcoin trades details.
 
 ## implementation
 
-Jupyter notebook `api-example.ipynb` in folder **jupyter** contains clickable Python code for the following.
+Jupyter notebook `src/web-api/api-example.ipynb` contains clickable Python code for the following.
 
 ### stating a request
 
