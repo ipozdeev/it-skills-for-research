@@ -13,7 +13,7 @@
   - [resources](#resources)
   - [homework](#homework)
 
-SQL is a language for data queries created to efficiently manipulate data in relational databases. Do not be discouraged be the effort it takes to learn it: once in your toolbox, it will improve your research and job market game significantly!
+SQL is a language for data queries created to efficiently manipulate data in relational databases. Do not be discouraged by the effort it takes to learn it: once in your toolbox, it will improve your research and job market game significantly!
 
 'Relational' means that there is a way to structure the data as a set of relations, whereby related things can be either placed in the same row of a table or explicitly linked across tables. Utilizing the established relations allows for a great computational power, and the better the structure of a relational database, the quicker data queries will be.
 
@@ -35,11 +35,11 @@ SQL allows the user to impose restrictions on columns: for instance, values in a
 
 ### primary key
 
-One important restriction is called the 'primary key': it is a field or a collection of fields that uniquely identify one row in a table, such that stating it is enough to understand which observation is referred to. When talking about currency, the ISO-3 code uniquely identifies the currency such that knowing it allows to detect the only row with all the relevant attributes. To the same effect, instead of the ISO-3 code, we could have used a strictly increasing sequence of integers to identify rows, such that at some point CHF would have been assigned an integer which could be used to identify it. Indeed, many primary keys in SQL tables are integers derived from an auto-incremented sequence.
+One important restriction is called the 'primary key': it is a field or a collection of fields that uniquely identify one row in a table. For instance, the ISO-3 code uniquely identifies a currency. To the same effect, instead of the ISO-3 code, we could have used a strictly increasing sequence of integers to identify rows, such that at some point CHF would have been assigned an integer which could be used to identify it. Indeed, many primary keys in SQL tables are integers derived from an auto-incremented sequence.
 
 ### foreign keys
 
-A row from one table can be referenced in a different table using the 'foreign key'; for instance, imagine a table containing countries, each country having several attributes such as the name, the phone code and the official currency. The user can put any value in the currency column, of course: maybe the ISO code or the full name, &ndash; but if they choose to put there the primary key from table 'currency', they would add a layer of security by minimizing the chance of typos ('franc' vs 'franck') and also unlock the possibility to quickly look up the attributes of the currency from the other table and make questions such as 'is the currency of switzerland free-floating?' easy to answer.
+A row from one table can be referenced in a different table using the 'foreign key'; for instance, imagine a table for countries, each country having the official name, phone code and currency. The user can put any value in the currency column, of course: maybe the ISO code or the full name, &ndash; but putting a primary key from table 'currency' referencing the fiat of interest would add a layer of security (by making typos such as 'franck') and unlock the possibility to quickly look up attributes of the currency from the other table, making questions such as 'is the currency of switzerland free-floating?' easy to answer.
 
 ### data types
 
@@ -51,19 +51,19 @@ Programming languages feature interface for working with SQL databases (duh).
 
 ## database design
 
-1. Think of the data points that you have: EURCHF spot exchange rate on 14-Jan-2015 and 15-Jan-2015 (from Bloomberg), USDCHF 1 month forward points on 15-Jan-2015 (from Bloomberg) and on 22-Jan-2015 (from Quandl), EURCHF 12 month forward points on 22-Jan-2015 (from Bloomberg), etc.;
-2. For each of *N* data points think of *k* possible attributes that would *uniquely identify every data point*, arriving at a *Nxk* table:
-   > base currency, counter currency, data type, provider, observation date, observation value;
+1. Think backwards from the things you want to save, e.g. EURCHF spot exchange rate on 14-Jan-2015 and 15-Jan-2015 (from Bloomberg), USDCHF 1 month forward points on 15-Jan-2015 (from Bloomberg) and on 22-Jan-2015 (from Quandl), EURCHF 12 month forward points on 22-Jan-2015 (from Bloomberg), etc.;
+2. For each of the data points think of *k* possible attributes that would *uniquely describe each one*, e.g. base currency, counter currency, data type, provider, observation date, observation value;
 3. Think of data points that you might have later on: CPI index in Switzerland in May 2022 (including vintage data), musical sentiment in the Eurozone in May 2022, etc. &ndash; and all the extra attributes, extending the number of attributes to *K*;
-4. Think of how you might want to to query the data, for instance, select all spot rates, select all data relating to a particular currency etc.
-5. Pivot this table to maximize readability.
+4. Think of how you might want to to query the data, e.g. select all spot rates, select all data relating to a particular currency etc. &ndash; and how your design would allow for better queries;
+5. Think what should happen in case of changes to saved data points ('vintage data') or deletions thereof.
 
 Point 3, the thinking ahead, is underrated.
 
 ## resources
 
 - [postgres manual](https://www.postgresql.org/docs/), the go-to reference on all things postgresql;
-- [postgres from docker](https://youtu.be/aHbE3pTyG-Q).
+- [postgres from docker](https://youtu.be/aHbE3pTyG-Q);
+- [draw.io](https://app.diagrams.net/?splash=0&p=sql) with the [sql plugin](https://www.drawio.com/doc/faq/sql-plugin) for creating diagrams.
 
 ## homework
 
