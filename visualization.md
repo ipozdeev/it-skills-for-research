@@ -9,6 +9,8 @@
   - [how do they brain?](#how-do-they-brain)
     - [patterns and pattern breakers](#patterns-and-pattern-breakers)
     - [pre-attentive attributes](#pre-attentive-attributes)
+  - [technical aspects](#technical-aspects)
+  - [visualization checklist](#visualization-checklist)
   - [resources](#resources)
   - [exercises](#exercises)
 
@@ -93,11 +95,24 @@ In the context of shapes, differences in length and 2D position are better quant
 
 <img src="./src/visualization/shape-attributes.png" width=325>
 
-A lot of what we see is influenced by our cultural upbringing. Take colors, for example. The Democratic party of the US has blue as its primary color, while the Republican party has red. Coca-Cola is strongly associated with red, while Pepsi with blue. Whenever these are featured in your visualizations, it is a good idea to match the colors you use in the legend with what the audience subconsciously expect the colors to be.
+A lot of what we see is influenced by our cultural upbringing. Language is an obvious example here, strongly influencing our visual perception. The alphabetic order is a nice pre-learned pattern to make use of when improving searchability of lengthy lists such as column/row names and legend entries. Speakers of different languages have different perception of colors! For instance, Russians may have an easier time discriminating between shades of blue, as there are distinct words for those in everyday use ('синий' for 'blue' and 'голубой' for 'light blue').
+
+Take colors, for example. The Democratic party of the US has blue as its primary color, while the Republican party has red. Coca-Cola is strongly associated with red, while Pepsi with blue. Whenever these are featured in your visualizations, it is a good idea to match the colors you use in the legend with what the audience subconsciously expect the colors to be.
 
 <img src="./src/visualization/democrat-republican-blue-red.png" width=500>
 
-Speakers of different languages have different perception of colors. For instance, Russians may have an easier time discriminating between shades of blue, as there are distinct words for those in everyday use ('синий' for 'blue' and 'голубой' for 'light blue').
+## technical aspects
+Image formats .png and .pdf are preferred to .jpeg: the latter is a lossy compression format and is likely to produce pixelated images at higher zoom ratios. A good dots per inch value is 300 for the figure size of 4x3 inches.
+
+## visualization checklist
+
+- font size is at least 11pt;
+- pre-learned attention patterns are utilized (color meaning, alphabet);
+- new easy-to-learn attention patterns are introduced (decimal separator, color association);
+- palettes are colorblind-friendly;
+- colors and pattern breakers accentuate important information;
+- choices (colors, date formats, ordering) are as consistent as possible;
+- .png and .pdf are strongly preferred to .jpeg.
 
 ## resources
 
