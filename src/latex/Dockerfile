@@ -1,9 +1,5 @@
 # syntax=docker/dockerfile:1
 
-FROM texlive/texlive
+FROM texlive/texlive:latest-medium
 
-RUN tlmgr install threeparttable
-
-WORKDIR tmp/
-
-COPY template.tex .
+RUN tlmgr install threeparttable blindtext biblatex biblatex-bwl

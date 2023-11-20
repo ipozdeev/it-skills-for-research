@@ -43,7 +43,19 @@ See [resources](#resources) for more info.
 
 ## setup
 
-To get latexing up and running we would need a format, an engine, a bibliography processor (to be discussed later) and a text editor. You can either install these locally as a distribution (see above), or use docker (pull [texlive/texlive](https://hub.docker.com/r/texlive/texlive)), or use the app called [Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) to work on your documents online. Note that a local installation gives you the most control, but can be frustrating when things don't work; Overleaf is neat, but doesn't allow for an easy integration with your favorite text editor, and docker has docker problems.
+To get latexing up and running we would need a format, an engine, a bibliography processor (to be discussed later) and a text editor. You can either install these locally as a distribution (see above), or use docker (pull [texlive/texlive](https://hub.docker.com/r/texlive/texlive)), or use the app called [Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) to work on your documents online. Note that a local installation gives you the most control, but can be frustrating when things don't work; Overleaf is neat, but doesn't allow for an easy integration with your favorite text editor; docker is the preferred solution despite suffering from the usual docker problems, so let's take a minute to see how it could work for you.
+
+First, select an texlive image [from the dockerhub](https://hub.docker.com/r/texlive/texlive/tags); for most purposes, just use the most extensive (and hence, the heaviest) tag `latest`, which is the default one:
+
+```bash
+docker pull texlive/texlive:latest
+```
+
+From this image you can run a container with all the TeX formats and compilers; to get access to them, while working on your files, you could mount the working directory onto a directory inside the container (check a possible destination first!), and execute appropriate commands on demand:
+
+```bash
+docker run -v "$(pwd):/workdir texlive/texlive
+```
 
 ## packages
 
@@ -96,11 +108,13 @@ to produce a readable pdf. In a text editor such as Sublime Text with LaTeX inte
 
 ## generating .tex exogenously
 
-Often, you can use the same software that generates your research findings such as tables and figures to *latexify* them, or transcribe to LaTeX-interpretable code. It might be a function such as `xtable` in R, a method of a class, such as `pandas.DataFrame.to_latex()` in python or a button in the navigation bar as in gretl. In any case, before starting to manually input numbers into a .tex file, do search for a solution first! For instance:
+Often, you can use the same software that generates your research findings such as tables and figures to *latexify* them, or transcribe to LaTeX-interpretable code. It might be a function such as `xtable` in R, a method of a class, such as `pandas.DataFrame.to_latex()` in python or a button in the navigation bar as in gretl. In any case, before starting to manually input numbers into a .tex file, do search for a solution first, for instance:
 
 > [julia write table to latex](https://korsbo.github.io/Latexify.jl/stable/)
 
 > [jupyter notebook export to latex](https://stackoverflow.com/questions/32564415/how-to-convert-jupyter-ipython-notebooks-to-latex)
+
+or ask ChatGPT! 
 
 ## bibliography
 
