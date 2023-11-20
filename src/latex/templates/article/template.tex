@@ -1,5 +1,9 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{dcolumn}
+\usepackage{threeparttable}
+
+\newcolumntype{d}[1]{D{.}{.}{#1}}
 
 % Placeholder paragraphs with text
 \usepackage{blindtext}
@@ -27,9 +31,23 @@
 A new system to be aligned
 \begin{align}
 	x ^ 2 + y ^ 2 &= 1 \\
-	a \& b &\& c \& d = \omega
+	a \& b \& c \& d &= \omega
 \end{align}
 
+A table with numbers aligned at the decimal separator:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|d{2}|d{2}|d{2}|d{2}|}
+        \hline
+        10.23 & 3.45 & 6.78 & 9.01 \\
+        2.34 & -4.56 & 7.89 & 0.12 \\
+        3.45 & 5.67 & \pm 8.90 & 100.23 \\
+        \hline
+    \end{tabular}
+    \caption{Example Table with Decimal Alignment}
+\end{table}
+  
 \cite{CieslakEtAlStockReturns} is a fine read.
 
 \printbibliography
