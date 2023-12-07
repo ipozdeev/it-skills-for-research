@@ -49,7 +49,7 @@ Some further requirements are:
 - work on the project consistently, avoid bulk commits;
 - keep your data transparent and easy to replace or update;
 - make figures and tables in line with the visualization standards discussed in class;
-- write a short text paper using LaTeX or Jupyter/Shiny, populate it with sections, a table of contents, and the above tables and figures;
+- write a short text paper using LaTeX or Jupyter/Shiny, populate it with sections, a table of contents, a bibliography and the above tables and figures;
 - make a beamer presentation using LaTeX;
 - create an interactive app (Shiny or Jupyter notebook) describing the main findings and presenting several robustness checks;
 - make the project fully reproducible: dockerize it, export the coding environment and prepare documentation; **anyone who could pass this course should be able to see and reproduce your findings from scratch**;
