@@ -3,6 +3,7 @@
 - [version control](#version-control)
   - [basics](#basics)
   - [installation](#installation)
+  - [what to version control?](#what-to-version-control)
   - [starting to version control](#starting-to-version-control)
   - [git areas](#git-areas)
   - [tracking changes](#tracking-changes)
@@ -39,6 +40,9 @@ Follow the instructions on the webpage to install Git. Now, to operate Git you c
 Choose whatever you like! In this tutorial, we will stick to the first option. Obviously, the same commands we will be executing power the Git features of your favorite text editor or third software.
 
 > \[[git-book](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)\] The first thing you should do when you install Git is to set your user name and email address.
+
+## what to version control?
+TODO
 
 ## starting to version control
 
