@@ -55,7 +55,7 @@ Some further requirements are:
 - make the project fully reproducible: dockerize it, export the coding environment and prepare documentation; **anyone who could pass this course should be able to see and reproduce your findings from scratch**;
 - have fun and feel academic-esque.
 
-For the defense, you will be asked to help me reproduce your results **on my computer**, answering my questions down the road.
+For the defense, you will be asked to help me reproduce your results **on my computer**, answering my questions down the road, such as how to set up the docker environment, compile the LaTeX for the presentation etc., and every group participants is expected to be able to answer those.
 
 You can pick a topic from the [list of suggested topics](./research-topics.md), but own topics are strongly encouraged! You can also choose to replicate a result from a paper (which does not have an open-source implementation yet).
 
