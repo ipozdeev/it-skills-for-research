@@ -130,6 +130,8 @@ This way, for any style that is not covered by Markdown's syntax, you can simply
 
 Obviously, Github speaks markdown (you are looking at a proof), and hence is a good place to publish your notebooks. Also, with a suitable extension installed, a notebook with all its output can be converted to a .tex document or compiled to a .pdf directly.
 
+TODO: 'more markdown than code!'
+
 ## resources
 
 - [getting started with markdown](https://www.markdownguide.org/getting-started);

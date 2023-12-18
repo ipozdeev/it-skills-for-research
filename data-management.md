@@ -13,6 +13,7 @@
       - [serialized objects](#serialized-objects)
     - [directory tree API](#directory-tree-api)
   - [data and git](#data-and-git)
+  - [sensitive and private data](#sensitive-and-private-data)
   - [exercises](#exercises)
 
 ## introduction
@@ -181,6 +182,9 @@ def put_fx_data():
 ## data and git
 
 In general, you should avoid tracking your data files, especially if they are in a binary format such as HDF or Feather: uploading these to a cloud storage where other people can fetch them from is a better option. Nor is it an easy thing to do: if you try to push a file larger than 50 MB, git will issue a warning, and it will block files larger than 100 MB altogether. For large files, `git lfs` is a solution.
+
+## sensitive and private data
+TODO: share as simulated values
 
 ## exercises
 
