@@ -43,16 +43,17 @@ Some further requirements are:
 
 - the repository is called informatively: do NOT use 'DigitalToolsForFinance', 'final-project', 'DTfFSubmission' etc.; 
 - the main findings are on the default branch; 
-- there is an informative README file briefly describing your project, as well as the steps needed to reproduce the latter; 
+- there is an informative README file:
+  -  briefly describing your project and the main findings (with the main figure/table if applicable) - treat the README as an extended abstract of your research;
+  -  describing in detail the steps needed to reproduce the findings; 
 - all group members are contributors to the repository and have made meaningful commits;
 - the repository is structured neatly and concisely, without the clutter of folders and files for which third people have no use (use .gitignore);
 - work on the project consistently, avoid bulk commits;
 - keep your data transparent and easy to replace or update;
 - make figures and tables in line with the visualization standards discussed in class;
-- write a short text paper using LaTeX or Jupyter/Shiny, populate it with sections, a table of contents, a bibliography and the above tables and figures;
-- make a beamer presentation using LaTeX;
-- create an interactive app (Shiny or Jupyter notebook) describing the main findings and presenting several robustness checks;
-- make the project fully reproducible: dockerize it, export the coding environment and prepare documentation; **anyone who could pass this course should be able to see and reproduce your findings from scratch**;
+- write a short text paper and a beamer presentation using LaTeX, populate it with sections, a table of contents, a bibliography and the above tables and figures, and make sure anyone can compile the LaTeX code using docker (e.g. `texlive/texlive` image);
+- create an interactive app (Shiny or Jupyter notebook) describing the main findings and presenting several robustness checks; make the app self-explanatory and a true substitute ot the conventional paper by describing all the steps with Markdown/HTML;
+- make the project fully reproducible: dockerize it (all the steps!), export the coding environment for anyone to be able to run it locally, and prepare documentation; **anyone who could pass this course should be able to see and reproduce your findings from scratch**;
 - have fun and feel academic-esque.
 
 For the defense, you will be asked to help me reproduce your results **on my computer**, answering my questions down the road, such as how to set up the docker environment, compile the LaTeX for the presentation etc., and every group participants is expected to be able to answer those.
