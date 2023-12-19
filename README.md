@@ -52,7 +52,7 @@ Some further requirements are:
 - keep your data transparent and easy to replace or update;
 - make figures and tables in line with the visualization standards discussed in class;
 - write a short text paper and a beamer presentation using LaTeX, populate it with sections, a table of contents, a bibliography and the above tables and figures, and make sure anyone can compile the LaTeX code using docker (e.g. `texlive/texlive` image);
-- create an interactive app (Shiny or Jupyter notebook) describing the main findings and presenting several robustness checks; make the app self-explanatory and a true substitute ot the conventional paper by describing all the steps with Markdown/HTML;
+- create an interactive app (Shiny or Jupyter notebook) describing the main findings and presenting several robustness checks; the app should be self-explanatory and self-sufficient, and read like a paper, so please structure it in a user-friendly way and document all the steps with Markdown/HTML;
 - make the project fully reproducible: dockerize it (all the steps!), export the coding environment for anyone to be able to run it locally, and prepare documentation; **anyone who could pass this course should be able to see and reproduce your findings from scratch**;
 - have fun and feel academic-esque.
 
