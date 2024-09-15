@@ -9,4 +9,6 @@
 - do cryptocurrencies extend the mean-variance frontier of an equity investor?
 - are cryptocurrencies priced by equity factors?
 - what has been the best lookback period for a momentum strategy on the set of us industry portfolios?
+- what are the long-term mean-reverting properties of some popular assets?
 - does the zurich street parade lead to excess mortality?
+- to what degree are the (forward-looking) returns of bond etfs explained by the current interest rates?

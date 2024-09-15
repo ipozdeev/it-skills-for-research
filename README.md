@@ -2,7 +2,7 @@
 
 A collection of skills for academic (not only) research, may be a bit finance-centric.
 
-See [syllabus](syllabus.pdf) for details.
+See [syllabus](syllabus.pdf) (outdated!) for details.
 
 ## prerequisites
 
@@ -14,26 +14,27 @@ See [syllabus](syllabus.pdf) for details.
 
 | date    | topic
 | ----    | ----
-| week 1  | [introduction](./introduction.md)<br/>            [reproducibility](https://the-turing-way.netlify.app/welcome.html)<br/>[chatgpt](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4391863)
+| week 1  | [introduction](./introduction.md)<br/>[reproducibility](https://the-turing-way.netlify.app/welcome.html)<br/>[chatgpt](https://sites.google.com/view/lastunen/ai-for-economists)
 | week 2  | [command line](./command-line.md)
-| week 3  | [project environment](./project-environment.md)<br/>[coding environment (docker)](./coding-environment.md)
-| week 4  | [version control p1: working solo](./version-control.md)
-| week 5  | [version control p2: collaboration](./collaboration-tools.md)
-| week 6  | [data management p1: setting up a database](./data-management.md)
-| week 7  | [data management p2: web api](./web-api.md)
-| week 8  | [data management p3: introduction to SQL](./sql-basics.md)
-| week 9  | [visualization](./visualization.md)
-| week 10 | [publication p1: latex](./writing-with-latex.md)
-| week 11 | [publication p2: apps](./apps.md)
-| week 12 | [cloud computing](./cloud-computing.md)
+| week 3  | [project environment](./project-environment.md)
+| week 4  | [coding environment (docker)](./coding-environment.md)
+| week 5  | [version control p1: working solo](./version-control.md)
+| week 6  | [version control p2: collaboration](./collaboration-tools.md)
+| week 7  | [data management p1: setting up a database](./data-management.md)
+| week 8  | [data management p2: web api](./web-api.md)
+| week 9  | [data management p3: introduction to SQL](./sql-basics.md)
+| week 10 | [visualization](./visualization.md)
+| week 11 | [publication p1: latex](./writing-with-latex.md)
+| week 12 | [publication p2: apps](./apps.md)
+| week 13 | [cloud computing](./cloud-computing.md)
 
 ## software
 
-We will be using Slack, a command line terminal, ChatGPT, Python or R plus Jupyter (potentially with an IDE), an advanced text editor (such as Sublime Text or VS Code), SQL management software, git (potentially with dedicated software or integration into the text editor of choice), as well as LaTeX (potentially with dedicated editors).
+We will be using Slack, a command line terminal, ChatGPT, Python or R plus Jupyter (potentially with an IDE), an advanced text editor (such as Sublime Text or VS Code), git (potentially with dedicated software or integration into the text editor of choice), Docker and LaTeX (potentially with dedicated editors).
 
 ## examination
 
-(100\%, group assignment, same grade, deadline 11-Dec-2023, defense by 18-Dec-2023)
+(100\%, group assignment, same grade, deadline 11-Dec-2024, defense by 20-Dec-2024)
 
 The exam takes the form of a little research project, hosted on Github, submitted by the deadline above and defended in person later.
 
@@ -56,8 +57,7 @@ Some further requirements are:
 - make the project fully reproducible: dockerize it (all the steps!), export the coding environment for anyone to be able to run it locally, and prepare documentation; **anyone who could pass this course should be able to see and reproduce your findings from scratch**;
 - have fun and feel academic-esque.
 
-For the defense, you will be asked to help me reproduce your results **on my computer**, answering my questions down the road, such as how to set up the docker environment, compile the LaTeX for the presentation etc., and every group participants is expected to be able to answer those.
+For the defense, you will be asked to reproduce your research and answer my questions down the road, such as how to set up the docker environment, compile the LaTeX for the presentation etc.; and every group participants is expected to be able to answer those.
 
-You can pick a topic from the [list of suggested topics](./research-topics.md), but own topics are strongly encouraged! You can also choose to replicate a result from a paper (which does not have an open-source implementation yet).
-
+You can pick a topic from the [list of suggested topics](./research-topics.md), but own topics are strongly encouraged! You can also choose to replicate a result from your favorite paper (which does not have an open-source implementation yet).
 
