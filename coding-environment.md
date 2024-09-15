@@ -59,7 +59,7 @@ An extra (optional) step for Linux users to take is to give your user root privi
 
 ### image
 
-In order to create a docker container that can do something useful, an 'image' is needed. Images can be thought of as configuration blueprints: you design one according to your environment requirements, then use it to `run` a container. Many pre-configured images are available on [Docker Hub](https://hub.docker.com/), with a vast range of needs covered. Having found a correct image, you can `pull` it (download the blueprint to your machine):
+In order to create a docker container that can do something useful, an 'image' is needed. Images can be thought of as configuration blueprints: you design one according to your environment requirements, then use it to `run` a container. Many pre-configured images are available in a container registry such as [Docker Hub](https://hub.docker.com/) and [quay.io](https://quay.io), with a vast range of needs covered. Having found a correct image, you can `pull` it (download the blueprint to your machine):
 
 ```bash
 docker pull julia

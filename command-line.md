@@ -75,7 +75,7 @@ tells `pdflatex` to use an existing directory `DIR` as the destination for gener
 
 > [What's the difference between one dash and two dashes?](https://superuser.com/q/372203/1731633)
 
-One super popular flag is `--help`: running a command with it would give you, well, some help on the command.
+One super popular flag is `--help`: running a command with it would give you, well, some help on the command. More on the command line command syntax [here](https://swcarpentry.github.io/shell-novice/02-filedir.html#general-syntax-of-a-shell-command).
 
 ## paths
 
@@ -126,6 +126,7 @@ Scripts can be executed automatically at a specified time. All you need is a wor
 - [command line tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line) from mozilla;
 - [command line course](https://zi-training.zi.uzh.ch/en/page/operating-systems-programming/science-it-linux-command-line) from uzh;
 - [command line challenge](https://cmdchallenge.com);
+- extensive [command line tutorial](https://swcarpentry.github.io/shell-novice);
 - [bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners);
 - [crontab reference](https://www.tutorialspoint.com/unix_commands/crontab.htm);
 - [future of the command line](https://github.com/readme/featured/future-of-the-command-line) from github.
