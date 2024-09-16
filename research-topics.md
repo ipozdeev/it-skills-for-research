@@ -12,3 +12,4 @@
 - what are the long-term mean-reverting properties of some popular assets?
 - does the zurich street parade lead to excess mortality?
 - to what degree are the (forward-looking) returns of bond etfs explained by the current interest rates?
+- explore different rebalancing rules (threshold-based, calendar-based) with respect to portfolio performance (e.g. on Fama and French industry portfolios);
