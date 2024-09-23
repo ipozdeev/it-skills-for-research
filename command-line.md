@@ -75,7 +75,11 @@ tells `pdflatex` to use an existing directory `DIR` as the destination for gener
 
 > [What's the difference between one dash and two dashes?](https://superuser.com/q/372203/1731633)
 
-One super popular flag is `--help`: running a command with it would give you, well, some help on the command. More on the command line command syntax [here](https://swcarpentry.github.io/shell-novice/02-filedir.html#general-syntax-of-a-shell-command).
+One super popular flag is `--help`: running a command with it would give you, well, some help on the command. Another way to summon help is to use command `man` followed by the name of the command you need help with.
+
+Commands can be composite, e.g. `git` is never used alone but as the first part of a composite command such as `git commit` or `git merge`.
+
+More on the command line command syntax [here](https://swcarpentry.github.io/shell-novice/02-filedir.html#general-syntax-of-a-shell-command).
 
 ## paths
 
