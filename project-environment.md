@@ -36,7 +36,7 @@ The [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/overview.html
 
 *NB: Make sure you understand the difference between a text editor and word processor (refer to [the LaTeX introduction](https://github.com/ipozdeev/digital-tools-for-finance/blob/master/writing-with-latex.md#introduction) for details).*
 
-**Visual Studio Code**, **Sublime Text** and **Atom** are some popular choices. These are extensible text editors with thousands of *packages* written to serve all kinds of purposes, e.g. to provide a Python engine, LaTeX language support, in-editor access to the terminal etc. The bulk of this course is written with Atom.
+**Visual Studio Code** and **Sublime Text** are some popular choices. These are extensible text editors with thousands of *packages* written to serve all kinds of purposes, e.g. to provide a Python engine, LaTeX language support, in-editor access to the terminal etc.
 
 Integrated development environments (IDE) such as **Spyder**, **RStudio** and **PyCharm** is a convenient alternative to a basic text editor. An IDE combines the basic text editor functionality with that of a code interpreter, version control and testing system, a debugger etc. and is essentially text editor on steroids.
 

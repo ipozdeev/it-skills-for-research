@@ -2,8 +2,8 @@ import pandas as pd
 
 
 def main():
-    foo = pd.Panel()
-    print(foo)
+    p = pd.Panel()
+    print("success!")
 
 
 if __name__ == "__main__":
