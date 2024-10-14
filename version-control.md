@@ -42,7 +42,16 @@ Choose whatever you like! In this tutorial, we will stick to the first option. O
 > \[[git-book](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)\] The first thing you should do when you install Git is to set your user name and email address.
 
 ## what to version control?
-TODO
+Do version control text files: 
+- code;
+- notes;
+- small data files that are difficult to recover (e.g. manually collected data such as events, field experiments etc.);
+
+Do not version control:
+- binary files: excel workbooks, MS Word documents, graphics and other media, .pdf documents;
+- large data files and data that is easy to recover: data from vendors such as Thomson Reuters etc.;
+- sensitive data and data under a commercial license;
+- temporary, auxiliary files, (to be discussed in the context of .gitignore later).
 
 ## starting to version control
 
@@ -111,7 +120,7 @@ Alternatively, you can rebase the master branch onto the current one:
 git rebase master
 ```
 
-The main difference between `merge` and `rebase` is that the former keeps the merged branch away from the rest, whereas the latter makes it part of the something else; the details are important and interesting and discussed [here](https://www.atlassian.com/git/tutorials/merging-vs-rebasing).
+The differences between `merge` and `rebase` are important and interesting and discussed [here](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) &ndash; as one takeaway, *do not rebase public branches*. 
 
 
 ## fixing the screwed-up
