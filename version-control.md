@@ -235,7 +235,8 @@ git push origin <TAG NAME>
 - [undoing things in git](https://www.atlassian.com/git/tutorials/undoing-changes)
 - [difference between `checkout`, `reset` and `revert`](https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting);
 - [lots of useful path examples for .gitignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore);
-- [lots of useful templates of `.gitignore` files](https://github.com/github/gitignore).
+- [lots of useful templates of `.gitignore` files](https://github.com/github/gitignore);
+- [learn git branching](https://learngitbranching.js.org/)
 
 ## exercises
 
