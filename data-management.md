@@ -184,7 +184,11 @@ def put_fx_data():
 In general, you should avoid tracking your data files, especially if they are in a binary format such as HDF or Feather: uploading these to a cloud storage where other people can fetch them from is a better option. Nor is it an easy thing to do: if you try to push a file larger than 50 MB, git will issue a warning, and it will block files larger than 100 MB altogether. For large files, `git lfs` is a solution.
 
 ## sensitive and private data
-TODO: share as simulated values
+If your data is under a license (e.g. from Bloomberg), or if you don't want to share it for other reasons, a good idea is to still upload something that could be used as input to your function. It can be a snapshot of your data (first 5 rows) or simulated values of the same structure, headers and data types as the original data. If you estimate a model, you would most often be able to sample random values from this model: for instance, if you estimate an OLS of the form `y_hat = a + bx`, with both the left- and right-hand side variables coming from a licensed dataset, do upload a table of values simulated as follows: 
+- sample `x` from some distribution resembling the original data;
+- sample residuals `u` from a Normal distribution of the variance estimated whne fitting the model; 
+- sample `y` as `bx + u`.
+Your code would run on this data and produce the more or less same estimates of the OLS coefficients.
 
 ## exercises
 
