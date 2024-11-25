@@ -45,7 +45,7 @@ See [resources](#resources) for more info.
 
 To get latexing up and running we would need a format, an engine, a bibliography processor (to be discussed later) and a text editor. You can either install these locally as a distribution (see above), or use docker (pull [texlive/texlive](https://hub.docker.com/r/texlive/texlive)), or use the app called [Overleaf](https://www.overleaf.com/learn/how-to/Creating_a_document_in_Overleaf) to work on your documents online. Note that a local installation gives you the most control, but can be frustrating when things don't work; Overleaf is neat, but doesn't allow for an easy integration with your favorite text editor; docker is the preferred solution despite suffering from the usual docker problems, so let's take a minute to see how it could work for you.
 
-First, select an texlive image [from the dockerhub](https://hub.docker.com/r/texlive/texlive/tags); for most purposes, just use the most extensive (and hence, the heaviest) tag `latest`, which is the default one:
+First, select an texlive image [from the dockerhub](https://hub.docker.com/r/texlive/texlive/tags); for most purposes, just use the most extensive (and hence, the heaviest) tag `latest`, which is the default:
 
 ```bash
 docker pull texlive/texlive:latest
@@ -54,7 +54,7 @@ docker pull texlive/texlive:latest
 From this image you can run a container with all the TeX formats and compilers; to get access to them, while working on your files, you could mount the working directory onto a directory inside the container (check a possible destination first!), and execute appropriate commands on demand:
 
 ```bash
-docker run -v "$(pwd):/workdir texlive/texlive
+docker run -v $(pwd):/workdir texlive/texlive
 ```
 
 ## packages
@@ -118,13 +118,13 @@ or ask ChatGPT!
 
 ## bibliography
 
-Bibliography is a collection of all references you cite in your work. As it is in general a bad idea to type citations by hand (at the bare minimum to avoid awkward spelling errors), a better idea is to organize them in a well structured database and point to its entries whenever needed. In a LaTeX document, this is achieved using two things, which you will always encounter in discussions of bibliography: a backend processor such as *biber* and a package providing bibliography formats such as *biblatex*. The former takes a bibliography database (usually a `.bib` file) and processes it to produce a TeX-conforming file (usually with extension `.bbl`), while the latter uses a format's macros to place, point to and and keep track of citations.
+Bibliography is a collection of all references you cite in your work. As it is in general a bad idea to type citations by hand (at the bare minimum to avoid awkward spelling errors), a better idea is to organize them in a well structured database and point to its entries whenever needed. In a LaTeX document, this is achieved using two things, which you will always encounter in discussions of bibliography: a backend processor such as *biber* or *bibtex* and a package providing bibliography formats such as *biblatex* or *natbib*. The backend takes a bibliography database (usually a `.bib` file) and processes it to produce a TeX-conforming file (usually with extension `.bbl`), while the format uses a collection ogf macros to place, point to and and keep track of citations.
 
-We will be working with *biber* and *biblatex*. The latter contains many possible bibliography variants such as `bwl-FU`, differing in the way names are abbreviated and ordered, mnemonics defined etc.
+Many possible bibliography variants such as `bwl-FU` are contained in *biblatex*, differing in the way names are abbreviated and ordered, mnemonics defined etc.
 
 ### structure
 
-A bibliography database is saved as a `.bib` file and has entries of the form:
+A bibliography database is biblatexsaved as a `.bib` file and has entries of the form:
 
 ```latex
 @<TYPE>{<KEY>,
@@ -164,7 +164,7 @@ Place biblatex package import statement in the [preamble](https://en.wikibooks.o
 ```latex
 % bibliography
 \usepackage[
-    backend=biber,
+    backend=bibtex,
     style=bwl-FU,
     url=false,
     doi=false,
