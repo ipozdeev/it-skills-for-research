@@ -20,7 +20,6 @@ ui <- fluidPage(
       br(),
       p("data until:"),
       textOutput("last_date")
-      
     ),
     
     mainPanel(
@@ -57,11 +56,12 @@ server <- function(input, output) {
       data = df, 
       mode = "markers",
       text = rownames(df),
-      showlegend = FALSE,
-      name = "stock")
+      showlegend = TRUE,
+      name = "stocks")
     
     fig <- fig %>%
-      add_lines(x = df$b, y = fitted(fit), name = "ols fit")
+      add_lines(x = df$b, y = fitted(fit), name = "ols fit") %>%
+      layout(legend = list(x = 0.1, y = 0.9))
     
     fig
     
